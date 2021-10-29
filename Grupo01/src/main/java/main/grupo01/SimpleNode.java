@@ -1,3 +1,5 @@
+package main.grupo01;
+
 public class SimpleNode<E> {
 
     private E content;

@@ -1,3 +1,5 @@
+package main.grupo01;
+
 public class DoubleNode<E> {
 
     private E content;
