@@ -1,5 +1,3 @@
-package TDAs;
-
 public class SimpleNode<E> {
 
     private E content;

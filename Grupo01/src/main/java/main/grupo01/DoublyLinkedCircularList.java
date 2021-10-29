@@ -1,5 +1,3 @@
-package TDAs;
-
 public class DoublyLinkedCircularList<E> implements List<E> {
 
     private DoubleNode<E> last;

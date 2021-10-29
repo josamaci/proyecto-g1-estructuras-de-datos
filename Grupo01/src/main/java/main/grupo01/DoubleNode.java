@@ -1,5 +1,3 @@
-package TDAs;
-
 public class DoubleNode<E> {
 
     private E content;
