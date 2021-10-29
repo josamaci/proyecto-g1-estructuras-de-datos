@@ -1,3 +1,8 @@
+package main.grupo01;
+
+import java.util.Comparator;
+import java.util.Iterator;
+
 public class DoublyLinkedCircularList<E> implements List<E> {
 
     private DoubleNode<E> last;
@@ -198,5 +203,20 @@ public class DoublyLinkedCircularList<E> implements List<E> {
             count++;
         }
         return null;
+    }
+
+    @Override
+    public Iterator<E> iterator() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<E> findAll(Comparator<E> cmp, E element) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int compareTo(E o) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

@@ -1,3 +1,5 @@
+package main.grupo01;
+
 import java.util.Comparator;
 import java.util.Iterator;
 
@@ -25,8 +27,10 @@ public interface List<E> extends Iterable<E>, Comparable<E>{
 
     public E set(int index, E element);
 
+    @Override
     public String toString();
 
+    @Override
     public Iterator<E> iterator();
 
     public List<E> findAll(Comparator<E> cmp, E element);
