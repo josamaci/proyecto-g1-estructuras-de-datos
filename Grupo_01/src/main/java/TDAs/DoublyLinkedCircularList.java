@@ -5,20 +5,31 @@ import java.util.Iterator;
 
 public class DoublyLinkedCircularList<E> implements List<E> {
 
-    private DoubleNode<E> last;
+    private DoubleNodeList<E> last;
+    
+    // No creo que deberiamos utilizar una variable effectiveSize
     private int effectiveSize = 0;
 
-    public DoublyLinkedCircularList() {
-        this.last = null;
+    // No creo que sea necesario un constructor debido a que el "last" deberia apuntar asi mismo.
+//    public DoublyLinkedCircularList() {
+//        this.last = null;
+//    }
+    
+    public DoubleNodeList<E> getLast() {
+        return last;
+    }
+    
+    public void setLast(DoubleNodeList<E> last) {
+        this.last = last;
     }
 
-    private DoubleNode<E> getHeader() {
+    private DoubleNodeList<E> getHeader() {
         return last.getNext();
     }
 
     @Override
     public boolean addFirst(E e) {
-        DoubleNode<E> node = new DoubleNode<>(e);
+        DoubleNodeList<E> node = new DoubleNodeList<>(e);
         if (last == null) {
             last = node;
         } else if (effectiveSize == 1) {
@@ -27,7 +38,7 @@ public class DoublyLinkedCircularList<E> implements List<E> {
             last.setNext(node);
             last.setPrevious(node);
         } else {
-            DoubleNode<E> header = getHeader();
+            DoubleNodeList<E> header = getHeader();
 
             node.setNext(header);
             node.setPrevious(last);
@@ -41,7 +52,7 @@ public class DoublyLinkedCircularList<E> implements List<E> {
 
     @Override
     public boolean addLast(E e) {
-        DoubleNode<E> node = new DoubleNode<>(e);
+        DoubleNodeList<E> node = new DoubleNodeList<>(e);
         if (last == null) {
             last = node;
         } else if (effectiveSize == 1) {
@@ -50,7 +61,7 @@ public class DoublyLinkedCircularList<E> implements List<E> {
             last.setNext(node);
             last.setPrevious(node);
         } else {
-            DoubleNode<E> header = getHeader();
+            DoubleNodeList<E> header = getHeader();
 
             node.setNext(header);
             node.setPrevious(last);
@@ -65,7 +76,7 @@ public class DoublyLinkedCircularList<E> implements List<E> {
 
     @Override
     public E removeFirst() {
-        DoubleNode<E> header = getHeader();
+        DoubleNodeList<E> header = getHeader();
         E element = header.getContent();
 
         last.setNext(header.getNext());
@@ -79,8 +90,8 @@ public class DoublyLinkedCircularList<E> implements List<E> {
 
     @Override
     public E removeLast() {
-        DoubleNode<E> header = getHeader();
-        DoubleNode<E> previous = getDoubleNode(effectiveSize - 2);
+        DoubleNodeList<E> header = getHeader();
+        DoubleNodeList<E> previous = getDoubleNode(effectiveSize - 2);
         E element = header.getContent();
 
         previous.setNext(header);
@@ -93,7 +104,13 @@ public class DoublyLinkedCircularList<E> implements List<E> {
 
     @Override
     public int size() {
-        return effectiveSize;
+//        return effectiveSize;
+        int size = 0;
+        DoubleNodeList<E> n;
+        for (n = this.getHeader(); n != this.last; n = n.getNext()) {
+            size++;
+        }
+        return size;
     }
 
     @Override
@@ -115,10 +132,10 @@ public class DoublyLinkedCircularList<E> implements List<E> {
             } else if (index == effectiveSize - 1) {
                 addLast(element);
             } else {
-                DoubleNode<E> newNode = new DoubleNode(element);
+                DoubleNodeList<E> newNode = new DoubleNodeList(element);
 
-                DoubleNode<E> n1 = getDoubleNode(index);
-                DoubleNode<E> n2 = n1.getPrevious();
+                DoubleNodeList<E> n1 = getDoubleNode(index);
+                DoubleNodeList<E> n2 = n1.getPrevious();
 
                 newNode.setNext(n1);
                 newNode.setPrevious(n2);
@@ -134,7 +151,7 @@ public class DoublyLinkedCircularList<E> implements List<E> {
     @Override
     public E remove(int index) {
         if (checkIndex(index)) {
-            DoubleNode<E> node = getDoubleNode(index);
+            DoubleNodeList<E> node = getDoubleNode(index);
             E element = node.getContent();
 
             if (index == 0) {
@@ -142,8 +159,8 @@ public class DoublyLinkedCircularList<E> implements List<E> {
             } else if (index == effectiveSize - 1) {
                 removeLast();
             } else {
-                DoubleNode<E> n1 = node.getPrevious();
-                DoubleNode<E> n2 = node.getNext();
+                DoubleNodeList<E> n1 = node.getPrevious();
+                DoubleNodeList<E> n2 = node.getNext();
 
                 n1.setNext(n2);
                 n2.setPrevious(n1);
@@ -170,7 +187,7 @@ public class DoublyLinkedCircularList<E> implements List<E> {
     public String toString() {
         String cadena = "";
         int count = 0;
-        for (DoubleNode<E> n = getHeader(); count < effectiveSize; n = n.getNext()) {
+        for (DoubleNodeList<E> n = getHeader(); count < effectiveSize; n = n.getNext()) {
             E e = n.getContent();
             cadena += e.toString() + " ";
             count++;
@@ -194,9 +211,9 @@ public class DoublyLinkedCircularList<E> implements List<E> {
      * @param index indice del nodo
      * @return retorna el nodo deseado
      */
-    private DoubleNode<E> getDoubleNode(int index) {
+    private DoubleNodeList<E> getDoubleNode(int index) {
         int count = 0;
-        for (DoubleNode<E> n = getHeader(); count < effectiveSize; n = n.getNext()) {
+        for (DoubleNodeList<E> n = getHeader(); count < effectiveSize; n = n.getNext()) {
             if (count == index) {
                 return n;
             }

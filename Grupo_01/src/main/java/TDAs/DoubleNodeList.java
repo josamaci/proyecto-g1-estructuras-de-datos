@@ -1,12 +1,12 @@
 package TDAs;
 
-public class DoubleNode<E> {
+public class DoubleNodeList<E> {
 
     private E content;
-    private DoubleNode<E> next;
-    private DoubleNode<E> previous;
+    private DoubleNodeList<E> next;
+    private DoubleNodeList<E> previous;
 
-    public DoubleNode(E element) {
+    public DoubleNodeList(E element) {
         this.content = element;
         this.next = this;
         this.previous = this;
@@ -16,15 +16,15 @@ public class DoubleNode<E> {
         return content;
     }
 
-    public DoubleNode<E> getNext() {
+    public DoubleNodeList<E> getNext() {
         return next;
     }
 
-    public DoubleNode<E> getPrevious() {
+    public DoubleNodeList<E> getPrevious() {
         return previous;
     }
 
-    public void setNext(DoubleNode<E> e) {
+    public void setNext(DoubleNodeList<E> e) {
         this.next = e;
     }
 
@@ -32,7 +32,7 @@ public class DoubleNode<E> {
         this.content = e;
     }
 
-    public void setPrevious(DoubleNode<E> previous) {
+    public void setPrevious(DoubleNodeList<E> previous) {
         this.previous = previous;
     }
 }
