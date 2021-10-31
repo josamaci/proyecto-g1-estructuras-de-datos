@@ -4,16 +4,22 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-
+<?import javafx.scene.text.Font?>
 
 <BorderPane prefHeight="640.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="espol.grupo_01.MainMenuFXMLController">
    <top>
-      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="79.0" prefWidth="373.0" text="tbd!" textAlignment="CENTER" BorderPane.alignment="CENTER" />
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="79.0" prefWidth="373.0" text="tbd!" textAlignment="CENTER" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="48.0" />
+         </font></Label>
    </top>
    <bottom>
       <HBox alignment="CENTER" prefHeight="179.0" prefWidth="360.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="primaryButton" alignment="CENTER" contentDisplay="CENTER" onAction="#switchToSettings" prefHeight="66.0" prefWidth="138.0" text="Let's Play!" textAlignment="CENTER" />
+            <Button fx:id="playBtn" alignment="CENTER" contentDisplay="CENTER" onAction="#switchToSettings" prefHeight="66.0" prefWidth="138.0" text="Let's Play!" textAlignment="CENTER">
+               <font>
+                  <Font name="Ink Free" size="24.0" />
+               </font></Button>
          </children>
       </HBox>
    </bottom>
