@@ -6,18 +6,23 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="640.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="espol.grupo_01.SettingsFXMLController">
+<VBox alignment="CENTER" prefHeight="640.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="espol.grupo_01.SettingsFXMLController">
    <children>
-      <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="558.0" prefWidth="360.0" stylesheets="@../../Styles/tabStyle.css" tabClosingPolicy="UNAVAILABLE">
+      <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="579.0" prefWidth="360.0" stylesheets="@../../Styles/tabStyle.css" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="100.0" tabMaxWidth="100.0">
         <tabs>
           <Tab text="BOARD SIZE">
                <content>
-                  <VBox prefHeight="200.0" prefWidth="100.0" />
+                  <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: cd295a;" />
                </content>
           </Tab>
-            <Tab text="BOARD SIZE">
+            <Tab text="CATEGORY">
                <content>
-                  <VBox prefHeight="200.0" prefWidth="100.0" />
+                  <VBox prefHeight="356.0" prefWidth="360.0" />
+               </content>
+            </Tab>
+            <Tab text="DIFFICULTY">
+               <content>
+                  <VBox prefHeight="455.0" prefWidth="360.0" />
                </content>
             </Tab>
         </tabs>

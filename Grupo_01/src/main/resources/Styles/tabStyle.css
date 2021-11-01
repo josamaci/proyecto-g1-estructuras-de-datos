@@ -2,13 +2,15 @@
  * CAMBIAR NO OLVIDAR
  */
 
-.tab-pane .tab-header-area .tab-header-background {
-    -fx-opacity: 0;
+.tab-header-background {
+    -fx-background-color: #38adae;
 }
 
 .tab-pane
 {
-    -fx-tab-min-width:90px;
+    -fx-tab-min-height:65px;
+    -fx-tab-min-width:95px;
+
 }
 
 .tab{
@@ -16,19 +18,19 @@
 }
 .tab-pane .tab
 {
-    -fx-background-color: #e6e6e6;
+    -fx-background-color: #f7db69;
 
 }
 
 .tab-pane .tab:selected
 {
-    -fx-background-color: #3c3c3c;
+    -fx-background-color: #ffce30;
 }
 
 .tab .tab-label { 
     -fx-alignment: CENTER;
     -fx-text-fill: #828282;
-    -fx-font-size: 12px;
+    -fx-font-size: 18px;
     -fx-font-weight: bold;
 }
 
