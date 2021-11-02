@@ -64,12 +64,12 @@ public class PlayboardFXMLController implements Initializable {
 
     @FXML
     private void AddRow(MouseEvent event) {
-        gBoard.addRow(gBoard.getRowCount());
+        gBoard.addRow(gBoard.getRowCount(), new Label("eo"));
     }
 
     @FXML
     private void AddColumn(MouseEvent event) {
-        gBoard.addColumn(gBoard.getColumnCount());
+        gBoard.addColumn(gBoard.getColumnCount(), new Label("eo"));
     }
 
     @FXML
