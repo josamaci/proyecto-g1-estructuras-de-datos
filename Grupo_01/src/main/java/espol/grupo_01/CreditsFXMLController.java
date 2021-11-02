@@ -5,9 +5,15 @@
  */
 package espol.grupo_01;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
@@ -16,6 +22,13 @@ import javafx.fxml.Initializable;
  */
 public class CreditsFXMLController implements Initializable {
 
+    @FXML
+    private Label lblWinLose;
+    @FXML
+    private Label lblPoints;
+    @FXML
+    private Button btMainMenu;
+
     /**
      * Initializes the controller class.
      */
@@ -23,5 +36,14 @@ public class CreditsFXMLController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void backToTheTitle(MouseEvent event) throws IOException{
+        try{
+        App.setRoot("MainMenuFXML");}
+        catch(IOException ex){
+            ex.printStackTrace();
+        }
+    }
     
 }
