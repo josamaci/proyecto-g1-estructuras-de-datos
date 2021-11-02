@@ -2,11 +2,11 @@
  * CAMBIAR NO OLVIDAR
  */
 
-.tab-header-background {
-    -fx-background-color: #38adae;
+.tab-header-background { /*color de encabezado*/
+    -fx-background-color: #7FACD6;
 }
 
-.tab-pane
+.tab-pane /*ancho y alto de la pestania*/
 {
     -fx-tab-min-height:65px;
     -fx-tab-min-width:95px;
@@ -14,33 +14,34 @@
 }
 
 .tab{
-    -fx-background-insets: 0 1 0 1,0,0;
+    -fx-background-insets: 4 2 0 2,0,0;
 }
 .tab-pane .tab
 {
-    -fx-background-color: #f7db69;
+    -fx-background-color: #E8B7D4;
 
 }
 
 .tab-pane .tab:selected
 {
-    -fx-background-color: #ffce30;
+    -fx-background-color: #F67280;
+        
 }
 
 .tab .tab-label { 
     -fx-alignment: CENTER;
-    -fx-text-fill: #828282;
+    -fx-text-fill: #59598b;
     -fx-font-size: 18px;
     -fx-font-weight: bold;
 }
 
 .tab:selected .tab-label { 
     -fx-alignment: CENTER;
-    -fx-text-fill: #96b946;
+    -fx-text-fill: #FFFFFF;
 }
 
 .tab-pane:top *.tab-header-area {
     -fx-background-insets: 0, 0 0 1 0;
- /* -fx-padding: 0.416667em 0.166667em 0.0em 0.833em; /* 5 2 0 10 */
-    -fx-padding: 0.416667em 0.166667em 0.0em 0.0em; /* overridden as 5 2 0 0 */
+    -fx-padding: 0.016667em 0.166667em 0.0em 1.33em;
+   
 }
