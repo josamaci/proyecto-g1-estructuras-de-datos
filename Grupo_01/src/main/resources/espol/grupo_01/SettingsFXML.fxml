@@ -18,14 +18,14 @@
                <content>
                   <VBox prefHeight="455.0" prefWidth="360.0" style="-fx-background-color: F67280;">
                      <children>
-                        <Label alignment="CENTER" prefHeight="59.0" prefWidth="360.0" text="Choose the board's size:" textAlignment="CENTER">
+                        <Label alignment="CENTER" prefHeight="59.0" prefWidth="360.0" text="Choose board size:" textAlignment="CENTER">
                            <font>
                               <Font name="HP Simplified Hans Light" size="30.0" />
                            </font>
                         </Label>
                         <HBox prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <ToggleButton mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" text="7x7">
+                              <ToggleButton fx:id="btBoard7" mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" stylesheets="@../../Styles/tbtStyle.css" text="7x7">
                                  <HBox.margin>
                                     <Insets left="25.0" right="20.0" />
                                  </HBox.margin>
@@ -33,7 +33,7 @@
                                     <Font size="24.0" />
                                  </font>
                               </ToggleButton>
-                              <ToggleButton mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" text="9x9">
+                              <ToggleButton fx:id="btBoard9" mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" stylesheets="@../../Styles/tbtStyle.css" text="9x9">
                                  <HBox.margin>
                                     <Insets left="25.0" right="20.0" />
                                  </HBox.margin>
@@ -48,7 +48,7 @@
                         </HBox>
                         <HBox prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <ToggleButton mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" text="11x11">
+                              <ToggleButton fx:id="btBoard11" mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" stylesheets="@../../Styles/tbtStyle.css" text="11x11">
                                  <HBox.margin>
                                     <Insets left="25.0" right="20.0" />
                                  </HBox.margin>
@@ -56,7 +56,7 @@
                                     <Font size="24.0" />
                                  </font>
                               </ToggleButton>
-                              <ToggleButton mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" text="13x13">
+                              <ToggleButton fx:id="btBoard13" mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" stylesheets="@../../Styles/tbtStyle.css" text="13x13">
                                  <HBox.margin>
                                     <Insets left="25.0" right="20.0" />
                                  </HBox.margin>
@@ -71,7 +71,7 @@
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <ToggleButton contentDisplay="CENTER" mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" text="Random!" textAlignment="CENTER">
+                              <ToggleButton fx:id="btBoardRd" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" stylesheets="@../../Styles/tbtStyle.css" text="Random!" textAlignment="CENTER">
                                  <HBox.margin>
                                     <Insets left="25.0" right="20.0" />
                                  </HBox.margin>
@@ -162,13 +162,18 @@
       </TabPane>
       <HBox alignment="CENTER" prefHeight="386.0" prefWidth="360.0" style="-fx-background-color: #7FACD6;">
          <children>
-            <Button fx:id="btBackToTitle" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="3.0" onAction="#switchToMainMenu" prefHeight="43.0" prefWidth="131.0" style="-fx-pref-width: 145; -fx-pref-height: 40;" text="Main Menu">
+            <Button fx:id="btBackToTitle" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="3.0" onAction="#switchToMainMenu" prefHeight="43.0" prefWidth="125.0" style="-fx-pref-width: 145; -fx-pref-height: 40;" text="Main Menu">
                <font>
                   <Font name="OCR A Extended" size="18.0" />
                </font>
                <HBox.margin>
                   <Insets right="15.0" />
                </HBox.margin></Button>
+            <Button fx:id="btStartGame" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="3.0" layoutX="110.0" layoutY="16.0" onAction="#switchToGame" prefHeight="43.0" prefWidth="125.0" style="-fx-pref-width: 145; -fx-pref-height: 40;" text="Let's Go!">
+               <font>
+                  <Font name="OCR A Extended" size="18.0" />
+               </font>
+            </Button>
          </children>
       </HBox>
    </children>
