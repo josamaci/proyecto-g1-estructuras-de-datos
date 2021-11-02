@@ -25,7 +25,7 @@
                         </Label>
                         <HBox prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <ToggleButton fx:id="btBoard7" mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" stylesheets="@../../Styles/tbtStyle.css" text="7x7">
+                              <ToggleButton fx:id="btBoard7" mnemonicParsing="false" onMouseClicked="#boardSize7" prefHeight="204.0" prefWidth="132.0" stylesheets="@../../Styles/tbtStyle.css" text="7x7">
                                  <HBox.margin>
                                     <Insets left="25.0" right="20.0" />
                                  </HBox.margin>
@@ -33,7 +33,7 @@
                                     <Font size="24.0" />
                                  </font>
                               </ToggleButton>
-                              <ToggleButton fx:id="btBoard9" mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" stylesheets="@../../Styles/tbtStyle.css" text="9x9">
+                              <ToggleButton fx:id="btBoard9" mnemonicParsing="false" onMouseClicked="#boardSize9" prefHeight="204.0" prefWidth="132.0" stylesheets="@../../Styles/tbtStyle.css" text="9x9">
                                  <HBox.margin>
                                     <Insets left="25.0" right="20.0" />
                                  </HBox.margin>
@@ -48,7 +48,7 @@
                         </HBox>
                         <HBox prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <ToggleButton fx:id="btBoard11" mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" stylesheets="@../../Styles/tbtStyle.css" text="11x11">
+                              <ToggleButton fx:id="btBoard11" mnemonicParsing="false" onMouseClicked="#boardSize11" prefHeight="204.0" prefWidth="132.0" stylesheets="@../../Styles/tbtStyle.css" text="11x11">
                                  <HBox.margin>
                                     <Insets left="25.0" right="20.0" />
                                  </HBox.margin>
@@ -56,7 +56,7 @@
                                     <Font size="24.0" />
                                  </font>
                               </ToggleButton>
-                              <ToggleButton fx:id="btBoard13" mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" stylesheets="@../../Styles/tbtStyle.css" text="13x13">
+                              <ToggleButton fx:id="btBoard13" mnemonicParsing="false" onMouseClicked="#boardSize13" prefHeight="204.0" prefWidth="132.0" stylesheets="@../../Styles/tbtStyle.css" text="13x13">
                                  <HBox.margin>
                                     <Insets left="25.0" right="20.0" />
                                  </HBox.margin>
@@ -71,7 +71,7 @@
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <ToggleButton fx:id="btBoardRd" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" stylesheets="@../../Styles/tbtStyle.css" text="Random!" textAlignment="CENTER">
+                              <ToggleButton fx:id="btBoardRd" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#boardSizeRandom" prefHeight="204.0" prefWidth="132.0" stylesheets="@../../Styles/tbtStyle.css" text="Random!" textAlignment="CENTER">
                                  <HBox.margin>
                                     <Insets left="25.0" right="20.0" />
                                  </HBox.margin>
