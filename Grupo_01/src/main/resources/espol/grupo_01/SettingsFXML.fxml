@@ -16,44 +16,127 @@
         <tabs>
           <Tab fx:id="boardTab" text="BOARD">
                <content>
-                  <VBox prefHeight="469.0" prefWidth="360.0" style="-fx-background-color: F67280;" />
-               </content>
-          </Tab>
-            <Tab text="WORDS">
-               <content>
-                  <VBox prefHeight="356.0" prefWidth="360.0" style="-fx-background-color: F67280;">
+                  <VBox prefHeight="455.0" prefWidth="360.0" style="-fx-background-color: F67280;">
                      <children>
-                        <Label alignment="CENTER" prefHeight="72.0" prefWidth="360.0" text="Choose a topic:" textAlignment="CENTER">
+                        <Label alignment="CENTER" prefHeight="59.0" prefWidth="360.0" text="Choose the board's size:" textAlignment="CENTER">
                            <font>
                               <Font name="HP Simplified Hans Light" size="30.0" />
                            </font>
                         </Label>
                         <HBox prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" text="Button">
+                              <ToggleButton mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" text="7x7">
                                  <HBox.margin>
                                     <Insets left="25.0" right="20.0" />
                                  </HBox.margin>
-                              </Button>
-                              <Button mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" text="Button">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </ToggleButton>
+                              <ToggleButton mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" text="9x9">
                                  <HBox.margin>
                                     <Insets left="25.0" right="20.0" />
                                  </HBox.margin>
-                              </Button>
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </ToggleButton>
                            </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
                         </HBox>
-                        <HBox layoutX="10.0" layoutY="130.0" prefHeight="100.0" prefWidth="360.0">
+                        <HBox prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" text="Button">
+                              <ToggleButton mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" text="11x11">
                                  <HBox.margin>
                                     <Insets left="25.0" right="20.0" />
                                  </HBox.margin>
-                              </Button>
-                              <Button mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" text="Button">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </ToggleButton>
+                              <ToggleButton mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" text="13x13">
                                  <HBox.margin>
                                     <Insets left="25.0" right="20.0" />
                                  </HBox.margin>
-                              </Button>
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </ToggleButton>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="45.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <ToggleButton contentDisplay="CENTER" mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" text="Random!" textAlignment="CENTER">
+                                 <HBox.margin>
+                                    <Insets left="25.0" right="20.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </ToggleButton>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="45.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children></VBox>
+               </content>
+          </Tab>
+            <Tab text="WORDS">
+               <content>
+                  <VBox prefHeight="498.0" prefWidth="360.0" style="-fx-background-color: F67280;">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="59.0" prefWidth="360.0" text="Choose a topic:" textAlignment="CENTER">
+                           <font>
+                              <Font name="HP Simplified Hans Light" size="30.0" />
+                           </font>
+                        </Label>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <ToggleButton mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" text="Animals">
+                                 <HBox.margin>
+                                    <Insets left="25.0" right="20.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </ToggleButton>
+                              <ToggleButton mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" text="Sports">
+                                 <HBox.margin>
+                                    <Insets left="25.0" right="20.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </ToggleButton>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <ToggleButton mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" text="Colors">
+                                 <HBox.margin>
+                                    <Insets left="25.0" right="20.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </ToggleButton>
+                              <ToggleButton mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" text="Brands">
+                                 <HBox.margin>
+                                    <Insets left="25.0" right="20.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </ToggleButton>
                            </children>
                            <VBox.margin>
                               <Insets top="45.0" />
@@ -63,11 +146,7 @@
                            <font>
                               <Font name="HP Simplified Hans Light" size="30.0" />
                            </font>
-                           <VBox.margin>
-                              <Insets top="20.0" />
-                           </VBox.margin>
                         </Label>
-                        <ToggleButton mnemonicParsing="false" text="ToggleButton" />
                      </children></VBox>
                </content>
             </Tab>
@@ -81,9 +160,9 @@
             <Insets />
          </VBox.margin>
       </TabPane>
-      <HBox alignment="CENTER" prefHeight="77.0" prefWidth="360.0" style="-fx-background-color: #7FACD6;">
+      <HBox alignment="CENTER" prefHeight="386.0" prefWidth="360.0" style="-fx-background-color: #7FACD6;">
          <children>
-            <Button fx:id="toMainMenuBtn" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="3.0" onAction="#switchToMainMenu" prefHeight="43.0" prefWidth="131.0" style="-fx-pref-width: 145; -fx-pref-height: 40;" text="Main Menu">
+            <Button fx:id="btBackToTitle" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="3.0" onAction="#switchToMainMenu" prefHeight="43.0" prefWidth="131.0" style="-fx-pref-width: 145; -fx-pref-height: 40;" text="Main Menu">
                <font>
                   <Font name="OCR A Extended" size="18.0" />
                </font>
