@@ -31,6 +31,18 @@ public class SettingsFXMLController {
     private boolean b11;
     private boolean b13;
     private boolean bR;
+    @FXML
+    private ToggleButton tbtWAnimals;
+    @FXML
+    private ToggleButton tbtWSports;
+    @FXML
+    private ToggleButton tbtWColors;
+    @FXML
+    private ToggleButton tbtWBrands;
+    @FXML
+    private ToggleButton tbtWColors1;
+    @FXML
+    private ToggleButton tbtWBrands1;
     
     @FXML
     private void switchToMainMenu() throws IOException {

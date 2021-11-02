@@ -98,7 +98,7 @@
                         </Label>
                         <HBox prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <ToggleButton mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" text="Animals">
+                              <ToggleButton fx:id="tbtWAnimals" mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" stylesheets="@../../Styles/tbtStyle.css" text="Animals">
                                  <HBox.margin>
                                     <Insets left="25.0" right="20.0" />
                                  </HBox.margin>
@@ -106,7 +106,7 @@
                                     <Font size="24.0" />
                                  </font>
                               </ToggleButton>
-                              <ToggleButton mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" text="Sports">
+                              <ToggleButton fx:id="tbtWSports" mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" stylesheets="@../../Styles/tbtStyle.css" text="Sports">
                                  <HBox.margin>
                                     <Insets left="25.0" right="20.0" />
                                  </HBox.margin>
@@ -121,7 +121,7 @@
                         </HBox>
                         <HBox prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <ToggleButton mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" text="Colors">
+                              <ToggleButton fx:id="tbtWColors" mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" stylesheets="@../../Styles/tbtStyle.css" text="Colors">
                                  <HBox.margin>
                                     <Insets left="25.0" right="20.0" />
                                  </HBox.margin>
@@ -129,7 +129,7 @@
                                     <Font size="24.0" />
                                  </font>
                               </ToggleButton>
-                              <ToggleButton mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" text="Brands">
+                              <ToggleButton fx:id="tbtWBrands" mnemonicParsing="false" prefHeight="204.0" prefWidth="132.0" stylesheets="@../../Styles/tbtStyle.css" text="Brands">
                                  <HBox.margin>
                                     <Insets left="25.0" right="20.0" />
                                  </HBox.margin>
@@ -147,6 +147,26 @@
                               <Font name="HP Simplified Hans Light" size="30.0" />
                            </font>
                         </Label>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <ToggleButton fx:id="tbtWColors1" mnemonicParsing="false" prefHeight="80.0" prefWidth="132.0" stylesheets="@../../Styles/tbtStyle.css" text="Spanish">
+                                 <HBox.margin>
+                                    <Insets left="25.0" right="20.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </ToggleButton>
+                              <ToggleButton fx:id="tbtWBrands1" mnemonicParsing="false" prefHeight="80.0" prefWidth="132.0" stylesheets="@../../Styles/tbtStyle.css" text="English">
+                                 <HBox.margin>
+                                    <Insets left="25.0" right="20.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </ToggleButton>
+                           </children>
+                        </HBox>
                      </children></VBox>
                </content>
             </Tab>
