@@ -5,6 +5,7 @@
  */
 package espol.grupo_01;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -37,6 +38,11 @@ public class CreditsFXMLController implements Initializable {
 
     @FXML
     private void backToTheTitle(MouseEvent event) {
+        try{
+        App.setRoot("MainMenuFXML");}
+        catch(IOException ex){
+            ex.printStackTrace();
+        }
     }
     
 }
