@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.VBox?>
@@ -24,6 +25,16 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
+            <Label fx:id="lblPoints" text="0">
+               <font>
+                  <Font name="System Bold" size="40.0" />
+               </font>
+            </Label>
+            <Button fx:id="btMainMenu" mnemonicParsing="false" onMouseClicked="#backToTheTitle" text="Back to the Title">
+               <VBox.margin>
+                  <Insets top="75.0" />
+               </VBox.margin>
+            </Button>
          </children>
       </VBox>
    </children>
