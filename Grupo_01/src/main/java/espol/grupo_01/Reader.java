@@ -23,8 +23,8 @@ public class Reader {
     
     public static DoublyLinkedList<String> ReadAll(DoublyLinkedList<String> namesFiles){
         DoublyLinkedList<String> words = new DoublyLinkedList<>();
-        for(int i=0; i<nameFile.size(); i++){
-        try(InputStream input = App.class.getResource(nameFile.get(i)).openStream();
+        for(int i=0; i<namesFiles.size(); i++){
+        try(InputStream input = App.class.getResource(namesFiles.get(i)).openStream();
                 BufferedReader bf = new BufferedReader(
                                     new InputStreamReader(input,"UTF-8"))){
             String linea;
