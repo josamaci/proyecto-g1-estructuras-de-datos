@@ -11,6 +11,6 @@ public class MainMenuFXMLController {
 
     @FXML
     private void switchToSettings() throws IOException {
-        App.setRoot("SettingsFXML");
+        App.setRoot("SettingBoardSize");
     }
 }

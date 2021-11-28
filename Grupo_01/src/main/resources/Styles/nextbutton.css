@@ -1,0 +1,16 @@
+.button{
+    -fx-effect: dropshadow(two-pass-box , darkgray, 10, 0.0 , 4, 5);
+    -fx-background-color: #f4511e;
+    -fx-background-radius: 15 15 15 15;
+    -fx-background-insets: 2 2 2 2 ;
+    -fx-cursor: hand;
+}
+
+.button:hover{
+    -fx-scale-y: 1.1;
+}
+
+.button:pressed {
+    -fx-scale-y: 0.99;
+    -fx-scale-x: 0.99;
+}

@@ -6,11 +6,12 @@
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="640.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="espol.grupo_01.SettingsFXMLController">
+<VBox alignment="CENTER" prefHeight="640.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="espol.grupo_01.SettingsFXMLController">
    <children>
       <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="588.0" prefWidth="360.0" stylesheets="@../../Styles/tabStyle.css" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="100.0" tabMaxWidth="100.0">
         <tabs>
@@ -32,8 +33,11 @@
                                  <font>
                                     <Font size="24.0" />
                                  </font>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="btGroupBoardSize" />
+                                 </toggleGroup>
                               </ToggleButton>
-                              <ToggleButton fx:id="btBoard9" mnemonicParsing="false" onMouseClicked="#boardSize9" prefHeight="204.0" prefWidth="132.0" stylesheets="@../../Styles/tbtStyle.css" text="9x9">
+                              <ToggleButton fx:id="btBoard9" mnemonicParsing="false" onMouseClicked="#boardSize9" prefHeight="204.0" prefWidth="132.0" stylesheets="@../../Styles/tbtStyle.css" text="9x9" toggleGroup="$btGroupBoardSize">
                                  <HBox.margin>
                                     <Insets left="25.0" right="20.0" />
                                  </HBox.margin>
@@ -48,7 +52,7 @@
                         </HBox>
                         <HBox prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <ToggleButton fx:id="btBoard11" mnemonicParsing="false" onMouseClicked="#boardSize11" prefHeight="204.0" prefWidth="132.0" stylesheets="@../../Styles/tbtStyle.css" text="11x11">
+                              <ToggleButton fx:id="btBoard11" mnemonicParsing="false" onMouseClicked="#boardSize11" prefHeight="204.0" prefWidth="132.0" stylesheets="@../../Styles/tbtStyle.css" text="11x11" toggleGroup="$btGroupBoardSize">
                                  <HBox.margin>
                                     <Insets left="25.0" right="20.0" />
                                  </HBox.margin>
@@ -56,7 +60,7 @@
                                     <Font size="24.0" />
                                  </font>
                               </ToggleButton>
-                              <ToggleButton fx:id="btBoard13" mnemonicParsing="false" onMouseClicked="#boardSize13" prefHeight="204.0" prefWidth="132.0" stylesheets="@../../Styles/tbtStyle.css" text="13x13">
+                              <ToggleButton fx:id="btBoard13" mnemonicParsing="false" onMouseClicked="#boardSize13" prefHeight="204.0" prefWidth="132.0" stylesheets="@../../Styles/tbtStyle.css" text="13x13" toggleGroup="$btGroupBoardSize">
                                  <HBox.margin>
                                     <Insets left="25.0" right="20.0" />
                                  </HBox.margin>
@@ -71,7 +75,7 @@
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <ToggleButton fx:id="btBoardRd" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#boardSizeRandom" prefHeight="204.0" prefWidth="132.0" stylesheets="@../../Styles/tbtStyle.css" text="Random!" textAlignment="CENTER">
+                              <ToggleButton fx:id="btBoardRd" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#boardSizeRandom" prefHeight="204.0" prefWidth="132.0" stylesheets="@../../Styles/tbtStyle.css" text="Random!" textAlignment="CENTER" toggleGroup="$btGroupBoardSize">
                                  <HBox.margin>
                                     <Insets left="25.0" right="20.0" />
                                  </HBox.margin>
@@ -182,7 +186,7 @@
       </TabPane>
       <HBox alignment="CENTER" prefHeight="386.0" prefWidth="360.0" style="-fx-background-color: #7FACD6;">
          <children>
-            <Button fx:id="btBackToTitle" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="3.0" onAction="#switchToMainMenu" prefHeight="43.0" prefWidth="125.0" style="-fx-pref-width: 145; -fx-pref-height: 40;" text="Main Menu">
+            <Button fx:id="btBackToTitle" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="3.0" onAction="#switchToMainMenu" prefHeight="43.0" prefWidth="65.0" style="-fx-pref-width: 145; -fx-pref-height: 40;" text="Main Menu">
                <font>
                   <Font name="OCR A Extended" size="18.0" />
                </font>
