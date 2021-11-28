@@ -15,6 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 /**
  * FXML Controller class
  *
@@ -58,7 +59,9 @@ public class SettingBoardSizeController implements Initializable {
     private void switchToPlayboard(ActionEvent event) throws IOException {
         App.setRoot("PlayboardFXML");
     }
-
-
+    
+    private void switchToMainMenu() throws IOException {
+        App.setRoot("MainMenuFXML");
+    }
 
 }
