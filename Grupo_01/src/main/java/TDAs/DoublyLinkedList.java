@@ -7,7 +7,7 @@ public class DoublyLinkedList<E> implements List<E> {
     
     private DoublyNodeList<E> header;
     private DoublyNodeList<E> last;
-
+    
     public DoublyLinkedList() {
         this.header = null;
         this.last = null;
@@ -94,7 +94,14 @@ public class DoublyLinkedList<E> implements List<E> {
 
     @Override
     public int size() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int size = 0;
+        if(!isEmpty()){
+        for (DoublyNodeList n = header; n != last; n = n.getNext()) {
+            size++;
+        }
+        size++;
+        }
+        return size;
     }
 
     @Override
