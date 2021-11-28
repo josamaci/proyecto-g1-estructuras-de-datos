@@ -147,7 +147,17 @@ public class DoublyLinkedList<E> implements List<E> {
 
     @Override
     public E get(int index) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        E e=null;
+        int cont = 0;
+        if(index>=0 && !isEmpty()){
+                for (DoublyNodeList n = header; n != last; n = n.getNext()) {
+                    if(cont == index){
+                        //e = n.getContent();
+                    }
+                }
+        
+        }
+        return e;
     }
 
     @Override

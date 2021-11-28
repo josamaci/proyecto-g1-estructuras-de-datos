@@ -13,10 +13,7 @@ public class Reader {
             String linea;
             while((linea = bf.readLine())!=null){
                 if(words.size()<=numWords){
-                    double ram = Math.random();
-                    if (ram > 0.5){
                         words.addLast(linea);
-                    }
                 }
             }         
         }  catch (IOException ex) {
@@ -25,4 +22,26 @@ public class Reader {
         }
         return words;
     }
+    
+    public static DoublyLinkedList<String> ReadAll(DoublyLinkedList<String> nameFile, int numWords){
+        DoublyLinkedList<String> words = new DoublyLinkedList<>();
+        for(int i=0; i<nameFile.size(); i++){
+        try(InputStream input = App.class.getResource(nameFile.get(i)).openStream();
+                BufferedReader bf = new BufferedReader(
+                                    new InputStreamReader(input,"UTF-8"))){
+            String linea;
+            while((linea = bf.readLine())!=null){
+                if(words.size()<=numWords){
+                        words.addLast(linea);
+                }
+            }         
+        }  catch (IOException ex) {
+            System.out.println("ERROR");
+            ex.printStackTrace();
+        }
+        }
+        return words;
+    }
+    
+     
 }
