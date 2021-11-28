@@ -5,16 +5,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 public class Reader {
-    public static DoublyLinkedList<String> Read(String nameFile, int numWords){
+    public static DoublyLinkedList<String> Read(String nameFile){
         DoublyLinkedList<String> words = new DoublyLinkedList<>();
         try(InputStream input = App.class.getResource(nameFile).openStream();
                 BufferedReader bf = new BufferedReader(
                                     new InputStreamReader(input,"UTF-8"))){
             String linea;
-            while((linea = bf.readLine())!=null){
-                if(words.size()<=numWords){
+            while((linea = bf.readLine())!=null){   
                         words.addLast(linea);
-                }
             }         
         }  catch (IOException ex) {
             System.out.println("ERROR");
@@ -23,7 +21,7 @@ public class Reader {
         return words;
     }
     
-    public static DoublyLinkedList<String> ReadAll(DoublyLinkedList<String> nameFile, int numWords){
+    public static DoublyLinkedList<String> ReadAll(DoublyLinkedList<String> namesFiles){
         DoublyLinkedList<String> words = new DoublyLinkedList<>();
         for(int i=0; i<nameFile.size(); i++){
         try(InputStream input = App.class.getResource(nameFile.get(i)).openStream();
@@ -31,9 +29,7 @@ public class Reader {
                                     new InputStreamReader(input,"UTF-8"))){
             String linea;
             while((linea = bf.readLine())!=null){
-                if(words.size()<=numWords){
                         words.addLast(linea);
-                }
             }         
         }  catch (IOException ex) {
             System.out.println("ERROR");
@@ -43,5 +39,15 @@ public class Reader {
         return words;
     }
     
-     
+    public static DoublyLinkedList<String> randomize(DoublyLinkedList<String> words, int numWords){
+        DoublyLinkedList<String> random = new DoublyLinkedList<>();
+            while(random.size()<=numWords){
+                for(String s:words){
+                    double r = Math.random();
+                    if(r>0.85){
+                    random.addLast(s);}
+                }
+            }
+        return random;
+    }
 }
