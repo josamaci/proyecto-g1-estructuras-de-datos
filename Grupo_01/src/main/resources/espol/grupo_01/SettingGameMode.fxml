@@ -14,15 +14,15 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="361.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="espol.grupo_01.SettingBoardSizeController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="361.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="espol.grupo_01.SettingGameModeController">
    <children>
-      <VBox layoutX="-1.0" prefHeight="640.0" prefWidth="361.0">
+      <VBox alignment="CENTER" prefHeight="640.0" prefWidth="361.0">
          <children>
-            <HBox prefHeight="86.0" prefWidth="362.0">
+            <HBox prefHeight="82.0" prefWidth="362.0">
                <children>
                   <HBox alignment="TOP_CENTER" prefHeight="86.0" prefWidth="67.0">
                      <children>
-                        <Button fx:id="btBackToTitle" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="62.0" prefWidth="75.0" text="&lt;-">
+                        <Button fx:id="btBackToCat" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#switchToCategory" prefHeight="62.0" prefWidth="75.0" text="&lt;-">
                            <font>
                               <Font name="System Italic" size="17.0" />
                            </font>
@@ -35,7 +35,7 @@
                         <Insets top="10.0" />
                      </opaqueInsets>
                   </HBox>
-                  <Circle radius="5.0" stroke="TRANSPARENT" strokeType="INSIDE">
+                  <Circle opacity="0.5" radius="5.0" stroke="TRANSPARENT" strokeType="INSIDE">
                      <HBox.margin>
                         <Insets left="65.0" right="20.0" top="40.0" />
                      </HBox.margin>
@@ -61,14 +61,14 @@
                         </LinearGradient>
                      </fill>
                   </Circle>
-                  <Circle disable="true" opacity="0.5" radius="5.0" stroke="TRANSPARENT" strokeType="INSIDE">
+                  <Circle disable="true" radius="5.0" stroke="TRANSPARENT" strokeType="INSIDE">
                      <HBox.margin>
                         <Insets left="20.0" right="20.0" top="40.0" />
                      </HBox.margin>
                   </Circle>
                </children>
             </HBox>
-            <Label alignment="CENTER" prefHeight="70.0" prefWidth="351.0" text="First, choose a board size!" textAlignment="CENTER">
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="351.0" text="Finally, choose a game mode!" textAlignment="CENTER">
                <font>
                   <Font size="25.0" />
                </font>
@@ -76,73 +76,48 @@
                   <Insets left="10.0" />
                </VBox.margin>
             </Label>
-            <HBox alignment="CENTER" prefHeight="124.0" prefWidth="362.0">
+            <HBox alignment="CENTER" prefHeight="120.0" prefWidth="362.0">
                <children>
-                  <ToggleButton fx:id="btBoard7" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" stylesheets="@../../Styles/settingboardsize.css" text="7x7">
+                  <ToggleButton fx:id="btNormalMode" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" stylesheets="@../../Styles/settingboardsize.css" text="Normal">
                      <font>
                         <Font size="24.0" />
                      </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
                      <toggleGroup>
-                        <ToggleGroup fx:id="btGroupBoardSize" />
+                        <ToggleGroup fx:id="btGroupGameMode" />
                      </toggleGroup>
-                     <HBox.margin>
-                        <Insets right="25.0" top="10.0" />
-                     </HBox.margin>
-                  </ToggleButton>
-                  <ToggleButton fx:id="btBoard9" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" stylesheets="@../../Styles/settingboardsize.css" text="9x9" toggleGroup="$btGroupBoardSize">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets top="10.0" />
-                     </HBox.margin>
                   </ToggleButton>
                </children>
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
                <VBox.margin>
-                  <Insets bottom="10.0" />
+                  <Insets />
                </VBox.margin>
             </HBox>
             <HBox alignment="CENTER" prefHeight="120.0" prefWidth="362.0">
                <children>
-                  <ToggleButton fx:id="btBoard11" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" stylesheets="@../../Styles/settingboardsize.css" text="11x11" toggleGroup="$btGroupBoardSize">
+                  <ToggleButton fx:id="btExtremeMode" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" stylesheets="@../../Styles/settingboardsize.css" text="Extreme" textAlignment="CENTER" toggleGroup="$btGroupGameMode">
                      <font>
                         <Font size="24.0" />
                      </font>
                      <HBox.margin>
-                        <Insets right="25.0" />
+                        <Insets />
                      </HBox.margin>
-                  </ToggleButton>
-                  <ToggleButton fx:id="btBoard13" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" stylesheets="@../../Styles/settingboardsize.css" text="13x13" toggleGroup="$btGroupBoardSize">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
                   </ToggleButton>
                </children>
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
                <VBox.margin>
-                  <Insets bottom="10.0" />
+                  <Insets />
                </VBox.margin>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="115.0" prefWidth="362.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="362.0">
                <children>
-                  <ToggleButton fx:id="btBoardR" mnemonicParsing="false" prefHeight="90.0" prefWidth="132.0" stylesheets="@../../Styles/settingboardsize.css" text="Random!" toggleGroup="$btGroupBoardSize">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </ToggleButton>
-               </children>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Button fx:id="btNextSetting" alignment="CENTER" mnemonicParsing="false" onAction="#switchToCategory" prefHeight="50.0" prefWidth="291.0" stylesheets="@../../Styles/nextbutton.css" text="Got it! Now what?">
+                  <Button fx:id="btPlayboard" alignment="CENTER" mnemonicParsing="false" onAction="#switchToPlayboard" prefHeight="50.0" prefWidth="291.0" stylesheets="@../../Styles/nextbutton.css" text="Let's rock!">
                      <font>
                         <Font name="System Italic" size="24.0" />
                      </font>

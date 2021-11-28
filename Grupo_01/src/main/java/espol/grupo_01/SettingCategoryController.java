@@ -4,41 +4,39 @@
  */
 package espol.grupo_01;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-
 import javafx.scene.control.Button;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.input.MouseEvent;
+
 /**
  * FXML Controller class
  *
  * @author kevin
  */
-public class SettingBoardSizeController implements Initializable {
+public class SettingCategoryController implements Initializable {
 
-
+    @FXML
+    private Button btBackToBS;
+    @FXML
+    private ToggleButton btCategoryAnimal;
     @FXML
     private ToggleGroup btGroupBoardSize;
     @FXML
-    private Button btNextSetting;
+    private ToggleButton btCateogrySports;
     @FXML
-    private Button btBackToTitle;
+    private ToggleGroup btGroupCategory;
     @FXML
-    private ToggleButton btBoard7;
+    private ToggleButton btCategoryFruits;
     @FXML
-    private ToggleButton btBoard9;
+    private ToggleGroup btGroupBoardSize1;
     @FXML
-    private ToggleButton btBoard11;
-    @FXML
-    private ToggleButton btBoard13;
-    @FXML
-    private ToggleButton btBoardR;
+    private Button btNextSetting2;
+
     /**
      * Initializes the controller class.
      */
@@ -46,19 +44,13 @@ public class SettingBoardSizeController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
     @FXML
-    private void switchToCategory() throws IOException {
-        App.setRoot("SettingCategory");
+    private void switchToBoardSize(ActionEvent event) {
     }
 
-    private void switchToBoardSize(ActionEvent event) throws IOException {
-        App.setRoot("SettingBoardSize");
+    @FXML
+    private void switchToGameMode(ActionEvent event) {
     }
-
-    private void switchToPlayboard(ActionEvent event) throws IOException {
-        App.setRoot("PlayboardFXML");
-    }
-
-
-
+    
 }

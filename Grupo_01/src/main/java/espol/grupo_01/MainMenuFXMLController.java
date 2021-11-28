@@ -7,7 +7,7 @@ import javafx.scene.control.Button;
 public class MainMenuFXMLController {
 
     @FXML
-    private Button playBtn;
+    private Button btPlay;
 
     @FXML
     private void switchToSettings() throws IOException {
