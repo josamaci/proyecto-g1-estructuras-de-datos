@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="361.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="espol.grupo_01.SettingCategoryController">
+<Pane fx:id="pCat" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="361.0" styleClass="pCat" stylesheets="@../../Styles/settingcategory.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="espol.grupo_01.SettingCategoryController">
    <children>
       <VBox alignment="CENTER" prefHeight="640.0" prefWidth="361.0">
          <children>
@@ -68,7 +68,7 @@
                   </Circle>
                </children>
             </HBox>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="351.0" text="Second, choose a category!" textAlignment="CENTER">
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="351.0" text="Second, choose a category!" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="25.0" />
                </font>
@@ -78,9 +78,9 @@
             </Label>
             <HBox alignment="CENTER" prefHeight="120.0" prefWidth="362.0">
                <children>
-                  <ToggleButton fx:id="btCategoryAnimal" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" stylesheets="@../../Styles/settingboardsize.css" text="Animals">
+                  <ToggleButton fx:id="btCategoryAnimal" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" stylesheets="@../../Styles/settingboardsize.css" text="Animals" textFill="WHITE">
                      <font>
-                        <Font size="24.0" />
+                        <Font name="System Bold" size="24.0" />
                      </font>
                      <toggleGroup>
                         <ToggleGroup fx:id="btGroupBoardSize" />
@@ -99,9 +99,9 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="120.0" prefWidth="362.0">
                <children>
-                  <ToggleButton fx:id="btCateogrySports" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" stylesheets="@../../Styles/settingboardsize.css" text="Sports">
+                  <ToggleButton fx:id="btCateogrySports" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" stylesheets="@../../Styles/settingboardsize.css" text="Sports" textFill="WHITE">
                      <font>
-                        <Font size="24.0" />
+                        <Font name="System Bold" size="24.0" />
                      </font>
                      <HBox.margin>
                         <Insets />
@@ -123,21 +123,21 @@
                   <Insets />
                </opaqueInsets>
                <children>
-                  <ToggleButton fx:id="btCategoryFruits" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" stylesheets="@../../Styles/settingboardsize.css" text="Fruits">
+                  <ToggleButton fx:id="btCategoryFruits" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" stylesheets="@../../Styles/settingboardsize.css" text="Fruits" textFill="WHITE">
                      <toggleGroup>
                         <ToggleGroup fx:id="btGroupBoardSize1" />
                      </toggleGroup>
                      <font>
-                        <Font size="24.0" />
+                        <Font name="System Bold" size="24.0" />
                      </font>
                   </ToggleButton>
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="btNextSetting2" alignment="CENTER" mnemonicParsing="false" onAction="#switchToGameMode" prefHeight="50.0" prefWidth="291.0" stylesheets="@../../Styles/nextbutton.css" text="Ok! And then?">
+                  <Button fx:id="btNextSetting2" alignment="CENTER" mnemonicParsing="false" onAction="#switchToGameMode" prefHeight="50.0" prefWidth="291.0" stylesheets="@../../Styles/nextbutton.css" text="OK! And then?" textFill="WHITE">
                      <font>
-                        <Font name="System Italic" size="24.0" />
+                        <Font name="System Bold Italic" size="24.0" />
                      </font>
                   </Button>
                </children>

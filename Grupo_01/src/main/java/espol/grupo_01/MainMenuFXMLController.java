@@ -1,11 +1,15 @@
 package espol.grupo_01;
 
-import java.io.IOException;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 
-public class MainMenuFXMLController {
+public class MainMenuFXMLController implements Initializable {
 
     @FXML
     private Button btPlay;
@@ -13,9 +17,14 @@ public class MainMenuFXMLController {
     private BorderPane bpMenu;
     @FXML
     private Button btOptions;
-
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    } 
+    
     @FXML
-    private void switchToSettings() throws IOException {
+    private void switchToSettings(ActionEvent event) throws IOException {
         App.setRoot("SettingBoardSize");
     }
 }

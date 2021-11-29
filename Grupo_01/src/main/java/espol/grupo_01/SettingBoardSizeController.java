@@ -45,23 +45,33 @@ public class SettingBoardSizeController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        btNextSetting.setDisable(false);
+        if(Reader.language){
+            btNextSetting.setText("Got it! Now what?");
+        }else{
+            btNextSetting.setText("¡Entendido! ¿Ahora qué?");
+        }
     }    
     @FXML
     private void switchToCategory() throws IOException {
         App.setRoot("SettingCategory");
     }
-
+    
     private void switchToBoardSize(ActionEvent event) throws IOException {
         App.setRoot("SettingBoardSize");
     }
-
+    
     private void switchToPlayboard(ActionEvent event) throws IOException {
-        App.setRoot("PlayboardFXML");
+        App.setRoot("Playboard");
     }
     
+    @FXML
     private void switchToMainMenu() throws IOException {
-        App.setRoot("MainMenuFXML");
+        App.setRoot("MainMenu");
+    }
+
+    @FXML
+    private void initialize(ActionEvent event) {
     }
 
 }
