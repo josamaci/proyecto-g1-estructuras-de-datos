@@ -4,6 +4,7 @@
  */
 package espol.grupo_01;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -46,11 +47,13 @@ public class SettingCategoryController implements Initializable {
     }    
 
     @FXML
-    private void switchToBoardSize(ActionEvent event) {
+    private void switchToBoardSize(ActionEvent event) throws IOException {
+        App.setRoot("SettingBoardSize");
     }
 
     @FXML
-    private void switchToGameMode(ActionEvent event) {
+    private void switchToGameMode(ActionEvent event) throws IOException {
+        App.setRoot("SettingGameMode");
     }
     
 }
