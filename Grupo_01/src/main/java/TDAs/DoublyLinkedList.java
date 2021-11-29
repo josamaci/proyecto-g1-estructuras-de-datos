@@ -170,8 +170,25 @@ public class DoublyLinkedList<E> implements List<E> {
 
     @Override
     public Iterator<E> iterator() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Iterator<E> it = new Iterator<E>(){
+            protected DoublyNodeList<E> cursor = header; 
+            @Override
+            public boolean hasNext() {
+                return cursor.getNext()!=null;
+            }
+            @Override
+            public E next(){
+                E content = null;
+                if(hasNext()){
+                    content = cursor.getContent();
+                    cursor = cursor.getNext();
+                }
+                return content;
+            }
+        };
+    return it; 
     }
+
 
     @Override
     public List<E> findAll(Comparator<E> cmp, E element) {
