@@ -149,11 +149,14 @@ public class DoublyLinkedList<E> implements List<E> {
     public E get(int index) {
         E e=null;
         int cont = 0;
-        if(index>=0 && !isEmpty()){
-                for (DoublyNodeList n = header; n != last; n = n.getNext()) {
+        DoublyNodeList n = header;
+        if(index>=0 && index<size() && !isEmpty()){
+                while(cont<=index) {
                     if(cont == index){
-                        //e = n.getContent();
+                        e = (E)n.getContent();
                     }
+                    n = n.getNext();
+                    cont++;
                 }
         
         }
