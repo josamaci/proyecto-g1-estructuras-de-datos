@@ -41,13 +41,13 @@ public class PlayboardController implements Initializable {
     @FXML
     private Button btDeleteColumn;
     @FXML
-    private Button btBacktoTitle;
-    @FXML
     private GridPane gBoard;
     @FXML
     private BorderPane bpPlayboard;
     @FXML
     private Label lblPoints1;
+    @FXML
+    private Button btSurrender;
 
     /**
      * Initializes the controller class.
@@ -74,8 +74,8 @@ public class PlayboardController implements Initializable {
     }
 
     @FXML
-    private void backToTitle(ActionEvent event) throws IOException {
-        App.setRoot("MainMenu");
+    private void surrender(ActionEvent event) throws IOException {
+        App.setRoot("Credits");
     }
     
 }

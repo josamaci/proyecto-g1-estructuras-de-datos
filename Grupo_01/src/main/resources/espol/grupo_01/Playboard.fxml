@@ -12,11 +12,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<<<<<<< HEAD
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="360.0" styleClass="bpPlayboard" stylesheets="@../../Styles/playboard.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="espol.grupo_01.PlayboardController">
-=======
-<BorderPane fx:id="bpPlayboard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="360.0" styleClass="bpPlayboard" stylesheets="@../../Styles/playboardfxml.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="espol.grupo_01.PlayboardFXMLController">
->>>>>>> 55d4df7816c9e299b530aa356b26dc37c2770897
+<BorderPane fx:id="bpPlayboard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="360.0" styleClass="bpPlayboard" stylesheets="@../../Styles/playboardfxml.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="espol.grupo_01.PlayboardController">
    <center>
       <GridPane fx:id="gBoard" alignment="CENTER" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -104,7 +100,7 @@
                         <Insets right="50.0" />
                      </HBox.margin>
                      <children>
-                        <Button fx:id="btAddRow" mnemonicParsing="false" onMouseClicked="#AddRow" prefHeight="32.0" prefWidth="120.0" stylesheets="@../../Styles/nextbutton.css" text="Add Row" textFill="WHITE">
+                        <Button fx:id="btAddRow" mnemonicParsing="false" onMouseClicked="#AddRow" prefHeight="32.0" prefWidth="120.0" styleClass="nextButton" stylesheets="@../../Styles/button.css" text="Add Row" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
@@ -112,7 +108,7 @@
                               <Insets bottom="30.0" />
                            </VBox.margin>
                         </Button>
-                        <Button fx:id="btAddColumn" mnemonicParsing="false" onMouseClicked="#AddColumn" prefHeight="32.0" prefWidth="120.0" stylesheets="@../../Styles/nextbutton.css" text="Add Column" textFill="WHITE">
+                        <Button fx:id="btAddColumn" mnemonicParsing="false" onMouseClicked="#AddColumn" prefHeight="32.0" prefWidth="120.0" styleClass="nextButton" stylesheets="@../../Styles/button.css" text="Add Column" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
@@ -140,14 +136,10 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-<<<<<<< HEAD
-                  <Button fx:id="btBacktoTitle" alignment="CENTER" mnemonicParsing="false" onAction="#backToTitle" text="Back to the Title" />
-=======
-                  <Button fx:id="btAdd1" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#backToTitle" prefHeight="38.0" prefWidth="122.0" stylesheets="@../../Styles/redbutton.css" text="Surrender" textFill="WHITE">
+                  <Button fx:id="btSurrender" alignment="CENTER" mnemonicParsing="false" onAction="#surrender" prefHeight="38.0" prefWidth="122.0" stylesheets="@../../Styles/redbutton.css" text="Surrender" textFill="WHITE">
                      <font>
                         <Font name="System Bold Italic" size="17.0" />
                      </font></Button>
->>>>>>> 55d4df7816c9e299b530aa356b26dc37c2770897
                </children>
             </HBox>
          </children>

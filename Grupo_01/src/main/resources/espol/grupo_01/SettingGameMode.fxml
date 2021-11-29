@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="pSettings" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="361.0" styleClass="pSettings" stylesheets="@../../Styles/settinggamemode.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="espol.grupo_01.SettingGameModeController">
+<Pane fx:id="pSettings" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="361.0" styleClass="pSettings" stylesheets="@../../Styles/settinggamemode.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="espol.grupo_01.SettingGameModeController">
    <children>
       <VBox alignment="CENTER" prefHeight="640.0" prefWidth="361.0">
          <children>
@@ -117,7 +117,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="362.0">
                <children>
-                  <Button fx:id="btPlayboard" alignment="CENTER" mnemonicParsing="false" onAction="#switchToPlayboard" prefHeight="50.0" prefWidth="291.0" stylesheets="@../../Styles/nextbutton.css" text="Let's rock!">
+                  <Button fx:id="btPlayboard" alignment="CENTER" mnemonicParsing="false" onAction="#switchToPlayboard" prefHeight="50.0" prefWidth="291.0" styleClass="nextButton" stylesheets="@../../Styles/button.css" text="Let's rock!">
                      <font>
                         <Font name="System Italic" size="24.0" />
                      </font>

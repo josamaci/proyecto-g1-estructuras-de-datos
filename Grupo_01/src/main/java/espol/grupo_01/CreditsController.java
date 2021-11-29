@@ -8,12 +8,11 @@ package espol.grupo_01;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 
 /**
@@ -41,12 +40,8 @@ public class CreditsController implements Initializable {
     }    
 
     @FXML
-    private void backToTheTitle(MouseEvent event) {
-        try{
-        App.setRoot("MainMenuFXML");}
-        catch(IOException ex){
-            ex.printStackTrace();
-        }
+    private void backToTheTitle(ActionEvent event) throws IOException{
+        App.setRoot("MainMenu");
     }
     
 }
