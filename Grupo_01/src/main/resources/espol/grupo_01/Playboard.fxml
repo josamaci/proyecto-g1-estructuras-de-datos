@@ -10,10 +10,15 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
 
+<<<<<<< HEAD
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="360.0" styleClass="bpPlayboard" stylesheets="@../../Styles/playboard.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="espol.grupo_01.PlayboardController">
+=======
+<BorderPane fx:id="bpPlayboard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="360.0" styleClass="bpPlayboard" stylesheets="@../../Styles/playboardfxml.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="espol.grupo_01.PlayboardFXMLController">
+>>>>>>> 55d4df7816c9e299b530aa356b26dc37c2770897
    <center>
-      <GridPane fx:id="gBoard" alignment="CENTER" gridLinesVisible="true" BorderPane.alignment="CENTER">
+      <GridPane fx:id="gBoard" alignment="CENTER" BorderPane.alignment="CENTER">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -42,11 +47,17 @@
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label text="Points:" />
-                  <Label fx:id="lblPoints">
+                  <Label prefHeight="30.0" prefWidth="74.0" text="Points:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font></Label>
+                  <Label fx:id="lblPoints" text="0" textFill="WHITE">
                      <HBox.margin>
-                        <Insets left="10.0" right="180.0" />
+                        <Insets left="10.0" right="160.0" />
                      </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
                   </Label>
                   <Circle fx:id="health1" fill="#d71208" radius="12.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" />
                   <Circle fx:id="health2" fill="#d71208" layoutX="425.0" layoutY="60.0" radius="12.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE">
@@ -61,7 +72,25 @@
                   </Circle>
                </children>
             </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0" />
+            <HBox prefHeight="48.0" prefWidth="360.0">
+               <children>
+                  <Label prefHeight="30.0" prefWidth="168.0" text="Tiempo restante:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" top="8.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="lblPoints1" text="90" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="8.0" />
+                     </HBox.margin>
+                  </Label>
+               </children></HBox>
          </children>
       </VBox>
    </top>
@@ -70,27 +99,55 @@
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="btAddRow" mnemonicParsing="false" onMouseClicked="#AddRow" text="Add Row">
+                  <VBox>
                      <HBox.margin>
-                        <Insets right="5.0" />
+                        <Insets right="50.0" />
                      </HBox.margin>
-                  </Button>
-                  <Button fx:id="btAddColumn" layoutX="96.0" layoutY="48.0" mnemonicParsing="false" onMouseClicked="#AddColumn" text="Add Column">
-                     <HBox.margin>
-                        <Insets right="20.0" />
-                     </HBox.margin>
-                  </Button>
-                  <Button fx:id="btDeleteRow" mnemonicParsing="false" onMouseClicked="#DeleteRow" text="Delete Row" />
-                  <Button fx:id="btDeleteColumn" mnemonicParsing="false" onMouseClicked="#DeleteColumn" text="Delete Column">
-                     <HBox.margin>
-                        <Insets left="5.0" />
-                     </HBox.margin>
-                  </Button>
+                     <children>
+                        <Button fx:id="btAddRow" mnemonicParsing="false" onMouseClicked="#AddRow" prefHeight="32.0" prefWidth="120.0" stylesheets="@../../Styles/nextbutton.css" text="Add Row" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="30.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="btAddColumn" mnemonicParsing="false" onMouseClicked="#AddColumn" prefHeight="32.0" prefWidth="120.0" stylesheets="@../../Styles/nextbutton.css" text="Add Column" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Button fx:id="btDeleteRow" mnemonicParsing="false" onMouseClicked="#DeleteRow" prefHeight="32.0" prefWidth="120.0" stylesheets="@../../Styles/yellowbutton.css" text="Delete Row" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="30.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="btDeleteColumn" mnemonicParsing="false" onMouseClicked="#DeleteColumn" prefHeight="32.0" prefWidth="120.0" stylesheets="@../../Styles/yellowbutton.css" text="Delete Column" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
+<<<<<<< HEAD
                   <Button fx:id="btBacktoTitle" alignment="CENTER" mnemonicParsing="false" onAction="#backToTitle" text="Back to the Title" />
+=======
+                  <Button fx:id="btAdd1" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#backToTitle" prefHeight="38.0" prefWidth="122.0" stylesheets="@../../Styles/redbutton.css" text="Surrender" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="17.0" />
+                     </font></Button>
+>>>>>>> 55d4df7816c9e299b530aa356b26dc37c2770897
                </children>
             </HBox>
          </children>

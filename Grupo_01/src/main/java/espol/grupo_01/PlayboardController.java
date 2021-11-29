@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Circle;
 
@@ -43,6 +44,10 @@ public class PlayboardController implements Initializable {
     private Button btBacktoTitle;
     @FXML
     private GridPane gBoard;
+    @FXML
+    private BorderPane bpPlayboard;
+    @FXML
+    private Label lblPoints1;
 
     /**
      * Initializes the controller class.
