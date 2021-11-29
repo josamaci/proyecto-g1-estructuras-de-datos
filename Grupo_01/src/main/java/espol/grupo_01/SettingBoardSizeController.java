@@ -53,25 +53,12 @@ public class SettingBoardSizeController implements Initializable {
         }
     }    
     @FXML
-    private void switchToCategory() throws IOException {
+    private void switchToCategory(ActionEvent event) throws IOException {
         App.setRoot("SettingCategory");
     }
     
-    private void switchToBoardSize(ActionEvent event) throws IOException {
-        App.setRoot("SettingBoardSize");
-    }
-    
-    private void switchToPlayboard(ActionEvent event) throws IOException {
-        App.setRoot("Playboard");
-    }
-    
     @FXML
-    private void switchToMainMenu() throws IOException {
+    private void switchToMainMenu(ActionEvent event) throws IOException {
         App.setRoot("MainMenu");
     }
-
-    @FXML
-    private void initialize(ActionEvent event) {
-    }
-
 }

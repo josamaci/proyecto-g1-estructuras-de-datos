@@ -9,7 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 
-public class MainMenuFXMLController implements Initializable {
+public class MainMenuController implements Initializable {
 
     @FXML
     private Button btPlay;
@@ -24,7 +24,7 @@ public class MainMenuFXMLController implements Initializable {
     } 
     
     @FXML
-    private void switchToSettings(ActionEvent event) throws IOException {
+    private void switchToBoardSize(ActionEvent event) throws IOException {
         App.setRoot("SettingBoardSize");
     }
 }

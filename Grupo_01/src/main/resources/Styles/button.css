@@ -1,17 +1,23 @@
-.button{
+.nextButton{
     -fx-background-color: #4CAF50;
     -fx-background-radius: 15 15 15 15;
     -fx-background-insets: 2 2 2 2 ;
     -fx-cursor: hand;
     -fx-effect: dropshadow(one-pass-box, darkgreen, 0.0, 0.0, 0.0, 10);
-    
 }
-.button:hover{
+.nextButton:hover{
     -fx-background-color: #3e8e41;
 }
 
-.button:pressed {
+.nextButton:selected {
     -fx-background-color: #3e8e41;
+    -fx-text-fill: WHITE;
     -fx-translate-y: 5;
     -fx-effect: dropshadow(one-pass-box, darkgreen, 0.0, 0.0, 0.0, 5);
+}
+
+.optionButton{
+    -fx-background-color: #4CAF50;
+    -fx-background-radius: 15 15 15 15;
+    -fx-background-insets: 2 2 2 2 ;
 }

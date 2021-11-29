@@ -21,7 +21,7 @@ import javafx.scene.layout.VBox;
  *
  * @author JMaci
  */
-public class CreditsFXMLController implements Initializable {
+public class CreditsController implements Initializable {
 
     @FXML
     private Label lblWinLose;

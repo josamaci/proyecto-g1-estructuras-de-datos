@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="espol.grupo_01.PlayboardFXMLController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="360.0" styleClass="bpPlayboard" stylesheets="@../../Styles/playboard.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="espol.grupo_01.PlayboardController">
    <center>
       <GridPane fx:id="gBoard" alignment="CENTER" gridLinesVisible="true" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -90,7 +90,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="btAdd1" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#backToTitle" text="Back to the Title" />
+                  <Button fx:id="btBacktoTitle" alignment="CENTER" mnemonicParsing="false" onAction="#backToTitle" text="Back to the Title" />
                </children>
             </HBox>
          </children>

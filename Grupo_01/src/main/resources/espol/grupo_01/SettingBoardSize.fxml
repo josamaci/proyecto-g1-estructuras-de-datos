@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -8,13 +9,10 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="361.0" styleClass="pBoardSize" stylesheets="@../../Styles/settingboardsize.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="espol.grupo_01.SettingBoardSizeController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="361.0" styleClass="pBoardSize" stylesheets="@../../Styles/settingboardsize.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="espol.grupo_01.SettingBoardSizeController">
    <children>
       <VBox layoutX="-1.0" prefHeight="640.0" prefWidth="361.0">
          <children>
@@ -22,7 +20,7 @@
                <children>
                   <HBox alignment="TOP_CENTER" prefHeight="86.0" prefWidth="67.0">
                      <children>
-                        <Button fx:id="btBackToTitle" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#initialize" onMouseClicked="#switchToMainMenu" prefHeight="62.0" prefWidth="75.0" text="&lt;-">
+                        <Button fx:id="btBackToTitle" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#switchToMainMenu" prefHeight="62.0" prefWidth="75.0" text="&lt;-">
                            <font>
                               <Font name="System Italic" size="17.0" />
                            </font>
@@ -35,40 +33,24 @@
                         <Insets top="10.0" />
                      </opaqueInsets>
                   </HBox>
-                  <Circle radius="5.0" stroke="TRANSPARENT" strokeType="INSIDE">
+                  <Circle fill="WHITE" radius="5.0" stroke="TRANSPARENT" strokeType="INSIDE">
                      <HBox.margin>
                         <Insets left="65.0" right="20.0" top="40.0" />
                      </HBox.margin>
                   </Circle>
-                  <Circle disable="true" opacity="0.5" radius="5.0" stroke="TRANSPARENT" strokeType="INSIDE">
+                  <Circle disable="true" fill="WHITE" opacity="0.5" radius="5.0" stroke="TRANSPARENT" strokeType="INSIDE">
                      <HBox.margin>
                         <Insets left="20.0" right="20.0" top="40.0" />
                      </HBox.margin>
-                     <fill>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop>
-                                 <color>
-                                    <Color />
-                                 </color>
-                              </Stop>
-                              <Stop offset="1.0">
-                                 <color>
-                                    <Color />
-                                 </color>
-                              </Stop>
-                           </stops>
-                        </LinearGradient>
-                     </fill>
                   </Circle>
-                  <Circle disable="true" opacity="0.5" radius="5.0" stroke="TRANSPARENT" strokeType="INSIDE">
+                  <Circle disable="true" fill="WHITE" opacity="0.5" radius="5.0" stroke="TRANSPARENT" strokeType="INSIDE">
                      <HBox.margin>
                         <Insets left="20.0" right="20.0" top="40.0" />
                      </HBox.margin>
                   </Circle>
                </children>
             </HBox>
-            <Label alignment="CENTER" prefHeight="70.0" prefWidth="351.0" text="First, choose a board size!" textAlignment="CENTER">
+            <Label alignment="CENTER" prefHeight="70.0" prefWidth="351.0" text="Board Size" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="25.0" />
                </font>
@@ -78,7 +60,7 @@
             </Label>
             <HBox alignment="CENTER" prefHeight="124.0" prefWidth="362.0">
                <children>
-                  <ToggleButton fx:id="btBoard7" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" stylesheets="@../../Styles/settingboardsize.css" text="7x7">
+                  <ToggleButton fx:id="btBoard7" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="nextButton" text="7x7">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -88,14 +70,22 @@
                      <HBox.margin>
                         <Insets right="25.0" top="10.0" />
                      </HBox.margin>
+                     <stylesheets>
+                        <URL value="@../../Styles/settingboardsize.css" />
+                        <URL value="@../../Styles/button.css" />
+                     </stylesheets>
                   </ToggleButton>
-                  <ToggleButton fx:id="btBoard9" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" stylesheets="@../../Styles/settingboardsize.css" text="9x9" toggleGroup="$btGroupBoardSize">
+                  <ToggleButton fx:id="btBoard9" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="nextButton" text="9x9" toggleGroup="$btGroupBoardSize">
                      <font>
                         <Font size="24.0" />
                      </font>
                      <HBox.margin>
                         <Insets top="10.0" />
                      </HBox.margin>
+                     <stylesheets>
+                        <URL value="@../../Styles/settingboardsize.css" />
+                        <URL value="@../../Styles/button.css" />
+                     </stylesheets>
                   </ToggleButton>
                </children>
                <opaqueInsets>
@@ -107,18 +97,26 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="120.0" prefWidth="362.0">
                <children>
-                  <ToggleButton fx:id="btBoard11" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" stylesheets="@../../Styles/settingboardsize.css" text="11x11" toggleGroup="$btGroupBoardSize">
+                  <ToggleButton fx:id="btBoard11" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="nextButton" text="11x11" toggleGroup="$btGroupBoardSize">
                      <font>
                         <Font size="24.0" />
                      </font>
                      <HBox.margin>
                         <Insets right="25.0" />
                      </HBox.margin>
+                     <stylesheets>
+                        <URL value="@../../Styles/settingboardsize.css" />
+                        <URL value="@../../Styles/button.css" />
+                     </stylesheets>
                   </ToggleButton>
-                  <ToggleButton fx:id="btBoard13" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" stylesheets="@../../Styles/settingboardsize.css" text="13x13" toggleGroup="$btGroupBoardSize">
+                  <ToggleButton fx:id="btBoard13" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="nextButton" text="13x13" toggleGroup="$btGroupBoardSize">
                      <font>
                         <Font size="24.0" />
                      </font>
+                     <stylesheets>
+                        <URL value="@../../Styles/settingboardsize.css" />
+                        <URL value="@../../Styles/button.css" />
+                     </stylesheets>
                   </ToggleButton>
                </children>
                <opaqueInsets>
@@ -130,10 +128,14 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="115.0" prefWidth="362.0">
                <children>
-                  <ToggleButton fx:id="btBoardR" mnemonicParsing="false" prefHeight="90.0" prefWidth="132.0" stylesheets="@../../Styles/settingboardsize.css" text="Random!" toggleGroup="$btGroupBoardSize">
+                  <ToggleButton fx:id="btBoardR" mnemonicParsing="false" prefHeight="90.0" prefWidth="132.0" styleClass="nextButton" text="Random!" toggleGroup="$btGroupBoardSize">
                      <font>
                         <Font size="24.0" />
                      </font>
+                     <stylesheets>
+                        <URL value="@../../Styles/settingboardsize.css" />
+                        <URL value="@../../Styles/button.css" />
+                     </stylesheets>
                   </ToggleButton>
                </children>
                <opaqueInsets>
@@ -142,7 +144,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="btNextSetting" alignment="CENTER" mnemonicParsing="false" onAction="#initialize" onMouseExited="#switchToCategory" prefHeight="50.0" prefWidth="291.0" stylesheets="@../../Styles/nextbutton.css" text="Got it! Now what?">
+                  <Button fx:id="btNextSetting" alignment="CENTER" mnemonicParsing="false" onAction="#switchToCategory" prefHeight="50.0" prefWidth="291.0" stylesheets="@../../Styles/nextbutton.css" text="Got it! Now what?">
                      <font>
                         <Font name="System Italic" size="24.0" />
                      </font>

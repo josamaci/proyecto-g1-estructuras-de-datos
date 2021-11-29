@@ -1,13 +1,13 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
 package espol.grupo_01;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -19,9 +19,9 @@ import javafx.scene.shape.Circle;
 /**
  * FXML Controller class
  *
- * @author JMaci
+ * @author kevin
  */
-public class PlayboardFXMLController implements Initializable {
+public class PlayboardController implements Initializable {
 
     @FXML
     private Label lblPoints;
@@ -32,8 +32,6 @@ public class PlayboardFXMLController implements Initializable {
     @FXML
     private Circle health3;
     @FXML
-    private Button btAdd1;
-    @FXML
     private Button btAddRow;
     @FXML
     private Button btAddColumn;
@@ -41,6 +39,8 @@ public class PlayboardFXMLController implements Initializable {
     private Button btDeleteRow;
     @FXML
     private Button btDeleteColumn;
+    @FXML
+    private Button btBacktoTitle;
     @FXML
     private GridPane gBoard;
 
@@ -52,34 +52,25 @@ public class PlayboardFXMLController implements Initializable {
         // TODO
     }    
 
-
-    @FXML
-    private void backToTitle(MouseEvent event) {
-        try{
-        App.setRoot("MainMenuFXML");}
-        catch(IOException ex){
-            ex.printStackTrace();
-        }
-    }
-
     @FXML
     private void AddRow(MouseEvent event) {
-        gBoard.addRow(gBoard.getRowCount(), new Label("eo"));
     }
 
     @FXML
     private void AddColumn(MouseEvent event) {
-        gBoard.addColumn(gBoard.getColumnCount(), new Label("eo"));
     }
 
     @FXML
     private void DeleteRow(MouseEvent event) {
-        gBoard.getChildren().remove(gBoard.getRowCount()-1);
     }
 
     @FXML
     private void DeleteColumn(MouseEvent event) {
-        gBoard.getChildren().remove(gBoard.getColumnCount()-1);
+    }
+
+    @FXML
+    private void backToTitle(ActionEvent event) throws IOException {
+        App.setRoot("MainMenu");
     }
     
 }
