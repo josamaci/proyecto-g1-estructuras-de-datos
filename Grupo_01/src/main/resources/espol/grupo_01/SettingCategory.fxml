@@ -76,7 +76,7 @@
                   <Insets left="10.0" />
                </VBox.margin>
             </Label>
-            <HBox alignment="CENTER" prefHeight="120.0" prefWidth="362.0">
+            <HBox alignment="CENTER" prefHeight="124.0" prefWidth="362.0">
                <children>
                   <ToggleButton fx:id="btCategoryAnimal" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" stylesheets="@../../Styles/settingboardsize.css" text="Animals" textFill="WHITE">
                      <font>
@@ -94,10 +94,10 @@
                   <Insets />
                </opaqueInsets>
                <VBox.margin>
-                  <Insets />
+                  <Insets bottom="10.0" />
                </VBox.margin>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="120.0" prefWidth="362.0">
+            <HBox alignment="CENTER" prefHeight="124.0" prefWidth="362.0">
                <children>
                   <ToggleButton fx:id="btCateogrySports" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" stylesheets="@../../Styles/settingboardsize.css" text="Sports" textFill="WHITE">
                      <font>
@@ -115,10 +115,10 @@
                   <Insets />
                </opaqueInsets>
                <VBox.margin>
-                  <Insets />
+                  <Insets bottom="10.0" />
                </VBox.margin>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="120.0" prefWidth="362.0">
+            <HBox alignment="CENTER" prefHeight="124.0" prefWidth="362.0">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -132,6 +132,9 @@
                      </font>
                   </ToggleButton>
                </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
