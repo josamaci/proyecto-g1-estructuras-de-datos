@@ -13,6 +13,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.VBox;
 
 /**
  * FXML Controller class
@@ -27,6 +29,8 @@ public class CreditsFXMLController implements Initializable {
     private Label lblPoints;
     @FXML
     private Button btMainMenu;
+    @FXML
+    private VBox vbCredits;
 
     /**
      * Initializes the controller class.

@@ -5,6 +5,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 public class Reader {
+    public static boolean language = true;
+    public static String category = "Fruits";
+    public static boolean difficulty = true;
+    public static int size = 7;
+    
     public static DoublyLinkedList<String> Read(String nameFile){
         DoublyLinkedList<String> words = new DoublyLinkedList<>();
         try(InputStream input = App.class.getResource(nameFile).openStream();

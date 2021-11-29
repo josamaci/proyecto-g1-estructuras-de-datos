@@ -4,6 +4,7 @@
  */
 package espol.grupo_01;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -12,6 +13,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 
 /**
  * FXML Controller class
@@ -36,21 +39,26 @@ public class SettingCategoryController implements Initializable {
     private ToggleGroup btGroupBoardSize1;
     @FXML
     private Button btNextSetting2;
+    @FXML
+    private Pane pCat;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        btCategoryAnimal.setDisable(false);
     }    
 
     @FXML
-    private void switchToBoardSize(ActionEvent event) {
+    private void switchToBoardSize(ActionEvent event) throws IOException{
+        App.setRoot("SettingBoardSize");
     }
 
     @FXML
-    private void switchToGameMode(ActionEvent event) {
+    private void switchToGameMode(ActionEvent event) throws IOException{
+        App.setRoot("SettingGameMode");
     }
+
     
 }
