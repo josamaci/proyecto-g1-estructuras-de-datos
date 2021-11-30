@@ -46,17 +46,13 @@ public class SettingGameModeController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         btPlayboard.setDisable(false);
         if(Reader.language){
-            btCategoryAnimal.setText("Animals");
-            btCateogrySports.setText("Sports");
-            btCategoryFruits.setText("Fruits");
-            lbTitle.setText("Second, choose a category!");
-            btNextSetting2.setText("OK! And then?");
+            btExtremeMode.setText("Extreme");
+            btPlayboard.setText("Let's rock!");
+            lbTitle.setText("Finally, choose a game mode!");
         }else{
-            btCategoryAnimal.setText("Animales");
-            btCateogrySports.setText("Deportes");
-            btCategoryFruits.setText("Frutas");
-            lbTitle.setText("Ahora, ¡escoge una categoría!");
-            btNextSetting2.setText("Listo, ¿ahora qué?");
+            btExtremeMode.setText("Extremo");
+            btPlayboard.setText("¡A rockear!");
+            lbTitle.setText("Selecciona el modo de juego!");
         }
     }    
 
