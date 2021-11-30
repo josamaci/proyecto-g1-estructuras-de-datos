@@ -52,10 +52,21 @@ public class DoublyLinkedList<E> implements List<E> {
     public boolean addLast(E e) {
         if (e != null) {
             DoublyNodeList<E> newNode = new DoublyNodeList<>(e);
-            newNode.setPrevious(last);
-            last.setNext(newNode);
-            this.setLast(newNode);
-            return true;
+            if(header==null){
+                newNode.setNext(last);
+                this.setHeader(newNode);
+                return true;
+            }
+            else if(last==null){
+                newNode.setPrevious(header);
+                this.setLast(newNode);
+                return true;
+            }else if(!isEmpty()){
+                newNode.setPrevious(last);
+                last.setNext(newNode);
+                this.setLast(newNode);
+                return true;
+            }
         }
         return false;
     }

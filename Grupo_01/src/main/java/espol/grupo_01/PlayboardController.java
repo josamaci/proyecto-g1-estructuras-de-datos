@@ -103,6 +103,7 @@ public class PlayboardController implements Initializable {
         }else{
             words = Reader.Read(Reader.category);
         }
+        
     }    
 
     @FXML
