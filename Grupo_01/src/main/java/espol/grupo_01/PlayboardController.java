@@ -4,6 +4,7 @@
  */
 package espol.grupo_01;
 
+import Matriz.Matriz;
 import TDAs.DoublyLinkedList;
 import java.io.IOException;
 import static java.lang.Thread.sleep;
@@ -45,8 +46,6 @@ public class PlayboardController implements Initializable {
     private Button btDeleteRow;
     @FXML
     private Button btDeleteColumn;
-    @FXML
-    private GridPane gBoard;
     @FXML
     private BorderPane bpPlayboard;
     @FXML
@@ -104,6 +103,8 @@ public class PlayboardController implements Initializable {
             words = Reader.Read(Reader.category);
         }
         
+        Matriz matriz = new Matriz(SettingBoardSizeController.buttonValue);
+        bpPlayboard.setCenter(matriz.getPanelMatriz());
     }    
 
     @FXML

@@ -44,6 +44,8 @@ public class SettingBoardSizeController implements Initializable {
     private ToggleButton btBoardR;
     @FXML
     private Label lbTitle;
+    
+    protected static int buttonValue;
     /**
      * Initializes the controller class.
      */
@@ -72,23 +74,24 @@ public class SettingBoardSizeController implements Initializable {
         App.setRoot("MainMenu");
     }
     @FXML
-    private Integer value7(ActionEvent event) throws IOException {
-        return 7;
+    private void value7(ActionEvent event) throws IOException {
+        buttonValue = 7;
     }
     @FXML
-    private Integer value9(ActionEvent event) throws IOException {
-        return 9;
+    private void value9(ActionEvent event) throws IOException {
+        buttonValue = 9;
     }
     @FXML
-    private Integer value11(ActionEvent event) throws IOException {
-        return 11;
+    private void value11(ActionEvent event) throws IOException {
+        buttonValue = 11;
     }
     @FXML
-    private Integer value13(ActionEvent event) throws IOException {
-        return 13;
+    private void value13(ActionEvent event) throws IOException {
+        buttonValue = 7;
     }
     @FXML
-    private Integer valueR(ActionEvent event) throws IOException {
-        return 0;
+    private void valueR(ActionEvent event) throws IOException {
+        buttonValue = 0;
     }
+    
 }
