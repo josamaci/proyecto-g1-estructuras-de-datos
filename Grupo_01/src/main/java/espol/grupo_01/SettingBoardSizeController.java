@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.MouseEvent;
@@ -22,9 +23,7 @@ import javafx.scene.layout.Pane;
  * @author kevin
  */
 public class SettingBoardSizeController implements Initializable {
-
-
-    @FXML
+        @FXML
     private ToggleGroup btGroupBoardSize;
     @FXML
     private Button btNextSetting;
@@ -40,6 +39,8 @@ public class SettingBoardSizeController implements Initializable {
     private ToggleButton btBoard13;
     @FXML
     private ToggleButton btBoardR;
+    @FXML
+    private Label lbTitle;
     /**
      * Initializes the controller class.
      */
@@ -48,8 +49,12 @@ public class SettingBoardSizeController implements Initializable {
         btNextSetting.setDisable(false);
         if(Reader.language){
             btNextSetting.setText("Got it! Now what?");
+            btBoardR.setText("Random!");
+            lbTitle.setText("Board Size");
         }else{
             btNextSetting.setText("¡Entendido! ¿Ahora qué?");
+            btBoardR.setText("Aleatorio");
+            lbTitle.setText("Tamaño del Tablero");
         }
     }    
     @FXML
