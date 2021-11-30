@@ -103,6 +103,9 @@ public class PlayboardController implements Initializable {
         }else{
             words = Reader.Read(Reader.category);
         }
+
+            System.out.println(words.get(0));
+        
     }    
 
     @FXML
