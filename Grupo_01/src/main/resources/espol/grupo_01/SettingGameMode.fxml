@@ -8,13 +8,10 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="pSettings" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="361.0" styleClass="pSettings" stylesheets="@../../Styles/settinggamemode.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="espol.grupo_01.SettingGameModeController">
+<Pane fx:id="pSettings" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="361.0" styleClass="pSettings" stylesheets="@../../Styles/settinggamemode.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="espol.grupo_01.SettingGameModeController">
    <children>
       <VBox alignment="CENTER" prefHeight="640.0" prefWidth="361.0">
          <children>
@@ -22,7 +19,7 @@
                <children>
                   <HBox alignment="TOP_CENTER" prefHeight="86.0" prefWidth="67.0">
                      <children>
-                        <Button fx:id="btBackToCat" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#switchToCategory" prefHeight="62.0" prefWidth="75.0" text="&lt;-">
+                        <Button fx:id="btBackToCat" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#switchToCategory" prefHeight="62.0" prefWidth="75.0" styleClass="changeButton" stylesheets="@../../Styles/normalButton.css" text="←">
                            <font>
                               <Font name="System Italic" size="17.0" />
                            </font>
@@ -35,33 +32,17 @@
                         <Insets top="10.0" />
                      </opaqueInsets>
                   </HBox>
-                  <Circle opacity="0.5" radius="5.0" stroke="TRANSPARENT" strokeType="INSIDE">
+                  <Circle fill="WHITE" opacity="0.5" radius="5.0" stroke="TRANSPARENT" strokeType="INSIDE">
                      <HBox.margin>
                         <Insets left="65.0" right="20.0" top="40.0" />
                      </HBox.margin>
                   </Circle>
-                  <Circle disable="true" opacity="0.5" radius="5.0" stroke="TRANSPARENT" strokeType="INSIDE">
+                  <Circle disable="true" fill="WHITE" opacity="0.5" radius="5.0" stroke="TRANSPARENT" strokeType="INSIDE">
                      <HBox.margin>
                         <Insets left="20.0" right="20.0" top="40.0" />
                      </HBox.margin>
-                     <fill>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop>
-                                 <color>
-                                    <Color />
-                                 </color>
-                              </Stop>
-                              <Stop offset="1.0">
-                                 <color>
-                                    <Color />
-                                 </color>
-                              </Stop>
-                           </stops>
-                        </LinearGradient>
-                     </fill>
                   </Circle>
-                  <Circle disable="true" radius="5.0" stroke="TRANSPARENT" strokeType="INSIDE">
+                  <Circle disable="true" fill="WHITE" radius="5.0" stroke="TRANSPARENT" strokeType="INSIDE">
                      <HBox.margin>
                         <Insets left="20.0" right="20.0" top="40.0" />
                      </HBox.margin>
@@ -70,7 +51,7 @@
             </HBox>
             <Label fx:id="lbTitle" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="351.0" text="Finally, choose a game mode!" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="25.0" />
+                  <Font name="Gill Sans MT Bold" size="25.0" />
                </font>
                <VBox.margin>
                   <Insets left="10.0" />
@@ -78,9 +59,9 @@
             </Label>
             <HBox alignment="BOTTOM_CENTER" prefHeight="124.0" prefWidth="362.0">
                <children>
-                  <ToggleButton fx:id="btNormalMode" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" stylesheets="@../../Styles/settingboardsize.css" text="Normal">
+                  <ToggleButton fx:id="btNormalMode" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" styleClass="optionButton" stylesheets="@../../Styles/toggleButton.css" text="Normal">
                      <font>
-                        <Font size="24.0" />
+                        <Font name="System Bold" size="24.0" />
                      </font>
                      <HBox.margin>
                         <Insets />
@@ -99,9 +80,9 @@
             </HBox>
             <HBox alignment="BOTTOM_CENTER" prefHeight="124.0" prefWidth="362.0">
                <children>
-                  <ToggleButton fx:id="btExtremeMode" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" stylesheets="@../../Styles/settingboardsize.css" text="Extreme" textAlignment="CENTER" toggleGroup="$btGroupGameMode">
+                  <ToggleButton fx:id="btExtremeMode" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" styleClass="optionButton" stylesheets="@../../Styles/toggleButton.css" text="Extreme" textAlignment="CENTER" toggleGroup="$btGroupGameMode">
                      <font>
-                        <Font size="24.0" />
+                        <Font name="System Bold" size="24.0" />
                      </font>
                      <HBox.margin>
                         <Insets />
@@ -117,9 +98,9 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="362.0">
                <children>
-                  <Button fx:id="btPlayboard" alignment="CENTER" mnemonicParsing="false" onAction="#switchToPlayboard" prefHeight="50.0" prefWidth="291.0" styleClass="nextButton" stylesheets="@../../Styles/button.css" text="Let's rock!">
+                  <Button fx:id="btPlayboard" alignment="CENTER" mnemonicParsing="false" onAction="#switchToPlayboard" prefHeight="50.0" prefWidth="291.0" styleClass="changeButton" stylesheets="@../../Styles/normalButton.css" text="Let's rock!" textFill="WHITE">
                      <font>
-                        <Font name="System Italic" size="24.0" />
+                        <Font name="System Bold" size="24.0" />
                      </font>
                   </Button>
                </children>

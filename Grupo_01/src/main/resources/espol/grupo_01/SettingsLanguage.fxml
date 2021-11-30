@@ -8,13 +8,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="bpMenu" prefHeight="640.0" prefWidth="360.0" styleClass="bpMenu" stylesheets="@../../Styles/mainmenu.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="espol.grupo_01.SettingsLanguageController">
+<BorderPane fx:id="bpMenu" prefHeight="640.0" prefWidth="360.0" styleClass="bpMenu" stylesheets="@../../Styles/mainmenu.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="espol.grupo_01.SettingsLanguageController">
    <bottom>
       <HBox alignment="CENTER" prefHeight="76.0" prefWidth="360.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btBack" alignment="CENTER" contentDisplay="CENTER" onAction="#switchToMainMenu" prefHeight="41.0" prefWidth="106.0" styleClass="optionButton" stylesheets="@../../Styles/button.css" text="BACK" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="btBack" alignment="CENTER" contentDisplay="CENTER" onAction="#switchToMainMenu" prefHeight="41.0" prefWidth="106.0" styleClass="changeButton" stylesheets="@../../Styles/normalButton.css" text="BACK" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font name="Gill Sans MT" size="18.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
             </Button>
          </children></HBox>
@@ -24,7 +24,7 @@
          <children>
             <Label fx:id="lbLS" alignment="CENTER" prefHeight="167.0" prefWidth="360.0" text="LANGUAGE SELECTION" textFill="WHITE">
                <font>
-                  <Font name="Gill Sans MT Bold" size="30.0" />
+                  <Font name="System Bold" size="30.0" />
                </font>
                <VBox.margin>
                   <Insets top="100.0" />
@@ -38,7 +38,7 @@
          <children>
             <Button fx:id="btSpanish" alignment="CENTER" contentDisplay="CENTER" onAction="#switchToSpanish" prefHeight="66.0" prefWidth="138.0" styleClass="nextButton" stylesheets="@../../Styles/redbutton.css" text="SPANISH" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font name="Gill Sans MT" size="24.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
                <VBox.margin>
                   <Insets bottom="10.0" />
@@ -46,7 +46,7 @@
             </Button>
             <Button fx:id="btEnglish" alignment="CENTER" contentDisplay="CENTER" onAction="#switchToEnglish" prefHeight="66.0" prefWidth="138.0" styleClass="nextButton" stylesheets="@../../Styles/yellowbutton.css" text="ENGLISH" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font name="Gill Sans MT" size="24.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
                <VBox.margin>
                   <Insets bottom="10.0" />
