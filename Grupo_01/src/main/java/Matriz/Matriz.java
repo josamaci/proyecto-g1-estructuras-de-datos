@@ -82,6 +82,8 @@ public class Matriz {
         
         Fila f = listaDeListas.get(numeroFila);
         
+        CircularList fLista = f.getLista();
+        
         int contadorPalabra = 0;
         
         if (f != null) {
@@ -104,24 +106,39 @@ public class Matriz {
                     int posicion = randomizador.nextInt(dimensiones);
                     
                     if (posicion + palabra.length() <= dimensiones) {
-
-                        for (char c : filaEnString.toCharArray()) {
-
-                            if (filaEnString.indexOf(c) >= posicion) {
-
+                        
+                        for (int i = 0; i < dimensiones; i++) {
+                            
+                            if (i >= posicion) {
+                                
                                 if (contadorPalabra < palabra.length()) {
-//                                    c = palabra.charAt(contadorPalabra);
-//                                    filaEnString = filaEnString.replace(c, palabra.charAt(contadorPalabra));
-                                    filaEnString = filaEnString.replaceFirst(Character.toString(c), Character.toString(palabra.charAt(contadorPalabra)));
+                                    
+                                    fLista.setAt(i, palabra.charAt(contadorPalabra));
                                     contadorPalabra++;
+                                    
                                 }
-                               
                             }
+                            
                         }
+                        
+//                        for (char c : filaEnString.toCharArray()) {
+//
+//                            if (filaEnString.indexOf(c) >= posicion) {
+//
+//                                if (contadorPalabra < palabra.length()) {
+////                                    c = palabra.charAt(contadorPalabra);
+////                                    filaEnString = filaEnString.replace(c, palabra.charAt(contadorPalabra));
+//                                    filaEnString = filaEnString.replaceFirst(Character.toString(c), Character.toString(palabra.charAt(contadorPalabra)));
+//                                    contadorPalabra++;
+//                                }
+//                               
+//                            }
+//                        }
                     }
                 }
             }
-            f.setContenido(filaEnString);
+            
+            f.setContenido(fLista);
             return true;
         }
         return false;
@@ -133,26 +150,38 @@ public class Matriz {
         
         for (Fila fila : listaDeListas) {
             
-            int contadorColumna = 0;
-            
             String p = fila.getContenido();
             
-            for (Character c : p.toCharArray()) {
-                if (contadorColumna == numeroColumna) {
-                    if (contadorPalabra < palabra.length()) {
-                        p = p.replace(c, palabra.charAt(contadorPalabra));
-                        // replace no siempre funciona hay que cambiar de estrategia
-                        fila.setContenido(p);
-                        contadorPalabra++;
-                        break;
-                    }
-                }
+            for (int i = 0; i < dimensiones; i++) {
+                
+                if (i == numeroColumna) {
 
-                else if (contadorPalabra > palabra.length() - 1) {
-                    return true;
+                    if (contadorPalabra < palabra.length()) {
+                        fila.getLista().setAt(i, palabra.charAt(contadorPalabra));
+                        fila.setContenido(fila.getLista());
+                        contadorPalabra++;
+                    }
+                    
                 }
-                contadorColumna++;
+                
             }
+            
+//            for (Character c : p.toCharArray()) {
+//                if (contadorColumna == numeroColumna) {
+//                    if (contadorPalabra < palabra.length()) {
+//                        p = p.replace(c, palabra.charAt(contadorPalabra));
+//                        // replace no siempre funciona hay que cambiar de estrategia
+//                        fila.setContenido(p);
+//                        contadorPalabra++;
+//                        break;
+//                    }
+//                }
+//
+//                else if (contadorPalabra > palabra.length() - 1) {
+//                    return true;
+//                }
+//                contadorColumna++;
+//            }
         }
         return false;
     } 
@@ -169,7 +198,7 @@ public class Matriz {
 //            return 1;
 //        }
         
-        return 2;
+        return 1;
     }
 
     public CircularList<Fila> getListaDeListas() {

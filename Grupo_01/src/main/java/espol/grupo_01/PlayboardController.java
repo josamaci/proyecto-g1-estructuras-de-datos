@@ -104,6 +104,7 @@ public class PlayboardController implements Initializable {
         }
         
         Matriz matriz = new Matriz(SettingBoardSizeController.buttonValue);
+        matriz.ponerPalabraEnLista("Hola");
         bpPlayboard.setCenter(matriz.getPanelMatriz());
     }    
 

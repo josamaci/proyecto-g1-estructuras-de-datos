@@ -22,6 +22,10 @@ public interface CircularList<E> extends Iterable<E>, Comparable<E>{
     
     public E get(int index);
     
-    public boolean set(int index, E e);
+    public boolean addAt(int index, E e);
+    
+    public E removeAt(int index);
+    
+    public boolean setAt(int index, E e);
     
 }

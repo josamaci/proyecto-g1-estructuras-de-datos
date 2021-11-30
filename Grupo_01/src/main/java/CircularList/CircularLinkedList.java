@@ -219,27 +219,79 @@ public class CircularLinkedList<E> implements CircularList<E> {
     }
 
     @Override
-    public boolean set(int index, E e) {
-        if (e != null) {
-            
-            int size = this.size();
-            int counter = 0;
+    public boolean setAt(int index, E e) {
+        if (e != null && index >= 0 && index < this.size()) {
             
             if (index == 0) {
                 this.addFirst(e);
+                return true;
             }
             
-            else if (index < size) {
-                CircularNodeList<E> i;
-                for (i = last.getNext(); i != this.last; i = i.getNext()) {
-                    if (counter == index) {
-                        i.setContent(e);
-                        return true;
-                    }
-                    counter++;
-                }
+            CircularNodeList<E> p = last.getNext();
+
+            for (int i = 0; i < index; i++) {
+                p = p.getNext();
             }
+
+            p.setContent(e);
+            
+            return true;
         }
         return false;
     }
+
+    @Override
+    public E removeAt(int index) {
+        
+        CircularNodeList<E> p = last.getNext();
+        
+        if (index >= 0 && index < this.size()) {
+            
+            if (index == 0) {
+                return this.removeFirst();
+            }
+
+            for (int i = 0; i < index; i++) {
+                p = p.getNext();
+            }
+
+            p.getPrevious().setNext(p.getNext());
+            p.getNext().setPrevious(p.getPrevious());
+            
+            p.setNext(p);
+            p.setPrevious(p);
+        }
+        return p.getContent();
+    }
+
+    @Override
+    public boolean addAt(int index, E e) {
+        
+        if (e != null && index >= 0 && index < this.size()) {
+
+            if (index == 0) {
+                this.addFirst(e);
+                return true;
+            }
+
+            CircularNodeList<E> newNode = new CircularNodeList<>(e);
+
+            CircularNodeList<E> p = last.getNext();
+
+            for (int i = 0; i < index; i++) {
+                p = p.getNext();
+            }
+
+            newNode.setNext(p.getNext());
+            p.getNext().setPrevious(newNode);
+
+            p.setNext(newNode);
+            newNode.setPrevious(p);
+
+            return true;
+        }
+        return false;
+        
+    }
+    
 }

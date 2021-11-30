@@ -49,7 +49,7 @@ public class Fila {
     
     public void setContenido(CircularList lista) {
         this.lista = lista;
-        llenarLista();
+        llenarContenido();
         actualizarPanel();
     }
 
