@@ -48,13 +48,33 @@ public class PlayboardController implements Initializable {
     private Label lblPoints1;
     @FXML
     private Button btSurrender;
+    @FXML
+    private Label lbPoints;
+    @FXML
+    private Label lbTime;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        if(Reader.language){
+            btAddColumn.setText("Add Column");
+            btDeleteRow.setText("Delete Row");
+            btAddRow.setText("Add Row");
+            btDeleteColumn.setText("Delete Column");
+            btSurrender.setText("Surrender");
+            lbPoints.setText("Points:");
+            lbTime.setText("Time to lose:");
+        }else{
+            btAddColumn.setText("+ Columna");
+            btDeleteRow.setText("- Fila");
+            btAddRow.setText("+ Fila");
+            btDeleteColumn.setText("- Columna");
+            btSurrender.setText("Rendirse");
+            lbPoints.setText("Puntos:");
+            lbTime.setText("Tiempo restante:");
+        }
     }    
 
     @FXML

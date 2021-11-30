@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 
 /**
@@ -30,13 +31,23 @@ public class CreditsController implements Initializable {
     private Button btMainMenu;
     @FXML
     private VBox vbCredits;
+    @FXML
+    private Label lbPoints;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        if(Reader.language){
+            lblWinLose.setText("YOU LOSE");
+            btMainMenu.setText("Main Menu");
+            lbPoints.setText("Points: ");
+        }else{
+            lblWinLose.setText("¡HAS PERDIDO!");
+            btMainMenu.setText("Menú principal");
+            lbPoints.setText("Puntos: ");
+        }
     }    
 
     @FXML
