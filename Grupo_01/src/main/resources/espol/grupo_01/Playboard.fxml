@@ -78,7 +78,7 @@
                         <Insets left="10.0" right="10.0" top="8.0" />
                      </HBox.margin>
                   </Label>
-                  <Label fx:id="lblPoints1" text="90" textFill="WHITE">
+                  <Label fx:id="lblTime" text="90" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>

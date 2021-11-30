@@ -5,11 +5,15 @@
 package espol.grupo_01;
 
 import java.io.IOException;
+import static java.lang.Thread.sleep;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
@@ -45,13 +49,13 @@ public class PlayboardController implements Initializable {
     @FXML
     private BorderPane bpPlayboard;
     @FXML
-    private Label lblPoints1;
-    @FXML
     private Button btSurrender;
     @FXML
     private Label lbPoints;
     @FXML
     private Label lbTime;
+    @FXML
+    private Label lblTime;
 
     /**
      * Initializes the controller class.
@@ -74,6 +78,12 @@ public class PlayboardController implements Initializable {
             btSurrender.setText("Rendirse");
             lbPoints.setText("Puntos:");
             lbTime.setText("Tiempo restante:");
+        }
+        if(!Reader.difficulty){
+            ContadorTiempo ct = new ContadorTiempo();
+            Thread t = new Thread(ct);
+            t.setDaemon(true);
+            t.start();
         }
     }    
 
@@ -98,4 +108,31 @@ public class PlayboardController implements Initializable {
         App.setRoot("Credits");
     }
     
+    private class ContadorTiempo implements Runnable{
+        @Override
+        public void run(){
+            try{
+                while(Reader.cont>0){
+                sleep(1000);
+                Reader.cont--;
+                Platform.runLater(()->{
+                lblTime.setText(String.valueOf(Reader.cont));});
+                }
+            }catch(InterruptedException ex){
+                ex.getMessage();
+            }
+            
+            try {
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("creditos.fxml"));
+            Parent root = fxmlLoader.load();
+            CreditsController cc = fxmlLoader.<CreditsController>getController();
+            cc.setPoints(lblPoints.getText());
+            App.setRoot("Credits");
+            
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+            
+        }
+    }
 }

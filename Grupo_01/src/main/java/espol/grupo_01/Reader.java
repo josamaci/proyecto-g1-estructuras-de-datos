@@ -7,8 +7,9 @@ import java.io.InputStreamReader;
 public class Reader {
     public static boolean language = true;
     public static String category = "Fruits";
-    public static boolean difficulty = true;
+    public static boolean difficulty = false;
     public static int size = 7;
+    public static int cont = 90;
     
     public static DoublyLinkedList<String> Read(String nameFile){
         DoublyLinkedList<String> words = new DoublyLinkedList<>();

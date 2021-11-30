@@ -55,4 +55,7 @@ public class CreditsController implements Initializable {
         App.setRoot("MainMenu");
     }
     
+    public void setPoints(String s){
+        lblPoints.setText(s);
+    }
 }
