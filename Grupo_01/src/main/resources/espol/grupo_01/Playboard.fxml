@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="bpPlayboard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="360.0" styleClass="bpPlayboard" stylesheets="@../../Styles/playboardfxml.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="espol.grupo_01.PlayboardController">
+<BorderPane fx:id="bpPlayboard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="360.0" styleClass="bpPlayboard" stylesheets="@../../Styles/playboardfxml.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="espol.grupo_01.PlayboardController">
    <center>
       <GridPane fx:id="gBoard" alignment="CENTER" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -43,7 +43,7 @@
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label prefHeight="30.0" prefWidth="74.0" text="Points:" textFill="WHITE">
+                  <Label fx:id="lbPoints" prefHeight="30.0" prefWidth="74.0" text="Points:" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font></Label>
@@ -70,7 +70,7 @@
             </HBox>
             <HBox prefHeight="48.0" prefWidth="360.0">
                <children>
-                  <Label prefHeight="30.0" prefWidth="168.0" text="Tiempo restante:" textFill="WHITE">
+                  <Label fx:id="lbTime" prefHeight="30.0" prefWidth="168.0" text="Time to lose:" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
