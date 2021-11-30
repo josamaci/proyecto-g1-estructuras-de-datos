@@ -103,9 +103,9 @@ public class PlayboardController implements Initializable {
             words = Reader.Read(Reader.category);
         }
         
-        Matriz matriz = new Matriz(SettingBoardSizeController.buttonValue);
-        matriz.ponerPalabraEnLista("Hola");
-        bpPlayboard.setCenter(matriz.getPanelMatriz());
+//        Matriz matriz = new Matriz(SettingBoardSizeController.buttonValue);
+//        matriz.ponerPalabraEnLista("Hola");
+//        bpPlayboard.setCenter(matriz.getPanelMatriz());
     }    
 
     @FXML
