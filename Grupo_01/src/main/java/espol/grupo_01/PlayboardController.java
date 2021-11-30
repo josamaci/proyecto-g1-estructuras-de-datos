@@ -4,6 +4,7 @@
  */
 package espol.grupo_01;
 
+import TDAs.DoublyLinkedList;
 import java.io.IOException;
 import static java.lang.Thread.sleep;
 import java.net.URL;
@@ -85,6 +86,23 @@ public class PlayboardController implements Initializable {
             t.setDaemon(true);
             t.start();
         }
+        DoublyLinkedList<String> words = new DoublyLinkedList<>();
+        if(Reader.category.equals("Aleatorio") || Reader.category.equals("Random")){
+            DoublyLinkedList<String> cats = new DoublyLinkedList<>();
+            if(Reader.category.equals("Aleatorio")){
+                cats.addLast("Animales.txt");
+                cats.addLast("Colores.txt");
+                cats.addLast("Frutas.txt");
+            }
+            if(Reader.category.equals("Random")){
+                cats.addLast("Animals.txt");
+                cats.addLast("Colors.txt");
+                cats.addLast("Fruits.txt");
+            }
+            words = Reader.ReadAll(cats);
+        }else{
+            words = Reader.Read(Reader.category);
+        }
     }    
 
     @FXML
@@ -123,7 +141,7 @@ public class PlayboardController implements Initializable {
             }
             
             try {
-            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("creditos.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("Credits.fxml"));
             Parent root = fxmlLoader.load();
             CreditsController cc = fxmlLoader.<CreditsController>getController();
             cc.setPoints(lblPoints.getText());
