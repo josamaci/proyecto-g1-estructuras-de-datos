@@ -75,5 +75,6 @@ public class SettingCategoryController implements Initializable {
     private void switchToGameMode(ActionEvent event) throws IOException {
         App.setRoot("SettingGameMode");
     }
+    
 
 }

@@ -59,7 +59,7 @@
             </Label>
             <HBox alignment="CENTER" prefHeight="124.0" prefWidth="362.0">
                <children>
-                  <ToggleButton fx:id="btBoard7" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="optionButton" stylesheets="@../../Styles/toggleButton.css" text="7x7">
+                  <ToggleButton fx:id="btBoard7" mnemonicParsing="false" onAction="#value7" prefHeight="100.0" prefWidth="100.0" styleClass="optionButton" stylesheets="@../../Styles/toggleButton.css" text="7x7">
                      <font>
                         <Font name="Gill Sans MT" size="23.0" />
                      </font>
@@ -70,7 +70,7 @@
                         <Insets right="25.0" top="10.0" />
                      </HBox.margin>
                   </ToggleButton>
-                  <ToggleButton fx:id="btBoard9" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="optionButton" stylesheets="@../../Styles/toggleButton.css" text="9x9" toggleGroup="$btGroupBoardSize">
+                  <ToggleButton fx:id="btBoard9" mnemonicParsing="false" onAction="#value9" prefHeight="100.0" prefWidth="100.0" styleClass="optionButton" stylesheets="@../../Styles/toggleButton.css" text="9x9" toggleGroup="$btGroupBoardSize">
                      <font>
                         <Font name="Gill Sans MT" size="23.0" />
                      </font>
@@ -88,7 +88,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="120.0" prefWidth="362.0">
                <children>
-                  <ToggleButton fx:id="btBoard11" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="optionButton" stylesheets="@../../Styles/toggleButton.css" text="11x11" toggleGroup="$btGroupBoardSize">
+                  <ToggleButton fx:id="btBoard11" mnemonicParsing="false" onAction="#value11" prefHeight="100.0" prefWidth="100.0" styleClass="optionButton" stylesheets="@../../Styles/toggleButton.css" text="11x11" toggleGroup="$btGroupBoardSize">
                      <font>
                         <Font name="Gill Sans MT" size="23.0" />
                      </font>
@@ -96,7 +96,7 @@
                         <Insets right="25.0" />
                      </HBox.margin>
                   </ToggleButton>
-                  <ToggleButton fx:id="btBoard13" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="optionButton" stylesheets="@../../Styles/toggleButton.css" text="13x13" toggleGroup="$btGroupBoardSize">
+                  <ToggleButton fx:id="btBoard13" mnemonicParsing="false" onAction="#value13" prefHeight="100.0" prefWidth="100.0" styleClass="optionButton" stylesheets="@../../Styles/toggleButton.css" text="13x13" toggleGroup="$btGroupBoardSize">
                      <font>
                         <Font name="Gill Sans MT" size="23.0" />
                      </font>
@@ -111,7 +111,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="115.0" prefWidth="362.0">
                <children>
-                  <ToggleButton fx:id="btBoardR" mnemonicParsing="false" prefHeight="90.0" prefWidth="132.0" styleClass="optionButton" stylesheets="@../../Styles/toggleButton.css" text="Random!" toggleGroup="$btGroupBoardSize">
+                  <ToggleButton fx:id="btBoardR" mnemonicParsing="false" onAction="#valueR" prefHeight="90.0" prefWidth="132.0" styleClass="optionButton" stylesheets="@../../Styles/toggleButton.css" text="Random!" toggleGroup="$btGroupBoardSize">
                      <font>
                         <Font name="Gill Sans MT" size="23.0" />
                      </font>

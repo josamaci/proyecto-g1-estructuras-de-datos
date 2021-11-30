@@ -6,6 +6,7 @@ package espol.grupo_01;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,6 +14,7 @@ import javafx.fxml.Initializable;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.MouseEvent;
@@ -31,6 +33,7 @@ public class SettingBoardSizeController implements Initializable {
     private Button btBackToTitle;
     @FXML
     private ToggleButton btBoard7;
+    
     @FXML
     private ToggleButton btBoard9;
     @FXML
@@ -46,6 +49,7 @@ public class SettingBoardSizeController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        //btBoardR.setUserData(xR);
         btNextSetting.setDisable(false);
         if(Reader.language){
             btNextSetting.setText("Got it! Now what?");
@@ -56,7 +60,8 @@ public class SettingBoardSizeController implements Initializable {
             btBoardR.setText("Aleatorio");
             lbTitle.setText("Tamaño del Tablero");
         }
-    }    
+    }
+    
     @FXML
     private void switchToCategory(ActionEvent event) throws IOException {
         App.setRoot("SettingCategory");
@@ -65,5 +70,25 @@ public class SettingBoardSizeController implements Initializable {
     @FXML
     private void switchToMainMenu(ActionEvent event) throws IOException {
         App.setRoot("MainMenu");
+    }
+    @FXML
+    private Integer value7(ActionEvent event) throws IOException {
+        return 7;
+    }
+    @FXML
+    private Integer value9(ActionEvent event) throws IOException {
+        return 9;
+    }
+    @FXML
+    private Integer value11(ActionEvent event) throws IOException {
+        return 11;
+    }
+    @FXML
+    private Integer value13(ActionEvent event) throws IOException {
+        return 13;
+    }
+    @FXML
+    private Integer valueR(ActionEvent event) throws IOException {
+        return 0;
     }
 }
