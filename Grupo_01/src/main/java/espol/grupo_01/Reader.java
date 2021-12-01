@@ -61,4 +61,32 @@ public class Reader {
             }
         return random;
     }
+    
+    public static Set<String> randomNumbers(int numNumbers){
+        Set<String> random = new TreeSet<>();
+            while(numNumbers>0){
+                int r = (int)(Math.random()*4)+1;
+                int m = 0;
+                switch(r){
+                    case 1:
+                        m = 1000;
+                        break;
+                    case 2:
+                        m = 10000;
+                        break;
+                    case 3:
+                        m = 100000;
+                        break;
+                    case 4:
+                        m = 1000000;
+                        break;
+                    default:
+                        m = 1000000;
+                }
+                int val = (int)(Math.random()*m)+1;
+                    random.add(String.valueOf(val));
+                    numNumbers--;
+            }
+        return random;
+    }
 }

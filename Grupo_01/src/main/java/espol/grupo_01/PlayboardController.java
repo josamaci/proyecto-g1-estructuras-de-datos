@@ -58,72 +58,16 @@ public class PlayboardController implements Initializable {
     private Label lbTime;
     @FXML
     private Label lblTime;
-
+    private Set<String> random;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        if(Reader.language){
-            btAddColumn.setText("Add Column");
-            btDeleteRow.setText("Delete Row");
-            btAddRow.setText("Add Row");
-            btDeleteColumn.setText("Delete Column");
-            btSurrender.setText("Surrender");
-            lbPoints.setText("Points:");
-            lbTime.setText("Time to lose:");
-        }else{
-            btAddColumn.setText("+ Columna");
-            btDeleteRow.setText("- Fila");
-            btAddRow.setText("+ Fila");
-            btDeleteColumn.setText("- Columna");
-            btSurrender.setText("Rendirse");
-            lbPoints.setText("Puntos:");
-            lbTime.setText("Tiempo restante:");
-        }
-        if(Reader.difficulty){
-            lbTime.setVisible(true);
-            lblTime.setVisible(true);
-            Reader.cont = 90;
-            ContadorTiempo ct = new ContadorTiempo();
-            Thread t = new Thread(ct);
-            t.setDaemon(true);
-            t.start();
-        }else{
-            Reader.cont = 1000000;
-            lbTime.setVisible(false);
-            lblTime.setVisible(false);
-        }
+        setLanguage();
+        setDifficulty();
+        generate();
         
-        DoublyLinkedList<String> words = new DoublyLinkedList<>();
-        
-        if(!Reader.category.equals("Numbers")){
-        if(Reader.category.equals("Aleatorio") || Reader.category.equals("Random")){
-            DoublyLinkedList<String> cats = new DoublyLinkedList<>();
-            if(Reader.category.equals("Aleatorio")){
-                cats.addFirst("Animales.txt");
-                cats.addFirst("Colores.txt");
-                cats.addFirst("Frutas.txt");
-            }
-            if(Reader.category.equals("Random")){
-                cats.addFirst("Animals.txt");
-                cats.addFirst("Colors.txt");
-                cats.addFirst("Fruits.txt");
-            }
-            words = Reader.ReadAll(cats);
-        }else{
-            words = Reader.Read(Reader.category);
-        }
-        }else{
-            
-        }
-        
-        Set<String> random = new TreeSet<>();
-        
-        random = Reader.randomize(words, 5);
-        for(String s:random){
-            System.out.println(s);
-        }
 //        Matriz matriz = new Matriz(SettingBoardSizeController.buttonValue);
 //        matriz.ponerPalabraEnLista("Hola");
 //        bpPlayboard.setCenter(matriz.getPanelMatriz());
@@ -150,6 +94,73 @@ public class PlayboardController implements Initializable {
         Reader.cont=0;
         App.setRoot("Credits");
     }
+    
+    private void setLanguage(){
+        if(Reader.language){
+            btAddColumn.setText("Add Column");
+            btDeleteRow.setText("Delete Row");
+            btAddRow.setText("Add Row");
+            btDeleteColumn.setText("Delete Column");
+            btSurrender.setText("Surrender");
+            lbPoints.setText("Points:");
+            lbTime.setText("Time to lose:");
+        }else{
+            btAddColumn.setText("+ Columna");
+            btDeleteRow.setText("- Fila");
+            btAddRow.setText("+ Fila");
+            btDeleteColumn.setText("- Columna");
+            btSurrender.setText("Rendirse");
+            lbPoints.setText("Puntos:");
+            lbTime.setText("Tiempo restante:");
+        }
+    }
+
+    private void setDifficulty() {
+        if(Reader.difficulty){
+            lbTime.setVisible(true);
+            lblTime.setVisible(true);
+            Reader.cont = 90;
+            ContadorTiempo ct = new ContadorTiempo();
+            Thread t = new Thread(ct);
+            t.setDaemon(true);
+            t.start();
+        }else{
+            Reader.cont = 1000000;
+            lbTime.setVisible(false);
+            lblTime.setVisible(false);
+        }
+    }
+
+    private void generate() {
+        DoublyLinkedList<String> words = new DoublyLinkedList<>();
+        random = new TreeSet<>();
+        if(!Reader.category.equals("Numbers")){
+            if(Reader.category.equals("Aleatorio") || Reader.category.equals("Random")){
+                DoublyLinkedList<String> cats = new DoublyLinkedList<>();
+                if(Reader.category.equals("Aleatorio")){
+                    cats.addFirst("Animales.txt");
+                    cats.addFirst("Colores.txt");
+                    cats.addFirst("Frutas.txt");
+                }
+                if(Reader.category.equals("Random")){
+                    cats.addFirst("Animals.txt");
+                    cats.addFirst("Colors.txt");
+                    cats.addFirst("Fruits.txt");
+                }
+                words = Reader.ReadAll(cats);
+            }else{
+                words = Reader.Read(Reader.category);
+            }
+            random = Reader.randomize(words, 5);
+        }else{
+            random = Reader.randomNumbers(5);
+        }
+        
+        for(String s:random){
+                System.out.println(s);
+            }
+    }
+    
     
     private class ContadorTiempo implements Runnable{
         @Override
