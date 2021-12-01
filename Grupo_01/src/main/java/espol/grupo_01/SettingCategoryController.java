@@ -53,7 +53,7 @@ public class SettingCategoryController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        btCategoryAnimal.setDisable(false);
+        btNextSetting2.setDisable(true);
         if (Reader.language) {
             btCategoryAnimal.setText("Animals");
             btCategoryColor.setText("Colors");
@@ -65,13 +65,9 @@ public class SettingCategoryController implements Initializable {
             btCategoryAnimal.setText("Animales");
             btCategoryColor.setText("Colores");
             btCategoryFruit.setText("Frutas");
+            btCategoryNumber.setText("Números");
             lbTitle.setText("Ahora, ¡escoge una categoría!");
             btNextSetting2.setText("Listo, ¿ahora qué?");
-        }
-        if (btGroupCategory.getSelectedToggle() == null){
-            btNextSetting2.setDisable(true);
-        } else {
-            btNextSetting2.setDisable(false);
         }
     }
 
@@ -92,6 +88,7 @@ public class SettingCategoryController implements Initializable {
         } else {
             buttonCat = "Animales.txt";
         }
+        btNextSetting2.setDisable(false);
     }
 
     @FXML
@@ -101,6 +98,7 @@ public class SettingCategoryController implements Initializable {
         } else {
             buttonCat = "Colores.txt";
         }
+        btNextSetting2.setDisable(false);
     }
 
     @FXML
@@ -110,11 +108,13 @@ public class SettingCategoryController implements Initializable {
         } else {
             buttonCat = "Frutas.txt";
         }
+        btNextSetting2.setDisable(false);
     }
 
     @FXML
     private void catNumbers(ActionEvent event) {
-        buttonCat = "Numbers.txt";
+        buttonCat = "Numbers";
+        btNextSetting2.setDisable(false);
     }
 
     @FXML
@@ -124,5 +124,6 @@ public class SettingCategoryController implements Initializable {
         } else {
             buttonCat = "Aleatorio";
         }
+        btNextSetting2.setDisable(false);
     }
 }

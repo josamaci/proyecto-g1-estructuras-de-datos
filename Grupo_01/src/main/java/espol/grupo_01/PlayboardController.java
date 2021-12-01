@@ -89,6 +89,7 @@ public class PlayboardController implements Initializable {
         }
         DoublyLinkedList<String> words = new DoublyLinkedList<>();
         
+        if(!Reader.category.equals("Numbers")){
         if(Reader.category.equals("Aleatorio") || Reader.category.equals("Random")){
             DoublyLinkedList<String> cats = new DoublyLinkedList<>();
             if(Reader.category.equals("Aleatorio")){
@@ -104,6 +105,9 @@ public class PlayboardController implements Initializable {
             words = Reader.ReadAll(cats);
         }else{
             words = Reader.Read(Reader.category);
+        }
+        }else{
+        
         }
         
         Set<String> random = new TreeSet<>();
