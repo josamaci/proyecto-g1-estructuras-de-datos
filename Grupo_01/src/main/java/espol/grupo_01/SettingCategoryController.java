@@ -47,7 +47,6 @@ public class SettingCategoryController implements Initializable {
     @FXML
     private ToggleGroup btGroupCategory1;
     
-    protected static String buttonCat;
     /**
      * Initializes the controller class.
      */
@@ -84,9 +83,9 @@ public class SettingCategoryController implements Initializable {
     @FXML
     private void catAnimals(ActionEvent event) {
         if (Reader.language) {
-            buttonCat = "Animals.txt";
+            Reader.category = "Animals.txt";
         } else {
-            buttonCat = "Animales.txt";
+            Reader.category = "Animales.txt";
         }
         btNextSetting2.setDisable(false);
     }
@@ -94,9 +93,9 @@ public class SettingCategoryController implements Initializable {
     @FXML
     private void catColors(ActionEvent event) {
         if (Reader.language) {
-            buttonCat = "Colors.txt";
+            Reader.category = "Colors.txt";
         } else {
-            buttonCat = "Colores.txt";
+            Reader.category = "Colores.txt";
         }
         btNextSetting2.setDisable(false);
     }
@@ -104,25 +103,25 @@ public class SettingCategoryController implements Initializable {
     @FXML
     private void catFruits(ActionEvent event) {
         if (Reader.language) {
-            buttonCat = "Fruits.txt";
+            Reader.category = "Fruits.txt";
         } else {
-            buttonCat = "Frutas.txt";
+            Reader.category = "Frutas.txt";
         }
         btNextSetting2.setDisable(false);
     }
 
     @FXML
     private void catNumbers(ActionEvent event) {
-        buttonCat = "Numbers";
+        Reader.category = "Numbers";
         btNextSetting2.setDisable(false);
     }
 
     @FXML
     private void catRandom(ActionEvent event) {
         if (Reader.language) {
-            buttonCat = "Random";
+            Reader.category = "Random";
         } else {
-            buttonCat = "Aleatorio";
+            Reader.category = "Aleatorio";
         }
         btNextSetting2.setDisable(false);
     }

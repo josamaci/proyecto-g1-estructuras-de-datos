@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="pSettings" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="361.0" styleClass="pSettings" stylesheets="@../../Styles/settinggamemode.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="espol.grupo_01.SettingGameModeController">
+<Pane fx:id="pSettings" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="361.0" styleClass="pSettings" stylesheets="@../../Styles/settinggamemode.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="espol.grupo_01.SettingGameModeController">
    <children>
       <VBox alignment="CENTER" prefHeight="640.0" prefWidth="361.0">
          <children>
@@ -59,7 +59,7 @@
             </Label>
             <HBox alignment="BOTTOM_CENTER" prefHeight="124.0" prefWidth="362.0">
                <children>
-                  <ToggleButton fx:id="btNormalMode" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" styleClass="optionButton" stylesheets="@../../Styles/toggleButton.css" text="Normal">
+                  <ToggleButton fx:id="btNormalMode" contentDisplay="CENTER" mnemonicParsing="false" onAction="#gmNormal" prefHeight="100.0" prefWidth="200.0" styleClass="optionButton" stylesheets="@../../Styles/toggleButton.css" text="Normal">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
@@ -80,7 +80,7 @@
             </HBox>
             <HBox alignment="BOTTOM_CENTER" prefHeight="124.0" prefWidth="362.0">
                <children>
-                  <ToggleButton fx:id="btExtremeMode" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" styleClass="optionButton" stylesheets="@../../Styles/toggleButton.css" text="Extreme" textAlignment="CENTER" toggleGroup="$btGroupGameMode">
+                  <ToggleButton fx:id="btExtremeMode" contentDisplay="CENTER" mnemonicParsing="false" onAction="#gmExtreme" prefHeight="100.0" prefWidth="200.0" styleClass="optionButton" stylesheets="@../../Styles/toggleButton.css" text="Extreme" textAlignment="CENTER" toggleGroup="$btGroupGameMode">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>

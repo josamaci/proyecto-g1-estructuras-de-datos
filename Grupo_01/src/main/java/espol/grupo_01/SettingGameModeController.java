@@ -39,7 +39,6 @@ public class SettingGameModeController implements Initializable {
     @FXML
     private Label lbTitle;
     
-    protected static String buttonGameMode;
     /**
      * Initializes the controller class.
      */
@@ -69,14 +68,10 @@ public class SettingGameModeController implements Initializable {
 
     @FXML
     private void gmNormal(ActionEvent event) throws IOException {
-        buttonGameMode = "Normal";
+        Reader.difficulty = false;
     }
     @FXML
     private void gmExtreme(ActionEvent event) throws IOException {
-        if (Reader.language) {
-            buttonGameMode = "Extreme";
-        } else {
-            buttonGameMode = "Extremo";
-        }
+        Reader.difficulty = true;
     }
 }

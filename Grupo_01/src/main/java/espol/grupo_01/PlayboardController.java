@@ -81,12 +81,20 @@ public class PlayboardController implements Initializable {
             lbPoints.setText("Puntos:");
             lbTime.setText("Tiempo restante:");
         }
-        if(!Reader.difficulty){
+        if(Reader.difficulty){
+            lbTime.setVisible(true);
+            lblTime.setVisible(true);
+            lblTime.setText("90");
             ContadorTiempo ct = new ContadorTiempo();
             Thread t = new Thread(ct);
             t.setDaemon(true);
             t.start();
+        }else{
+            lblTime.setText("1000000");
+            lbTime.setVisible(false);
+            lblTime.setVisible(false);
         }
+        
         DoublyLinkedList<String> words = new DoublyLinkedList<>();
         
         if(!Reader.category.equals("Numbers")){
@@ -107,7 +115,7 @@ public class PlayboardController implements Initializable {
             words = Reader.Read(Reader.category);
         }
         }else{
-        
+            
         }
         
         Set<String> random = new TreeSet<>();
