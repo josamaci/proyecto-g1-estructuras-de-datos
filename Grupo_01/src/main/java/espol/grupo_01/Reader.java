@@ -14,6 +14,7 @@ public class Reader {
     public static boolean difficulty = false;
     public static int size = 7;
     public static int cont = 120;
+    public static int punt = 0;
     
     public static DoublyLinkedList<String> Read(String nameFile){
         DoublyLinkedList<String> words = new DoublyLinkedList<>();

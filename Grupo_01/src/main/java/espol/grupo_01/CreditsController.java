@@ -48,14 +48,14 @@ public class CreditsController implements Initializable {
             btMainMenu.setText("Menú principal");
             lbPoints.setText("Puntos: ");
         }
+        lblPoints.setText(String.valueOf(Reader.punt));
     }    
 
     @FXML
     private void backToTheTitle(ActionEvent event) throws IOException{
+        Reader.punt=0;
+        Reader.cont=120;
         App.setRoot("MainMenu");
     }
     
-    public void setPoints(String s){
-        lblPoints.setText(s);
-    }
 }

@@ -64,6 +64,8 @@ public class PlayboardController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        lblTime.setText(String.valueOf(Reader.cont));
+        lblPoints.setText(String.valueOf(Reader.punt));
         setLanguage();
         setDifficulty();
         generate();
@@ -168,18 +170,16 @@ public class PlayboardController implements Initializable {
                 while(Reader.cont>0){
                 sleep(1000);
                 Reader.cont--;
+                Reader.punt++;
                 Platform.runLater(()->{
-                lblTime.setText(String.valueOf(Reader.cont));});
+                lblTime.setText(String.valueOf(Reader.cont));
+                lblPoints.setText(String.valueOf(Reader.punt));});
                 }
             }catch(InterruptedException ex){
                 ex.getMessage();
             }
             
             try {
-            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("Credits.fxml"));
-            Parent root = fxmlLoader.load();
-            CreditsController cc = fxmlLoader.<CreditsController>getController();
-            cc.setPoints(lblPoints.getText());
             App.setRoot("Credits");
             
         } catch (IOException ex) {
