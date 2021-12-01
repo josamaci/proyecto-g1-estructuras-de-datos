@@ -38,7 +38,8 @@ public class SettingGameModeController implements Initializable {
     private Button btPlayboard;
     @FXML
     private Label lbTitle;
-
+    
+    protected static String buttonGameMode;
     /**
      * Initializes the controller class.
      */
@@ -66,5 +67,16 @@ public class SettingGameModeController implements Initializable {
         App.setRoot("Playboard");
     }
 
-    
+    @FXML
+    private void gmNormal(ActionEvent event) throws IOException {
+        buttonGameMode = "Normal";
+    }
+    @FXML
+    private void gmExtreme(ActionEvent event) throws IOException {
+        if (Reader.language) {
+            buttonGameMode = "Extreme";
+        } else {
+            buttonGameMode = "Extremo";
+        }
+    }
 }

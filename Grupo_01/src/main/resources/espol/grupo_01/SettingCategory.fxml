@@ -19,7 +19,7 @@
                <children>
                   <HBox alignment="TOP_CENTER" prefHeight="86.0" prefWidth="67.0">
                      <children>
-                        <Button fx:id="btBackToBS" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#switchToBoardSize" prefHeight="62.0" prefWidth="75.0" styleClass="changeButton" stylesheets="@../../Styles/normalButton.css" text="←">
+                        <Button fx:id="btBackToBS" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#switchToBoardSize" prefHeight="62.0" prefWidth="75.0" styleClass="backButton" stylesheets="@../../Styles/normalButton.css" text="←">
                            <font>
                               <Font size="21.0" />
                            </font>
@@ -51,15 +51,15 @@
             </HBox>
             <Label fx:id="lbTitle" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="351.0" text="Second, choose a category!" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font name="Gill Sans MT Bold" size="25.0" />
+                  <Font name="System Bold" size="25.0" />
                </font>
                <VBox.margin>
-                  <Insets left="10.0" />
+                  <Insets />
                </VBox.margin>
             </Label>
             <HBox alignment="CENTER" prefHeight="124.0" prefWidth="362.0">
                <children>
-                  <ToggleButton fx:id="btCategoryAnimal" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" styleClass="optionButton" stylesheets="@../../Styles/toggleButton.css" text="Animals">
+                  <ToggleButton fx:id="btCategoryAnimal" mnemonicParsing="false" onAction="#catAnimals" prefHeight="90.0" prefWidth="160.0" styleClass="optionButton" stylesheets="@../../Styles/toggleButton.css" text="Animals">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
@@ -70,22 +70,12 @@
                         <ToggleGroup fx:id="btGroupCategory" />
                      </toggleGroup>
                   </ToggleButton>
-               </children>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <VBox.margin>
-                  <Insets bottom="10.0" />
-               </VBox.margin>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="124.0" prefWidth="362.0">
-               <children>
-                  <ToggleButton fx:id="btCateogrySports" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" styleClass="optionButton" stylesheets="@../../Styles/toggleButton.css" text="Sports" toggleGroup="$btGroupCategory">
+                  <ToggleButton fx:id="btCategoryColor" mnemonicParsing="false" onAction="#catColors" prefHeight="90.0" prefWidth="160.0" styleClass="optionButton" stylesheets="@../../Styles/toggleButton.css" text="Colors" toggleGroup="$btGroupCategory">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
                      <HBox.margin>
-                        <Insets />
+                        <Insets left="10.0" />
                      </HBox.margin>
                   </ToggleButton>
                </children>
@@ -93,27 +83,47 @@
                   <Insets />
                </opaqueInsets>
                <VBox.margin>
-                  <Insets bottom="10.0" />
+                  <Insets />
                </VBox.margin>
             </HBox>
             <HBox alignment="CENTER" prefHeight="124.0" prefWidth="362.0">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
                <children>
-                  <ToggleButton fx:id="btCategoryFruits" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" styleClass="optionButton" stylesheets="@../../Styles/toggleButton.css" text="Fruits" toggleGroup="$btGroupCategory">
+                  <ToggleButton fx:id="btCategoryFruit" mnemonicParsing="false" onAction="#catFruits" prefHeight="90.0" prefWidth="160.0" styleClass="optionButton" stylesheets="@../../Styles/toggleButton.css" text="Fruits" toggleGroup="$btGroupCategory">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton fx:id="btCategoryNumber" mnemonicParsing="false" onAction="#catNumbers" prefHeight="90.0" prefWidth="160.0" styleClass="optionButton" stylesheets="@../../Styles/toggleButton.css" text="Numbers" toggleGroup="$btGroupCategory">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ToggleButton>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="124.0" prefWidth="362.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <ToggleButton fx:id="btCategoryRandom" mnemonicParsing="false" onAction="#catRandom" prefHeight="90.0" prefWidth="160.0" styleClass="optionButton" stylesheets="@../../Styles/toggleButton.css" text="Random!" toggleGroup="$btGroupCategory">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </ToggleButton>
                </children>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="btNextSetting2" alignment="CENTER" mnemonicParsing="false" onAction="#switchToGameMode" prefHeight="50.0" prefWidth="291.0" styleClass="changeButton" stylesheets="@../../Styles/normalButton.css" text="OK! And then?" textFill="WHITE">
+                  <Button fx:id="btNextSetting2" alignment="CENTER" mnemonicParsing="false" onAction="#switchToGameMode" prefHeight="50.0" prefWidth="291.0" styleClass="changeButton" stylesheets="@../../Styles/normalButton.css" text="OK! And then?">
                      <font>
                         <Font name="System Bold Italic" size="24.0" />
                      </font>

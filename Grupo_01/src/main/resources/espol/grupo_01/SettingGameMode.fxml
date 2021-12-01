@@ -19,9 +19,9 @@
                <children>
                   <HBox alignment="TOP_CENTER" prefHeight="86.0" prefWidth="67.0">
                      <children>
-                        <Button fx:id="btBackToCat" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#switchToCategory" prefHeight="62.0" prefWidth="75.0" styleClass="changeButton" stylesheets="@../../Styles/normalButton.css" text="←">
+                        <Button fx:id="btBackToCat" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#switchToCategory" prefHeight="62.0" prefWidth="75.0" styleClass="backButton" stylesheets="@../../Styles/normalButton.css" text="←">
                            <font>
-                              <Font name="System Italic" size="17.0" />
+                              <Font name="System Bold" size="21.0" />
                            </font>
                            <HBox.margin>
                               <Insets left="10.0" right="10.0" top="10.0" />
@@ -51,10 +51,10 @@
             </HBox>
             <Label fx:id="lbTitle" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="351.0" text="Finally, choose a game mode!" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font name="Gill Sans MT Bold" size="25.0" />
+                  <Font name="System Bold" size="25.0" />
                </font>
                <VBox.margin>
-                  <Insets left="10.0" />
+                  <Insets />
                </VBox.margin>
             </Label>
             <HBox alignment="BOTTOM_CENTER" prefHeight="124.0" prefWidth="362.0">
@@ -75,7 +75,7 @@
                   <Insets />
                </opaqueInsets>
                <VBox.margin>
-                  <Insets bottom="10.0" />
+                  <Insets bottom="10.0" top="10.0" />
                </VBox.margin>
             </HBox>
             <HBox alignment="BOTTOM_CENTER" prefHeight="124.0" prefWidth="362.0">
@@ -98,12 +98,18 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="362.0">
                <children>
-                  <Button fx:id="btPlayboard" alignment="CENTER" mnemonicParsing="false" onAction="#switchToPlayboard" prefHeight="50.0" prefWidth="291.0" styleClass="changeButton" stylesheets="@../../Styles/normalButton.css" text="Let's rock!" textFill="WHITE">
+                  <Button fx:id="btPlayboard" alignment="CENTER" mnemonicParsing="false" onAction="#switchToPlayboard" prefHeight="50.0" prefWidth="291.0" styleClass="changeButton" stylesheets="@../../Styles/normalButton.css" text="Let's rock!">
                      <font>
-                        <Font name="System Bold" size="24.0" />
+                        <Font name="System Bold Italic" size="24.0" />
                      </font>
                   </Button>
                </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets top="110.0" />
+               </VBox.margin>
             </HBox>
          </children>
       </VBox>

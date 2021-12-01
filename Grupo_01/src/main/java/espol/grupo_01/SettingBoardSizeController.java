@@ -25,7 +25,7 @@ import javafx.scene.layout.Pane;
  * @author kevin
  */
 public class SettingBoardSizeController implements Initializable {
-        @FXML
+    @FXML
     private ToggleGroup btGroupBoardSize;
     @FXML
     private Button btNextSetting;
@@ -45,13 +45,12 @@ public class SettingBoardSizeController implements Initializable {
     @FXML
     private Label lbTitle;
     
-    protected static int buttonValue;
+    protected static double buttonValue;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //btBoardR.setUserData(xR);
         btNextSetting.setDisable(false);
         if(Reader.language){
             btNextSetting.setText("Got it! Now what?");
@@ -87,11 +86,12 @@ public class SettingBoardSizeController implements Initializable {
     }
     @FXML
     private void value13(ActionEvent event) throws IOException {
-        buttonValue = 7;
+        buttonValue = 13;
     }
     @FXML
     private void valueR(ActionEvent event) throws IOException {
-        buttonValue = 0;
+        buttonValue = Math.random() * (13 - 9) + 9;
+       
     }
     
 }
