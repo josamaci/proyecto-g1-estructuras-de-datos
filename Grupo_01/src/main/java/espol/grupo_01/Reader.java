@@ -11,7 +11,7 @@ public class Reader {
     public static boolean language = true;
     public static String category = "Fruits.txt";
     public static boolean difficulty = false;
-    public static double size = 7;
+    public static int size = 7;
     public static int cont = 90;
     
     public static DoublyLinkedList<String> Read(String nameFile){

@@ -6,6 +6,7 @@ package espol.grupo_01;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -116,7 +117,22 @@ public class SettingBoardSizeController implements Initializable {
         if (!btBoardR.isSelected()) {
             btNextSetting.setDisable(true);
         } else {
-            Reader.size = Math.random() * (13 - 9) + 9;
+            Random rm = new Random();
+            int a = rm.nextInt(4); //
+            switch(a){
+                case 0:
+                    Reader.size = 7;
+                    break;
+                case 1:
+                    Reader.size = 9;
+                    break;
+                case 2:
+                    Reader.size = 11;
+                    break;
+                case 3:
+                    Reader.size = 13;
+                    break;
+            }
             btNextSetting.setDisable(false);
         }
     }
