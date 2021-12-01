@@ -92,7 +92,6 @@ public class PlayboardController implements Initializable {
     @FXML
     private void surrender(ActionEvent event) throws IOException {
         Reader.cont=0;
-        App.setRoot("Credits");
     }
     
     private void setLanguage(){
@@ -119,16 +118,16 @@ public class PlayboardController implements Initializable {
         if(Reader.difficulty){
             lbTime.setVisible(true);
             lblTime.setVisible(true);
-            Reader.cont = 90;
-            ContadorTiempo ct = new ContadorTiempo();
-            Thread t = new Thread(ct);
-            t.setDaemon(true);
-            t.start();
-        }else{
-            Reader.cont = 1000000;
+            Reader.cont = 120;
+            }else{
+            Reader.cont = 10000000;
             lbTime.setVisible(false);
             lblTime.setVisible(false);
         }
+        ContadorTiempo ct = new ContadorTiempo();
+            Thread t = new Thread(ct);
+            t.setDaemon(true);
+            t.start();
     }
 
     private void generate() {

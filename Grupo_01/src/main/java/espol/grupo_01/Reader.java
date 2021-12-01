@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.LinkedHashSet;
+import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
 public class Reader {
@@ -12,7 +13,7 @@ public class Reader {
     public static String category = "Fruits.txt";
     public static boolean difficulty = false;
     public static double size = 7;
-    public static int cont = 90;
+    public static int cont = 120;
     
     public static DoublyLinkedList<String> Read(String nameFile){
         DoublyLinkedList<String> words = new DoublyLinkedList<>();
@@ -64,26 +65,9 @@ public class Reader {
     
     public static Set<String> randomNumbers(int numNumbers){
         Set<String> random = new TreeSet<>();
+        Random rm = new Random();
             while(numNumbers>0){
-                int r = (int)(Math.random()*4)+1;
-                int m = 0;
-                switch(r){
-                    case 1:
-                        m = 1000;
-                        break;
-                    case 2:
-                        m = 10000;
-                        break;
-                    case 3:
-                        m = 100000;
-                        break;
-                    case 4:
-                        m = 1000000;
-                        break;
-                    default:
-                        m = 1000000;
-                }
-                int val = (int)(Math.random()*m)+1;
+                int val = rm.nextInt(1000000)+1000;
                     random.add(String.valueOf(val));
                     numNumbers--;
             }
