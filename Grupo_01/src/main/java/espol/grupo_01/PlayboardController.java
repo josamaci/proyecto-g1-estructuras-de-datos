@@ -4,7 +4,6 @@
  */
 package espol.grupo_01;
 
-import Matriz.Matriz;
 import TDAs.DoublyLinkedList;
 import java.io.IOException;
 import static java.lang.Thread.sleep;
@@ -15,14 +14,12 @@ import java.util.TreeSet;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 
 /**
@@ -58,21 +55,26 @@ public class PlayboardController implements Initializable {
     private Label lbTime;
     @FXML
     private Label lblTime;
+    @FXML
+    private Pane matrixPane;
+    
     private Set<String> random;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        Matrix matriz = new Matrix(7);
+        matrixPane.setMinSize(400, 400);
+        matrixPane.setMaxSize(400, 400);
+        matrixPane.getChildren().add(matriz.gridPane);
+        
         lblTime.setText(String.valueOf(Reader.cont));
         lblPoints.setText(String.valueOf(Reader.punt));
         setLanguage();
         setDifficulty();
         generate();
-        
-//        Matriz matriz = new Matriz(SettingBoardSizeController.buttonValue);
-//        matriz.ponerPalabraEnLista("Hola");
-//        bpPlayboard.setCenter(matriz.getPanelMatriz());
     }    
 
     @FXML
