@@ -1,7 +1,9 @@
 package TDAs;
 
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Set;
 
 public class DoublyLinkedList<E> implements List<E> {
     
@@ -70,6 +72,8 @@ public class DoublyLinkedList<E> implements List<E> {
             }
             else{
                     addFirst(e);
+                    header.setNext(last);
+                
             }
             return true;
         }

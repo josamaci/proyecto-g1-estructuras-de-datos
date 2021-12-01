@@ -10,6 +10,8 @@ import java.io.IOException;
 import static java.lang.Thread.sleep;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Set;
+import java.util.TreeSet;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -103,11 +105,13 @@ public class PlayboardController implements Initializable {
         }else{
             words = Reader.Read(Reader.category);
         }
-        System.out.println(words.size());
-        for(String s:words){
+        
+        Set<String> random = new TreeSet<>();
+        
+        random = Reader.randomize(words, 5);
+        for(String s:random){
             System.out.println(s);
         }
-        
 //        Matriz matriz = new Matriz(SettingBoardSizeController.buttonValue);
 //        matriz.ponerPalabraEnLista("Hola");
 //        bpPlayboard.setCenter(matriz.getPanelMatriz());

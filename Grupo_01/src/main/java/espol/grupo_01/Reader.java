@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.LinkedHashSet;
+import java.util.Set;
+import java.util.TreeSet;
 public class Reader {
     public static boolean language = true;
     public static String category = "Fruits.txt";
@@ -45,13 +48,15 @@ public class Reader {
         return words;
     }
     
-    public static DoublyLinkedList<String> randomize(DoublyLinkedList<String> words, int numWords){
-        DoublyLinkedList<String> random = new DoublyLinkedList<>();
-            while(random.size()<=numWords){
+    public static Set<String> randomize(DoublyLinkedList<String> words, int numWords){
+        Set<String> random = new TreeSet<>();
+            while(numWords>0){
                 for(String s:words){
                     double r = Math.random();
-                    if(r>0.85){
-                    random.addLast(s);}
+                    if(r>0.85 && numWords>0){
+                        random.add(s);
+                        numWords--;
+                    }
                 }
             }
         return random;
