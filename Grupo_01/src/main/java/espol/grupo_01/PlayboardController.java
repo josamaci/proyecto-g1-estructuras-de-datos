@@ -86,26 +86,27 @@ public class PlayboardController implements Initializable {
             t.start();
         }
         DoublyLinkedList<String> words = new DoublyLinkedList<>();
-        words.addLast("EO");
-        words.addLast("AEO");
-        words.addLast("AEO");
-        System.out.println(words.size());
-        /*if(Reader.category.equals("Aleatorio") || Reader.category.equals("Random")){
+        
+        if(Reader.category.equals("Aleatorio") || Reader.category.equals("Random")){
             DoublyLinkedList<String> cats = new DoublyLinkedList<>();
             if(Reader.category.equals("Aleatorio")){
-                cats.addLast("Animales.txt");
-                cats.addLast("Colores.txt");
-                cats.addLast("Frutas.txt");
+                cats.addFirst("Animales.txt");
+                cats.addFirst("Colores.txt");
+                cats.addFirst("Frutas.txt");
             }
             if(Reader.category.equals("Random")){
-                cats.addLast("Animals.txt");
-                cats.addLast("Colors.txt");
-                cats.addLast("Fruits.txt");
+                cats.addFirst("Animals.txt");
+                cats.addFirst("Colors.txt");
+                cats.addFirst("Fruits.txt");
             }
             words = Reader.ReadAll(cats);
         }else{
             words = Reader.Read(Reader.category);
-        }*/
+        }
+        System.out.println(words.size());
+        for(String s:words){
+            System.out.println(s);
+        }
         
 //        Matriz matriz = new Matriz(SettingBoardSizeController.buttonValue);
 //        matriz.ponerPalabraEnLista("Hola");

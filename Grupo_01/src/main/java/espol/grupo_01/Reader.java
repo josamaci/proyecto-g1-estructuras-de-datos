@@ -18,7 +18,7 @@ public class Reader {
                                     new InputStreamReader(input,"UTF-8"))){
             String linea;
             while((linea = bf.readLine())!=null){   
-                        words.addLast(linea);
+                        words.addFirst(linea);
             }         
         }  catch (IOException ex) {
             System.out.println("ERROR");
@@ -35,7 +35,7 @@ public class Reader {
                                     new InputStreamReader(input,"UTF-8"))){
             String linea;
             while((linea = bf.readLine())!=null){
-                        words.addLast(linea);
+                        words.addFirst(linea);
             }         
         }  catch (IOException ex) {
             System.out.println("ERROR");
