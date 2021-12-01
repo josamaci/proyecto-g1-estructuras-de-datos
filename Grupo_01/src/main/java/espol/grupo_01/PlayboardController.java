@@ -84,13 +84,13 @@ public class PlayboardController implements Initializable {
         if(Reader.difficulty){
             lbTime.setVisible(true);
             lblTime.setVisible(true);
-            lblTime.setText("90");
+            Reader.cont = 90;
             ContadorTiempo ct = new ContadorTiempo();
             Thread t = new Thread(ct);
             t.setDaemon(true);
             t.start();
         }else{
-            lblTime.setText("1000000");
+            Reader.cont = 1000000;
             lbTime.setVisible(false);
             lblTime.setVisible(false);
         }
@@ -147,6 +147,7 @@ public class PlayboardController implements Initializable {
 
     @FXML
     private void surrender(ActionEvent event) throws IOException {
+        Reader.cont=0;
         App.setRoot("Credits");
     }
     
