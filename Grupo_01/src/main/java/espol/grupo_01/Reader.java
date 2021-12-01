@@ -12,9 +12,11 @@ public class Reader {
     public static boolean language = true;
     public static String category = "Fruits.txt";
     public static boolean difficulty = false;
-    public static int size = 7;
+//    public static int size = 7;
+    public static int size = 11;
     public static int cont = 120;
     public static int punt = 0;
+    public static Set<String> random;
     
     public static DoublyLinkedList<String> Read(String nameFile){
         DoublyLinkedList<String> words = new DoublyLinkedList<>();
@@ -52,15 +54,16 @@ public class Reader {
     
     public static Set<String> randomize(DoublyLinkedList<String> words, int numWords){
         Set<String> random = new TreeSet<>();
-            while(numWords>0){
-                for(String s:words){
-                    double r = Math.random();
-                    if(r>0.85 && numWords>0){
-                        random.add(s);
-                        numWords--;
-                    }
+        
+        for (int i = 0; i < numWords; i++) {
+            for (String s : words) {
+                double r = Math.random();
+                if (r > 0.85 && random.size() < numWords) {
+                    random.add(s);
                 }
             }
+        }
+ 
         return random;
     }
     

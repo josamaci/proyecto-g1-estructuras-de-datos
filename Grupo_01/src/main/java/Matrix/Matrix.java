@@ -1,6 +1,5 @@
-package espol.grupo_01;
+package Matrix;
 
-import Matrix.LabelManager;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -9,29 +8,28 @@ import javafx.scene.layout.GridPane;
 
 public class Matrix {
     
-    protected GridPane gridPane;
-    protected Label [][] array;
-    protected int size;
+    GridPane gridPane;
+    Label [][] array;
+    int size;
 
     public Matrix(int size) {
-        gridPane = new GridPane();
         array = new Label[size][size];
         this.size = size;
+        gridPane = new GridPane();
+        gridPane.setStyle("-fx-background-color: WHITE");
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                Label l = LabelManager.styleLabel();
+                Label l = new Label();
+                LabelManager.styleLabel(l);
                 array[i][j] = l;
                 gridPane.add(l, j, i);
             }
         }
     }
     
-    public GridPane getGridPane() {
-        return gridPane;
-    }
-    
     public void updatePane() {
         gridPane.getChildren().clear();
+        gridPane.setStyle("-fx-background-color: WHITE");
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array.length; j++) {
                 Label l = array[i][j];
@@ -222,6 +220,10 @@ public class Matrix {
                 }
             }
         }
+    }
+    
+    public GridPane getGridPane() {
+        return gridPane;
     }
     
 }

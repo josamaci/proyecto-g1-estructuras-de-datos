@@ -4,10 +4,12 @@
  */
 package espol.grupo_01;
 
+import Matrix.Matrix;
 import TDAs.DoublyLinkedList;
 import java.io.IOException;
 import static java.lang.Thread.sleep;
 import java.net.URL;
+import java.util.Iterator;
 import java.util.ResourceBundle;
 import java.util.Set;
 import java.util.TreeSet;
@@ -19,6 +21,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 
@@ -55,26 +58,30 @@ public class PlayboardController implements Initializable {
     private Label lbTime;
     @FXML
     private Label lblTime;
+//    @FXML
+//    private Pane matrixPane;
+    
+    private Label lbWord1;
     @FXML
     private Pane matrixPane;
-    
-    private Set<String> random;
+    @FXML
+    private HBox hbWords;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        Matrix matriz = new Matrix(7);
-        matrixPane.setMinSize(400, 400);
-        matrixPane.setMaxSize(400, 400);
-        matrixPane.getChildren().add(matriz.gridPane);
+        Matrix matriz = new Matrix(Reader.size);
+        bpPlayboard.setCenter(matriz.getGridPane());
         
         lblTime.setText(String.valueOf(Reader.cont));
         lblPoints.setText(String.valueOf(Reader.punt));
         setLanguage();
         setDifficulty();
         generate();
+        putWords(matriz);
+        setWords();
     }    
 
     @FXML
@@ -136,7 +143,7 @@ public class PlayboardController implements Initializable {
 
     private void generate() {
         DoublyLinkedList<String> words = new DoublyLinkedList<>();
-        random = new TreeSet<>();
+        Reader.random = new TreeSet<>();
         if(!Reader.category.equals("Numbers")){
             if(Reader.category.equals("Aleatorio") || Reader.category.equals("Random")){
                 DoublyLinkedList<String> cats = new DoublyLinkedList<>();
@@ -154,16 +161,32 @@ public class PlayboardController implements Initializable {
             }else{
                 words = Reader.Read(Reader.category);
             }
-            random = Reader.randomize(words, 5);
+            Reader.random = Reader.randomize(words, 5);
         }else{
-            random = Reader.randomNumbers(5);
+            Reader.random = Reader.randomNumbers(5);
         }
         
-        for(String s:random){
+        for(String s: Reader.random){
                 System.out.println(s);
             }
     }
     
+    private void setWords() {
+        for (String string : Reader.random) {
+            Label l = new Label(string);
+            l.setStyle("-fx-text-fill: WHITE");
+            hbWords.getChildren().add(l);
+        }
+    }    
+    
+    private void putWords(Matrix matrix) {
+        int count = 0;
+        for (String string : Reader.random) {
+            matrix.horizontal(string, count);
+            count++;
+        }
+        
+    }
     
     private class ContadorTiempo implements Runnable{
         @Override
