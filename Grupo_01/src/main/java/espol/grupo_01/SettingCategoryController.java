@@ -107,7 +107,7 @@ public class SettingCategoryController implements Initializable {
                 Reader.category = "Colores.txt";
             }
             btNextSetting2.setDisable(false);
-        }        
+        }
     }
 
     @FXML
@@ -121,17 +121,19 @@ public class SettingCategoryController implements Initializable {
                 Reader.category = "Frutas.txt";
             }
             btNextSetting2.setDisable(false);
+
         }
-}
+    }
+
     @FXML
     private void catNumbers(ActionEvent event) {
-        if (!btCategoryAnimal.isSelected()) {
+        if (!btCategoryNumber.isSelected()) {
             btNextSetting2.setDisable(true);
         } else {
             Reader.category = "Numbers";
-            btNextSetting2.setDisable(false);            
-            }
+            btNextSetting2.setDisable(false);
         }
+    }
 
     @FXML
     private void catRandom(ActionEvent event) {

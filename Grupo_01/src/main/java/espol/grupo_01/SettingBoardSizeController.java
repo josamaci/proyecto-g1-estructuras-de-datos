@@ -113,7 +113,7 @@ public class SettingBoardSizeController implements Initializable {
 
     @FXML
     private void valueR(ActionEvent event) {
-        if (!btBoard7.isSelected()) {
+        if (!btBoardR.isSelected()) {
             btNextSetting.setDisable(true);
         } else {
             Reader.size = Math.random() * (13 - 9) + 9;
