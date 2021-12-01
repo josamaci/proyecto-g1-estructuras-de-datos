@@ -10,6 +10,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
@@ -44,7 +45,7 @@ public class SettingGameModeController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        btPlayboard.setDisable(false);
+        btPlayboard.setDisable(true);
         if(Reader.language){
             btExtremeMode.setText("Extreme");
             btPlayboard.setText("Let's rock!");
@@ -54,6 +55,7 @@ public class SettingGameModeController implements Initializable {
             btPlayboard.setText("¡A rockear!");
             lbTitle.setText("Selecciona el modo de juego!");
         }
+        
     }    
 
     @FXML
@@ -67,11 +69,23 @@ public class SettingGameModeController implements Initializable {
     }
 
     @FXML
-    private void gmNormal(ActionEvent event) throws IOException {
-        Reader.difficulty = false;
+    private void gmNormal(ActionEvent event) {
+        if(!btNormalMode.isSelected()) {
+            btPlayboard.setDisable(true);
+        } else {
+            Reader.difficulty = false;
+            btPlayboard.setDisable(false);            
+        }
     }
+    
     @FXML
-    private void gmExtreme(ActionEvent event) throws IOException {
-        Reader.difficulty = true;
+    private void gmExtreme(ActionEvent event) {
+        if(!btExtremeMode.isSelected()) {
+            btPlayboard.setDisable(true);
+        } else {
+            Reader.difficulty = true;
+            btPlayboard.setDisable(false);  
+        } 
+        
     }
 }

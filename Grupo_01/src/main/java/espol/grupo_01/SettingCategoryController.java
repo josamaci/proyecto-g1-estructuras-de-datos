@@ -46,7 +46,7 @@ public class SettingCategoryController implements Initializable {
     private ToggleButton btCategoryRandom;
     @FXML
     private ToggleGroup btGroupCategory1;
-    
+
     /**
      * Initializes the controller class.
      */
@@ -58,6 +58,7 @@ public class SettingCategoryController implements Initializable {
             btCategoryColor.setText("Colors");
             btCategoryFruit.setText("Fruits");
             btCategoryNumber.setText("Numbers");
+            btCategoryRandom.setText("Random");
             lbTitle.setText("Second, choose a category!");
             btNextSetting2.setText("OK! And then?");
         } else {
@@ -65,6 +66,7 @@ public class SettingCategoryController implements Initializable {
             btCategoryColor.setText("Colores");
             btCategoryFruit.setText("Frutas");
             btCategoryNumber.setText("Números");
+            btCategoryRandom.setText("Aleatorio");
             lbTitle.setText("Ahora, ¡escoge una categoría!");
             btNextSetting2.setText("Listo, ¿ahora qué?");
         }
@@ -82,47 +84,66 @@ public class SettingCategoryController implements Initializable {
 
     @FXML
     private void catAnimals(ActionEvent event) {
-        if (Reader.language) {
-            Reader.category = "Animals.txt";
+        if (!btCategoryAnimal.isSelected()) {
+            btNextSetting2.setDisable(true);
         } else {
-            Reader.category = "Animales.txt";
+            if (Reader.language) {
+                Reader.category = "Animals.txt";
+            } else {
+                Reader.category = "Animales.txt";
+            }
+            btNextSetting2.setDisable(false);
         }
-        btNextSetting2.setDisable(false);
     }
 
     @FXML
     private void catColors(ActionEvent event) {
-        if (Reader.language) {
-            Reader.category = "Colors.txt";
+        if (!btCategoryColor.isSelected()) {
+            btNextSetting2.setDisable(true);
         } else {
-            Reader.category = "Colores.txt";
-        }
-        btNextSetting2.setDisable(false);
+            if (Reader.language) {
+                Reader.category = "Colors.txt";
+            } else {
+                Reader.category = "Colores.txt";
+            }
+            btNextSetting2.setDisable(false);
+        }        
     }
 
     @FXML
     private void catFruits(ActionEvent event) {
-        if (Reader.language) {
-            Reader.category = "Fruits.txt";
+        if (!btCategoryFruit.isSelected()) {
+            btNextSetting2.setDisable(true);
         } else {
-            Reader.category = "Frutas.txt";
+            if (Reader.language) {
+                Reader.category = "Fruits.txt";
+            } else {
+                Reader.category = "Frutas.txt";
+            }
+            btNextSetting2.setDisable(false);
         }
-        btNextSetting2.setDisable(false);
-    }
-
+}
     @FXML
     private void catNumbers(ActionEvent event) {
-        Reader.category = "Numbers";
-        btNextSetting2.setDisable(false);
-    }
+        if (!btCategoryAnimal.isSelected()) {
+            btNextSetting2.setDisable(true);
+        } else {
+            Reader.category = "Numbers";
+            btNextSetting2.setDisable(false);            
+            }
+        }
 
     @FXML
     private void catRandom(ActionEvent event) {
-        if (Reader.language) {
-            Reader.category = "Random";
+        if (!btCategoryRandom.isSelected()) {
+            btNextSetting2.setDisable(true);
         } else {
-            Reader.category = "Aleatorio";
+            if (Reader.language) {
+                Reader.category = "Random";
+            } else {
+                Reader.category = "Aleatorio";
+            }
+            btNextSetting2.setDisable(false);
         }
-        btNextSetting2.setDisable(false);
     }
 }
