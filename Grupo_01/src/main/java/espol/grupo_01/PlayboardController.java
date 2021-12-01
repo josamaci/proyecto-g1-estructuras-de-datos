@@ -86,7 +86,11 @@ public class PlayboardController implements Initializable {
             t.start();
         }
         DoublyLinkedList<String> words = new DoublyLinkedList<>();
-        if(Reader.category.equals("Aleatorio") || Reader.category.equals("Random")){
+        words.addLast("EO");
+        words.addLast("AEO");
+        words.addLast("AEO");
+        System.out.println(words.size());
+        /*if(Reader.category.equals("Aleatorio") || Reader.category.equals("Random")){
             DoublyLinkedList<String> cats = new DoublyLinkedList<>();
             if(Reader.category.equals("Aleatorio")){
                 cats.addLast("Animales.txt");
@@ -101,7 +105,7 @@ public class PlayboardController implements Initializable {
             words = Reader.ReadAll(cats);
         }else{
             words = Reader.Read(Reader.category);
-        }
+        }*/
         
 //        Matriz matriz = new Matriz(SettingBoardSizeController.buttonValue);
 //        matriz.ponerPalabraEnLista("Hola");

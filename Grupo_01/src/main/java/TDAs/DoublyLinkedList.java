@@ -39,10 +39,15 @@ public class DoublyLinkedList<E> implements List<E> {
     @Override
     public boolean addFirst(E e) {
         if (e != null) {
+            DoublyNodeList<E> h = header;
             DoublyNodeList<E> newNode = new DoublyNodeList<>(e);
             newNode.setNext(header);
-            header.setPrevious(newNode);
             this.setHeader(newNode);
+            if (h == null){
+                last = newNode;
+            }else{
+                h.setPrevious(newNode);
+            }
             return true;
         }
         return false;
@@ -51,22 +56,16 @@ public class DoublyLinkedList<E> implements List<E> {
     @Override
     public boolean addLast(E e) {
         if (e != null) {
+            DoublyNodeList<E> l = last;
             DoublyNodeList<E> newNode = new DoublyNodeList<>(e);
-            if(header==null){
-                newNode.setNext(last);
-                this.setHeader(newNode);
-                return true;
+            newNode.setPrevious(last);
+            this.setLast(newNode);
+            if (l == null){
+                last = newNode;
+            }else{
+                l.setNext(newNode);
             }
-            else if(last==null){
-                newNode.setPrevious(header);
-                this.setLast(newNode);
-                return true;
-            }else if(!isEmpty()){
-                newNode.setPrevious(last);
-                last.setNext(newNode);
-                this.setLast(newNode);
-                return true;
-            }
+            return true;
         }
         return false;
     }
@@ -107,10 +106,10 @@ public class DoublyLinkedList<E> implements List<E> {
     public int size() {
         int size = 0;
         if(!isEmpty()){
-        for (DoublyNodeList n = header; n != last; n = n.getNext()) {
-            size++;
-        }
-        size++;
+            for (DoublyNodeList n = header; n != null ; n = n.getNext()) {
+                size++;
+            }
+            
         }
         return size;
     }
