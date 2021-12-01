@@ -24,20 +24,19 @@ public class LabelManager {
         l.setAlignment(Pos.CENTER);
         l.setStyle("-fx-background-color: WHITE; -fx-border-color: BLACK");
         
-//        l.setOnMouseClicked(new EventHandler<MouseEvent>() {
-//            @Override
-//            public void handle(MouseEvent t) {
-//                
-//                Node n = t.getPickResult().getIntersectedNode();
-//                if (n instanceof Label) {
-//                    Label l = (Label) n;
-//                    l.setStyle("-fx-background-color: LIGHTBLUE; -fx-border-color: BLACK");
-//                    selectedWord += l.getText();
-//                    System.out.println(selectedWord);
-//                }
-////                System.out.println(t.getPickResult().getIntersectedNode().getTypeSelector());
-//            }
-//        });
+        l.setOnMouseDragged(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent t) {
+                Node n = t.getPickResult().getIntersectedNode();
+                if (n instanceof Label) {
+                    Label l = (Label) n;
+                    l.setStyle("-fx-background-color: LIGHTBLUE; -fx-border-color: BLACK");
+                    selectedWord += l.getText();
+                    System.out.println(selectedWord);
+                }
+                System.out.println(t.getPickResult().getIntersectedNode().getTypeSelector());
+            }
+        });
         l.setOnMousePressed((Event t) -> {
             
             l.setStyle("-fx-background-color: LIGHTBLUE; -fx-border-color: BLACK");
