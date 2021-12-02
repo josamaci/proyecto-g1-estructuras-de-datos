@@ -200,9 +200,32 @@ public class PlayboardController implements Initializable {
             }else{
                 words = Reader.Read(Reader.getCategory());
             }
-            Reader.setRandom(Reader.randomize(words, 5));
+            
+            switch(Reader.getSize()){
+                case 7: Reader.setRandom(Reader.randomize(words, 3));
+                    break;
+                case 9: Reader.setRandom(Reader.randomize(words, 3));
+                    break;
+                case 11: Reader.setRandom(Reader.randomize(words, 4));
+                    break;
+                case 13: Reader.setRandom(Reader.randomize(words, 5));
+                    break;
+                default:
+            }
+            
+            
         }else{
-            Reader.setRandom(Reader.randomNumbers(5));
+            switch(Reader.getSize()){
+                case 7: Reader.setRandom(Reader.randomNumbers(5));
+                    break;
+                case 9: Reader.setRandom(Reader.randomNumbers(5));
+                    break;
+                case 11: Reader.setRandom(Reader.randomNumbers(5));
+                    break;
+                case 13: Reader.setRandom(Reader.randomNumbers(5));
+                    break;
+                default:
+            }
         }
         
         for(String s: Reader.getRandom()){
