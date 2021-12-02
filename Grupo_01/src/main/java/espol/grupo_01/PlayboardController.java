@@ -59,10 +59,10 @@ public class PlayboardController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         click = 0;
-        Matrix matriz = new Matrix(Reader.size);
+        Matrix matriz = new Matrix(Reader.getSize());
         bpPlayboard.setCenter(matriz.getGridPane());
-        lblTime.setText(String.valueOf(Reader.cont));
-        lblPoints.setText(String.valueOf(Reader.punt));
+        lblTime.setText(String.valueOf(Reader.getCont()));
+        lblPoints.setText(String.valueOf(Reader.getPunt()));
         setLanguage();
         setDifficulty();
         generate();
@@ -125,12 +125,12 @@ public class PlayboardController implements Initializable {
 
     @FXML
     private void surrender(ActionEvent event) throws IOException {
-        Reader.cont=0;
+        Reader.setCont(0);
         bpPlayboard.setCenter(null);
     }
     
     private void setLanguage(){
-        if(Reader.language){
+        if(Reader.getLanguage()){
             btAddColumn.setText("Add Column");
             btDeleteRow.setText("Delete Row");
             btAddRow.setText("Add Row");
@@ -151,12 +151,12 @@ public class PlayboardController implements Initializable {
     }
 
     private void setDifficulty() {
-        if(Reader.difficulty){
+        if(Reader.getDifficulty()){
             lbTime.setVisible(true);
             lblTime.setVisible(true);
-            Reader.cont = 120;
+            Reader.setCont(120);
             }else{
-            Reader.cont = 10000000;
+            Reader.setCont(100000000);
             lbTime.setVisible(false);
             lblTime.setVisible(false);
         }
@@ -168,36 +168,36 @@ public class PlayboardController implements Initializable {
 
     private void generate() {
         DoublyLinkedList<String> words = new DoublyLinkedList<>();
-        Reader.random = new TreeSet<>();
-        if(!Reader.category.equals("Numbers")){
-            if(Reader.category.equals("Aleatorio") || Reader.category.equals("Random")){
+        Reader.setRandom(new TreeSet<>());
+        if(!Reader.getCategory().equals("Numbers")){
+            if(Reader.getCategory().equals("Aleatorio") || Reader.getCategory().equals("Random")){
                 DoublyLinkedList<String> cats = new DoublyLinkedList<>();
-                if(Reader.category.equals("Aleatorio")){
+                if(Reader.getCategory().equals("Aleatorio")){
                     cats.addFirst("Animales.txt");
                     cats.addFirst("Colores.txt");
                     cats.addFirst("Frutas.txt");
                 }
-                if(Reader.category.equals("Random")){
+                if(Reader.getCategory().equals("Random")){
                     cats.addFirst("Animals.txt");
                     cats.addFirst("Colors.txt");
                     cats.addFirst("Fruits.txt");
                 }
                 words = Reader.ReadAll(cats);
             }else{
-                words = Reader.Read(Reader.category);
+                words = Reader.Read(Reader.getCategory());
             }
-            Reader.random = Reader.randomize(words, 5);
+            Reader.setRandom(Reader.randomize(words, 5));
         }else{
-            Reader.random = Reader.randomNumbers(5);
+            Reader.setRandom(Reader.randomNumbers(5));
         }
         
-        for(String s: Reader.random){
+        for(String s: Reader.getRandom()){
                 System.out.println(s);
             }
     }
     
     private void setWords() {
-        for (String string : Reader.random) {
+        for (String string : Reader.getRandom()) {
             Label l = new Label(string);
             l.setStyle("-fx-text-fill: WHITE");
             hbWords.getChildren().add(l);
@@ -206,7 +206,7 @@ public class PlayboardController implements Initializable {
     
     private void putWords(Matrix matrix) {
         int count = 0;
-        for (String string : Reader.random) {
+        for (String string : Reader.getRandom()) {
             matrix.horizontal(string, count);
             count++;
         }
@@ -232,13 +232,13 @@ public class PlayboardController implements Initializable {
         @Override
         public void run(){
             try{
-                while(Reader.cont>0){
+                while(Reader.getCont()>0){
                 sleep(1000);
-                Reader.cont--;
-                Reader.punt++;
+                Reader.setCont(Reader.getCont()-1);
+                Reader.setPunt(Reader.getPunt()+1);
                 Platform.runLater(()->{
-                lblTime.setText(String.valueOf(Reader.cont));
-                lblPoints.setText(String.valueOf(Reader.punt));});
+                lblTime.setText(String.valueOf(Reader.getCont()));
+                lblPoints.setText(String.valueOf(Reader.getPunt()));});
                 }
             }
             catch(InterruptedException ex){
@@ -261,9 +261,9 @@ public class PlayboardController implements Initializable {
         @Override
         public void run() {
             try {
-                while (Reader.life < 3) {
+                while (Reader.getLife() < 3) {
                     Platform.runLater(() -> {
-                        switch (Reader.life) {
+                        switch (Reader.getLife()) {
                             case 2:
                                 health1.setDisable(true);
                                 break;

@@ -46,7 +46,7 @@ public class SettingGameModeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         btPlayboard.setDisable(true);
-        if(Reader.language){
+        if(Reader.getLanguage()){
             btExtremeMode.setText("Extreme");
             btPlayboard.setText("Let's rock!");
             lbTitle.setText("Finally, choose a game mode!");
@@ -73,7 +73,7 @@ public class SettingGameModeController implements Initializable {
         if(!btNormalMode.isSelected()) {
             btPlayboard.setDisable(true);
         } else {
-            Reader.difficulty = false;
+            Reader.setDifficulty(false);
             btPlayboard.setDisable(false);            
         }
     }
@@ -83,7 +83,7 @@ public class SettingGameModeController implements Initializable {
         if(!btExtremeMode.isSelected()) {
             btPlayboard.setDisable(true);
         } else {
-            Reader.difficulty = true;
+            Reader.setDifficulty(true);
             btPlayboard.setDisable(false);  
         } 
         

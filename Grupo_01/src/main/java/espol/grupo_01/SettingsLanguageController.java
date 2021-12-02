@@ -54,7 +54,7 @@ public class SettingsLanguageController implements Initializable {
 
     @FXML
     private void switchToSpanish(ActionEvent event) {
-        Reader.language = false;
+        Reader.setLanguage(false);
         lbLS.setText("SELECCIONA LENGUAJE");
         btSpanish.setText("ESPAÑOL");
         btEnglish.setText("INGLÉS");
@@ -63,7 +63,7 @@ public class SettingsLanguageController implements Initializable {
 
     @FXML
     private void switchToEnglish(ActionEvent event) {
-        Reader.language = true;
+        Reader.setLanguage(true);
         lbLS.setText("LANGUAGE SELECTION");
         btSpanish.setText("SPANISH");
         btEnglish.setText("ENGLISH");
