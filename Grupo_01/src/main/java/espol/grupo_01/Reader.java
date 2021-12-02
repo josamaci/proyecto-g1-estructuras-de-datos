@@ -16,6 +16,7 @@ public class Reader {
     public static int size = 11;
     public static int cont = 120;
     public static int punt = 0;
+    public static int life = 3;
     public static Set<String> random;
     
     public static DoublyLinkedList<String> Read(String nameFile){

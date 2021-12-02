@@ -1,18 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package espol.grupo_01;
 
-import static Matrix.LabelManager.verifyWord;
 import Matrix.Matrix;
 import TDAs.DoublyLinkedList;
 import java.io.IOException;
 import static java.lang.Thread.sleep;
 import java.net.URL;
-import java.util.Iterator;
 import java.util.ResourceBundle;
-import java.util.Set;
 import java.util.TreeSet;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -26,11 +19,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 
-/**
- * FXML Controller class
- *
- * @author kevin
- */
 public class PlayboardController implements Initializable {
 
     @FXML
@@ -59,17 +47,13 @@ public class PlayboardController implements Initializable {
     private Label lbTime;
     @FXML
     private Label lblTime;
-//    @FXML
-//    private Pane matrixPane;
     
     private Label lbWord1;
     @FXML
     private Pane matrixPane;
     @FXML
     private HBox hbWords;
-    /**
-     * Initializes the controller class.
-     */
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
@@ -83,9 +67,7 @@ public class PlayboardController implements Initializable {
         generate();
         putWords(matriz);
         setWords();
-        
-//        Thread tr = new Thread(() -> verifyWord());
-        
+        iniciarContadorVidas();
     }    
 
     @FXML
@@ -118,7 +100,8 @@ public class PlayboardController implements Initializable {
             btSurrender.setText("Surrender");
             lbPoints.setText("Points:");
             lbTime.setText("Time to lose:");
-        }else{
+        }
+        else{
             btAddColumn.setText("+ Columna");
             btDeleteRow.setText("- Fila");
             btAddRow.setText("+ Fila");
@@ -192,6 +175,13 @@ public class PlayboardController implements Initializable {
         
     }
     
+    private void iniciarContadorVidas() {
+        ContadorVidas cv = new ContadorVidas();
+        Thread t = new Thread(cv);
+        t.setDaemon(true);
+        t.start();
+    }
+    
     private class ContadorTiempo implements Runnable{
         @Override
         public void run(){
@@ -204,17 +194,46 @@ public class PlayboardController implements Initializable {
                 lblTime.setText(String.valueOf(Reader.cont));
                 lblPoints.setText(String.valueOf(Reader.punt));});
                 }
-            }catch(InterruptedException ex){
+            }
+            catch(InterruptedException ex){
                 ex.getMessage();
             }
             
             try {
             App.setRoot("Credits");
             
-        } catch (IOException ex) {
+            }
+            catch (IOException ex) {
             ex.printStackTrace();
-        }
+            }
             
         }
+    }
+    
+    private class ContadorVidas implements Runnable {
+
+        @Override
+        public void run() {
+            try {
+                while (Reader.life < 3) {
+                    Platform.runLater(() -> {
+                        switch (Reader.life) {
+                            case 2:
+                                health1.setDisable(true);
+                                break;
+                            case 1:
+                                health2.setDisable(true);
+                                break;
+                            case 0:
+                                health3.setDisable(true);
+                                break;
+                        }
+                    });
+                }
+            }
+            catch (Exception e) {
+            }
+        }
+        
     }
 }

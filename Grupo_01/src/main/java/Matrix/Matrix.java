@@ -1,27 +1,23 @@
 package Matrix;
 
-import javafx.event.Event;
-import javafx.event.EventHandler;
-import javafx.geometry.Pos;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
 public class Matrix {
     
     GridPane gridPane;
-    Button [][] array;
+    Label [][] array;
     int size;
 
     public Matrix(int size) {
-        array = new Button[size][size];
+        array = new Label[size][size];
         this.size = size;
         gridPane = new GridPane();
         gridPane.setStyle("-fx-background-color: WHITE");
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                Button l = new Button();
-                LabelManager.styleLabel(l);
+                Label l = new Label();
+                StyleManager.styleLabel(l);
                 array[i][j] = l;
                 gridPane.add(l, j, i);
             }
@@ -33,8 +29,8 @@ public class Matrix {
         gridPane.setStyle("-fx-background-color: WHITE");
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array.length; j++) {
-                Button l = array[i][j];
-                LabelManager.styleLabel(l);
+                Label l = array[i][j];
+                StyleManager.styleLabel(l);
                 gridPane.add(l, j, i);
             }
         }
@@ -48,11 +44,7 @@ public class Matrix {
         }
         array[row][size-1].setText(first);
     }
-    
-    /*
-        Arreglar, implementarlo bien
-    */
-    
+       
     public void moveRight(int row) {
         
         String last = array[row][size-1].getText();
