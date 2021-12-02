@@ -13,7 +13,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -47,13 +46,16 @@ public class PlayboardController implements Initializable {
     private Label lbTime;
     @FXML
     private Label lblTime;
-    
     private Label lbWord1;
     @FXML
     private Pane matrixPane;
     @FXML
     private HBox hbWords;
     private int click;
+    @FXML
+    private Button btMoveRight;
+    @FXML
+    private Button btMoveLeft;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         click = 0;
@@ -216,6 +218,14 @@ public class PlayboardController implements Initializable {
         Thread t = new Thread(cv);
         t.setDaemon(true);
         t.start();
+    }
+
+    @FXML
+    private void moveRowRight(ActionEvent event) {
+    }
+
+    @FXML
+    private void moveRowLeft(ActionEvent event) {
     }
     
     private class ContadorTiempo implements Runnable{
