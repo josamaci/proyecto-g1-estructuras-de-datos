@@ -222,10 +222,10 @@ public class Matrix {
     }
     
     public void addColumn() {
-        gridPane.getColumnConstraints().add(new ColumnConstraints());
+        gridPane.addRow(size, new Label(" "));
     }
     
     public void addRow() {
-        gridPane.getRowConstraints().add(new RowConstraints());
+        gridPane.addColumn(size, new Label(" "));
     }
 }
