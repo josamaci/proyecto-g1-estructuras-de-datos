@@ -11,4 +11,8 @@ public class Randomer {
         return Character.toString(alpha.charAt(n));
     }
     
+    public static int getRdint() {
+        return r.nextInt();
+    }
+    
 }

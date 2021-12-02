@@ -50,6 +50,17 @@ public class Matrix {
         gridPane.setGridLinesVisible(true);
     }
     
+    public void updateWords() {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                Label label = array[i][j];
+                if (label.getText().isEmpty()) {
+                    label.setText(Randomer.getRdStr());
+                }
+            }
+        }
+    }
+    
     public void moveLeft(int row) {
         String first = array[row][0].getText();
         for (int i = 0; i < size - 1; i++) {
