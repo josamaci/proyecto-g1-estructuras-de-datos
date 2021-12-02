@@ -4,6 +4,7 @@
  */
 package espol.grupo_01;
 
+import static Matrix.LabelManager.verifyWord;
 import Matrix.Matrix;
 import TDAs.DoublyLinkedList;
 import java.io.IOException;
@@ -82,6 +83,9 @@ public class PlayboardController implements Initializable {
         generate();
         putWords(matriz);
         setWords();
+        
+//        Thread tr = new Thread(() -> verifyWord());
+        
     }    
 
     @FXML

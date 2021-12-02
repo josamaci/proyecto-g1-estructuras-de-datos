@@ -3,23 +3,24 @@ package Matrix;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
 public class Matrix {
     
     GridPane gridPane;
-    Label [][] array;
+    Button [][] array;
     int size;
 
     public Matrix(int size) {
-        array = new Label[size][size];
+        array = new Button[size][size];
         this.size = size;
         gridPane = new GridPane();
         gridPane.setStyle("-fx-background-color: WHITE");
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                Label l = new Label();
+                Button l = new Button();
                 LabelManager.styleLabel(l);
                 array[i][j] = l;
                 gridPane.add(l, j, i);
@@ -32,7 +33,7 @@ public class Matrix {
         gridPane.setStyle("-fx-background-color: WHITE");
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array.length; j++) {
-                Label l = array[i][j];
+                Button l = array[i][j];
                 LabelManager.styleLabel(l);
                 gridPane.add(l, j, i);
             }
