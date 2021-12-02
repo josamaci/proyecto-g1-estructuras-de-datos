@@ -9,15 +9,78 @@ import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
 public class Reader {
-    public static boolean language = true;
-    public static String category = "Fruits.txt";
-    public static boolean difficulty = false;
-//    public static int size = 7;
-    public static int size = 11;
-    public static int cont = 120;
-    public static int punt = 0;
-    public static int life = 3;
-    public static Set<String> random;
+    private static boolean language = true;
+    private static String category = "Fruits.txt";
+    private static boolean difficulty = false;
+    private static int size = 7;
+    private static int cont = 120;
+    private static int punt = 0;
+    private static int life = 3;
+    private static Set<String> random;
+
+    public static boolean getLanguage() {
+        return language;
+    }
+
+    public static void setLanguage(boolean language) {
+        Reader.language = language;
+    }
+
+    public static String getCategory() {
+        return category;
+    }
+
+    public static void setCategory(String category) {
+        Reader.category = category;
+    }
+
+    public static boolean getDifficulty() {
+        return difficulty;
+    }
+
+    public static void setDifficulty(boolean difficulty) {
+        Reader.difficulty = difficulty;
+    }
+
+    public static int getSize() {
+        return size;
+    }
+
+    public static void setSize(int size) {
+        Reader.size = size;
+    }
+
+    public static int getCont() {
+        return cont;
+    }
+
+    public static void setCont(int cont) {
+        Reader.cont = cont;
+    }
+
+    public static int getPunt() {
+        return punt;
+    }
+
+    public static void setPunt(int punt) {
+        Reader.punt = punt;
+    }
+
+    public static int getLife() {
+        return life;
+    }
+
+    public static void setLife(int life) {
+        Reader.life = life;
+    }
+
+    public static Set<String> getRandom() {
+        return random;
+    }
+
+    public static void setRandom(Set<String> random) {
+        Reader.random = random;
+    }
     
     public static DoublyLinkedList<String> Read(String nameFile){
         DoublyLinkedList<String> words = new DoublyLinkedList<>();

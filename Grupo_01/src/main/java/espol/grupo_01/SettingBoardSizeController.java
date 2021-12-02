@@ -50,7 +50,7 @@ public class SettingBoardSizeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         btNextSetting.setDisable(true);
-        if (Reader.language) {
+        if (Reader.getLanguage()) {
             btNextSetting.setText("Got it! Now what?");
             btBoardR.setText("Random!");
             lbTitle.setText("Board Size");
@@ -76,7 +76,7 @@ public class SettingBoardSizeController implements Initializable {
         if (!btBoard7.isSelected()) {
             btNextSetting.setDisable(true);
         } else {
-            Reader.size = 7;
+            Reader.setSize(7);
             btNextSetting.setDisable(false);
         }
 
@@ -87,7 +87,7 @@ public class SettingBoardSizeController implements Initializable {
         if (!btBoard9.isSelected()) {
             btNextSetting.setDisable(true);
         } else {
-            Reader.size = 9;
+            Reader.setSize(9);
             btNextSetting.setDisable(false);
         }
     }
@@ -97,7 +97,7 @@ public class SettingBoardSizeController implements Initializable {
         if (!btBoard11.isSelected()) {
             btNextSetting.setDisable(true);
         } else {
-            Reader.size = 11;
+            Reader.setSize(11);
             btNextSetting.setDisable(false);
         }
     }
@@ -107,7 +107,7 @@ public class SettingBoardSizeController implements Initializable {
         if (!btBoard13.isSelected()) {
             btNextSetting.setDisable(true);
         } else {
-            Reader.size = 13;
+            Reader.setSize(13);
             btNextSetting.setDisable(false);
         }
     }
@@ -121,16 +121,16 @@ public class SettingBoardSizeController implements Initializable {
             int a = rm.nextInt(4); //
             switch(a){
                 case 0:
-                    Reader.size = 7;
+                    Reader.setSize(7);
                     break;
                 case 1:
-                    Reader.size = 9;
+                    Reader.setSize(9);
                     break;
                 case 2:
-                    Reader.size = 11;
+                    Reader.setSize(11);
                     break;
                 case 3:
-                    Reader.size = 13;
+                    Reader.setSize(13);
                     break;
             }
             btNextSetting.setDisable(false);

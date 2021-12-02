@@ -23,7 +23,7 @@ public class MainMenuController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        if(!Reader.language){
+        if(!Reader.getLanguage()){
             btPlay.setText("¡A jugar!");
             btOptions.setText("Idioma");
             lbTitle.setText("Caza Palabras");

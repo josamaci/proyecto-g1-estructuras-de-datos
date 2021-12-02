@@ -53,7 +53,7 @@ public class SettingCategoryController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         btNextSetting2.setDisable(true);
-        if (Reader.language) {
+        if (Reader.getLanguage()) {
             btCategoryAnimal.setText("Animals");
             btCategoryColor.setText("Colors");
             btCategoryFruit.setText("Fruits");
@@ -87,10 +87,10 @@ public class SettingCategoryController implements Initializable {
         if (!btCategoryAnimal.isSelected()) {
             btNextSetting2.setDisable(true);
         } else {
-            if (Reader.language) {
-                Reader.category = "Animals.txt";
+            if (Reader.getLanguage()) {
+                Reader.setCategory("Animals.txt");
             } else {
-                Reader.category = "Animales.txt";
+                Reader.setCategory("Animales.txt");
             }
             btNextSetting2.setDisable(false);
         }
@@ -101,10 +101,10 @@ public class SettingCategoryController implements Initializable {
         if (!btCategoryColor.isSelected()) {
             btNextSetting2.setDisable(true);
         } else {
-            if (Reader.language) {
-                Reader.category = "Colors.txt";
+            if (Reader.getLanguage()) {
+                Reader.setCategory("Colors.txt");
             } else {
-                Reader.category = "Colores.txt";
+                Reader.setCategory("Colores.txt");
             }
             btNextSetting2.setDisable(false);
         }
@@ -115,10 +115,10 @@ public class SettingCategoryController implements Initializable {
         if (!btCategoryFruit.isSelected()) {
             btNextSetting2.setDisable(true);
         } else {
-            if (Reader.language) {
-                Reader.category = "Fruits.txt";
+            if (Reader.getLanguage()) {
+                Reader.setCategory("Fruits.txt");
             } else {
-                Reader.category = "Frutas.txt";
+                Reader.setCategory("Frutas.txt");
             }
             btNextSetting2.setDisable(false);
 
@@ -130,7 +130,7 @@ public class SettingCategoryController implements Initializable {
         if (!btCategoryNumber.isSelected()) {
             btNextSetting2.setDisable(true);
         } else {
-            Reader.category = "Numbers";
+            Reader.setCategory("Numbers");
             btNextSetting2.setDisable(false);
         }
     }
@@ -140,10 +140,10 @@ public class SettingCategoryController implements Initializable {
         if (!btCategoryRandom.isSelected()) {
             btNextSetting2.setDisable(true);
         } else {
-            if (Reader.language) {
-                Reader.category = "Random";
+            if (Reader.getLanguage()) {
+                Reader.setCategory("Random");
             } else {
-                Reader.category = "Aleatorio";
+                Reader.setCategory("Aleatorio");
             }
             btNextSetting2.setDisable(false);
         }
