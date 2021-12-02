@@ -55,7 +55,12 @@ public class Matrix {
             for (int j = 0; j < array.length; j++) {
                 Label label = array[i][j];
                 if (label.getText().isEmpty()) {
-                    label.setText(Randomer.getRdStr());
+                    if (Reader.getCategory().equals("Numbers")) {
+                        label.setText(Randomer.getRdNum());
+                    }
+                    else {
+                        label.setText(Randomer.getRdStr());
+                    }
                 }
             }
         }

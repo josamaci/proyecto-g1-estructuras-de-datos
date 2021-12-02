@@ -2,6 +2,7 @@ package espol.grupo_01;
 
 import Matrix.Matrix;
 import Matrix.Posicion;
+import Matrix.Randomer;
 import TDAs.DoublyLinkedList;
 import java.io.IOException;
 import static java.lang.Thread.sleep;
@@ -76,7 +77,7 @@ public class PlayboardController implements Initializable {
         generate();
         putWords(matriz);
         setWords();
-        matriz.updateWords();
+//        matriz.updateWords();
         iniciarContadorVidas();
         setComboBox();
     }    
@@ -220,9 +221,22 @@ public class PlayboardController implements Initializable {
     
     private void putWords(Matrix matrix) {
         int count = 0;
+        int rdInt = Randomer.getRdint(3);
         for (String string : Reader.getRandom()) {
-            matrix.horizontal(string, count);
             count++;
+            switch (rdInt) {
+                case 0:
+                    matrix.horizontal(string, Randomer.getRdint(matrix.getSize()-1) , Randomer.getRdint(matrix.getSize()-1));
+                    break;
+                case 1:
+                    matrix.vertical(string, Randomer.getRdint(matrix.getSize()-1) , Randomer.getRdint(matrix.getSize()-1));
+                    break;
+                case 2:
+                    matrix.downLeft(string, Randomer.getRdint(matrix.getSize()-1) , Randomer.getRdint(matrix.getSize()-1));
+                    break;
+            }
+//            matrix.vertical(string, count);
+//            count++;
         }
         
     }
