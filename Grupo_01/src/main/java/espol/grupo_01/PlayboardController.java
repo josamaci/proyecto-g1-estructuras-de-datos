@@ -53,13 +53,12 @@ public class PlayboardController implements Initializable {
     private Pane matrixPane;
     @FXML
     private HBox hbWords;
-
+    private int click;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        click = 0;
         Matrix matriz = new Matrix(Reader.getSize());
         bpPlayboard.setCenter(matriz.getGridPane());
-        
         lblTime.setText(String.valueOf(Reader.getCont()));
         lblPoints.setText(String.valueOf(Reader.getPunt()));
         setLanguage();
@@ -71,24 +70,61 @@ public class PlayboardController implements Initializable {
     }    
 
     @FXML
-    private void AddRow(MouseEvent event) {
+    private void AddRow(ActionEvent event) {
+        if(click<1){
+            click++;
+        } else {
+            btAddRow.setDisable(true);
+            btAddColumn.setDisable(true);
+            btDeleteRow.setDisable(true);
+            btDeleteColumn.setDisable(true);
+        }
+    } 
+
+    @FXML
+    private void AddColumn(ActionEvent event) {
+
+        if(click<1){
+            click++;
+        } else {
+            btAddRow.setDisable(true);
+            btAddColumn.setDisable(true);
+            btDeleteRow.setDisable(true);
+            btDeleteColumn.setDisable(true);
+            
+        }
     }
 
     @FXML
-    private void AddColumn(MouseEvent event) {
+    private void DeleteRow(ActionEvent event) {
+
+        if(click<1){
+            click++;
+        } else {
+            btAddRow.setDisable(true);
+            btAddColumn.setDisable(true);
+            btDeleteRow.setDisable(true);
+            btDeleteColumn.setDisable(true);
+        }
     }
 
     @FXML
-    private void DeleteRow(MouseEvent event) {
-    }
+    private void DeleteColumn(ActionEvent event) {
 
-    @FXML
-    private void DeleteColumn(MouseEvent event) {
+        if(click<1){
+            click++;
+        } else {
+            btAddRow.setDisable(true);
+            btAddColumn.setDisable(true);
+            btDeleteRow.setDisable(true);
+            btDeleteColumn.setDisable(true);
+        }
     }
 
     @FXML
     private void surrender(ActionEvent event) throws IOException {
         Reader.setCont(0);
+        bpPlayboard.setCenter(null);
     }
     
     private void setLanguage(){

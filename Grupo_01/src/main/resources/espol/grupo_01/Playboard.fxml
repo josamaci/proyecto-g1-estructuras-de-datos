@@ -81,7 +81,7 @@
                         <Insets right="50.0" />
                      </HBox.margin>
                      <children>
-                        <Button fx:id="btAddRow" mnemonicParsing="false" onMouseClicked="#AddRow" prefHeight="100.0" prefWidth="100.0" styleClass="changeButton" stylesheets="@../../Styles/normalButton.css" text="Add Row" textFill="WHITE">
+                        <Button fx:id="btAddRow" mnemonicParsing="false" onAction="#AddRow" prefHeight="100.0" prefWidth="100.0" styleClass="changeButton" stylesheets="@../../Styles/normalButton.css" text="Add Row" textFill="WHITE">
                            <VBox.margin>
                               <Insets bottom="30.0" />
                            </VBox.margin>
@@ -89,7 +89,7 @@
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Button>
-                        <Button fx:id="btAddColumn" mnemonicParsing="false" onMouseClicked="#AddColumn" prefHeight="100.0" prefWidth="100.0" styleClass="changeButton" stylesheets="@../../Styles/normalButton.css" text="Add Column" textFill="WHITE">
+                        <Button fx:id="btAddColumn" mnemonicParsing="false" onAction="#AddColumn" prefHeight="100.0" prefWidth="100.0" styleClass="changeButton" stylesheets="@../../Styles/normalButton.css" text="Add Column" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
@@ -98,7 +98,7 @@
                   </VBox>
                   <VBox prefHeight="106.0" prefWidth="100.0">
                      <children>
-                        <Button fx:id="btDeleteRow" mnemonicParsing="false" onMouseClicked="#DeleteRow" prefHeight="100.0" prefWidth="100.0" stylesheets="@../../Styles/yellowbutton.css" text="Delete Row" textFill="WHITE">
+                        <Button fx:id="btDeleteRow" mnemonicParsing="false" onAction="#DeleteRow" prefHeight="100.0" prefWidth="100.0" stylesheets="@../../Styles/yellowbutton.css" text="Delete Row" textFill="WHITE">
                            <VBox.margin>
                               <Insets bottom="30.0" />
                            </VBox.margin>
@@ -106,7 +106,7 @@
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Button>
-                        <Button fx:id="btDeleteColumn" mnemonicParsing="false" onMouseClicked="#DeleteColumn" prefHeight="100.0" prefWidth="100.0" stylesheets="@../../Styles/yellowbutton.css" text="Delete Column" textFill="WHITE">
+                        <Button fx:id="btDeleteColumn" mnemonicParsing="false" onAction="#DeleteColumn" prefHeight="100.0" prefWidth="100.0" stylesheets="@../../Styles/yellowbutton.css" text="Delete Column" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
