@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -56,6 +57,8 @@ public class PlayboardController implements Initializable {
     private Button btMoveRight;
     @FXML
     private Button btMoveLeft;
+    @FXML
+    private ComboBox<Integer> cbRows;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         click = 0;
@@ -69,6 +72,7 @@ public class PlayboardController implements Initializable {
         putWords(matriz);
         setWords();
         iniciarContadorVidas();
+        setComboBox();
     }    
 
     @FXML
@@ -165,7 +169,11 @@ public class PlayboardController implements Initializable {
             t.setDaemon(true);
             t.start();
     }
-
+    private void setComboBox(){
+        for(int i = 1; i <= Reader.getSize(); i++){
+            cbRows.getItems().addAll(i);
+        }
+    }
     private void generate() {
         DoublyLinkedList<String> words = new DoublyLinkedList<>();
         Reader.setRandom(new TreeSet<>());
@@ -222,10 +230,12 @@ public class PlayboardController implements Initializable {
 
     @FXML
     private void moveRowRight(ActionEvent event) {
+        
     }
 
     @FXML
     private void moveRowLeft(ActionEvent event) {
+        
     }
     
     private class ContadorTiempo implements Runnable{
