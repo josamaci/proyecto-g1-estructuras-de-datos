@@ -2,7 +2,9 @@ package Matrix;
 
 import espol.grupo_01.Reader;
 import javafx.scene.control.Label;
+import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.RowConstraints;
 
 public class Matrix {
     
@@ -222,4 +224,11 @@ public class Matrix {
         return gridPane;
     }
     
+    public void addColumn() {
+        gridPane.getColumnConstraints().add(new ColumnConstraints());
+    }
+    
+    public void addRow() {
+        gridPane.getRowConstraints().add(new RowConstraints());
+    }
 }
