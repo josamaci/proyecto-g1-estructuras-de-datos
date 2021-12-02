@@ -1,5 +1,6 @@
 package Matrix;
 
+import espol.grupo_01.Reader;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
@@ -19,6 +20,7 @@ public class Matrix {
                 Label l = new Label();
                 StyleManager.styleLabel(l);
                 array[i][j] = l;
+                Reader.getMap().put(l, new Posicion(i,j));
                 gridPane.add(l, j, i);
             }
         }
@@ -31,6 +33,7 @@ public class Matrix {
             for (int j = 0; j < array.length; j++) {
                 Label l = array[i][j];
                 StyleManager.styleLabel(l);
+                Reader.getMap().put(l, new Posicion(i,j));
                 gridPane.add(l, j, i);
             }
         }

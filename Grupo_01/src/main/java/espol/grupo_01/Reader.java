@@ -1,13 +1,16 @@
 package espol.grupo_01;
 import TDAs.DoublyLinkedList;
+import Matrix.Posicion;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.LinkedHashSet;
+import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
+import javafx.scene.control.Label;
 public class Reader {
     private static boolean language = true;
     private static String category = "Fruits.txt";
@@ -17,7 +20,7 @@ public class Reader {
     private static int punt = 0;
     private static int life = 3;
     private static Set<String> random;
-
+    private static Map<Label, Posicion> map;
     public static boolean getLanguage() {
         return language;
     }
@@ -80,6 +83,14 @@ public class Reader {
 
     public static void setRandom(Set<String> random) {
         Reader.random = random;
+    }
+
+    public static Map<Label, Posicion> getMap() {
+        return map;
+    }
+
+    public static void setMap(Map<Label, Posicion> map) {
+        Reader.map = map;
     }
     
     public static DoublyLinkedList<String> Read(String nameFile){

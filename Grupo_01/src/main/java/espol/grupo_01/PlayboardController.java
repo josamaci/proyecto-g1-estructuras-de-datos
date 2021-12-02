@@ -1,10 +1,12 @@
 package espol.grupo_01;
 
 import Matrix.Matrix;
+import Matrix.Posicion;
 import TDAs.DoublyLinkedList;
 import java.io.IOException;
 import static java.lang.Thread.sleep;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 import java.util.TreeSet;
 import javafx.application.Platform;
@@ -57,6 +59,7 @@ public class PlayboardController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         click = 0;
+        Reader.setMap(new HashMap<Label, Posicion>());
         Matrix matriz = new Matrix(Reader.getSize());
         bpPlayboard.setCenter(matriz.getGridPane());
         lblTime.setText(String.valueOf(Reader.getCont()));
