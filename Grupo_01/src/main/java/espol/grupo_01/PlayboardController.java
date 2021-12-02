@@ -61,11 +61,13 @@ public class PlayboardController implements Initializable {
     private Button btMoveLeft;
     @FXML
     private ComboBox<Integer> cbRows;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         click = 0;
         Reader.setMap(new HashMap<Label, Posicion>());
         Matrix matriz = new Matrix(Reader.getSize());
+        moveRow(matriz);
         bpPlayboard.setCenter(matriz.getGridPane());
         lblTime.setText(String.valueOf(Reader.getCont()));
         lblPoints.setText(String.valueOf(Reader.getPunt()));
@@ -230,17 +232,16 @@ public class PlayboardController implements Initializable {
         t.setDaemon(true);
         t.start();
     }
-
-    @FXML
-    private void moveRowRight(ActionEvent event) {
-        
-    }
-
-    @FXML
-    private void moveRowLeft(ActionEvent event) {
-        
-    }
     
+    public void moveRow(Matrix m) {
+        btMoveRight.setOnMouseClicked(eh -> {
+            m.moveRight(cbRows.getValue() - 1);
+        });
+        btMoveLeft.setOnMouseClicked(eh -> {
+            m.moveLeft(cbRows.getValue() - 1);
+        });
+    }
+   
     private class ContadorTiempo implements Runnable{
         @Override
         public void run(){

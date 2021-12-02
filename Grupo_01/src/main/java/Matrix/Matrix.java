@@ -8,9 +8,17 @@ import javafx.scene.layout.RowConstraints;
 
 public class Matrix {
     
-    GridPane gridPane;
+    public GridPane gridPane;
     Label [][] array;
     int size;
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
 
     public Matrix(int size) {
         array = new Label[size][size];

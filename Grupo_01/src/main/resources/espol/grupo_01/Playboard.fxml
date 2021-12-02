@@ -128,12 +128,12 @@
                      <children>
                         <HBox alignment="CENTER" prefHeight="38.0" prefWidth="130.0">
                            <children>
-                              <Button fx:id="btMoveRight" mnemonicParsing="false" onAction="#moveRowRight" prefHeight="43.0" prefWidth="47.0" stylesheets="@../../Styles/yellowbutton.css" text="→" textFill="WHITE">
+                              <Button fx:id="btMoveLeft" mnemonicParsing="false" prefHeight="43.0" prefWidth="46.0" stylesheets="@../../Styles/yellowbutton.css" text="←" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="20.0" />
                                  </font>
                               </Button>
-                              <Button fx:id="btMoveLeft" mnemonicParsing="false" onAction="#moveRowLeft" prefHeight="43.0" prefWidth="46.0" stylesheets="@../../Styles/yellowbutton.css" text="←" textFill="WHITE">
+                              <Button fx:id="btMoveRight" mnemonicParsing="false" prefHeight="43.0" prefWidth="47.0" stylesheets="@../../Styles/yellowbutton.css" text="→" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="20.0" />
                                  </font>
@@ -145,7 +145,7 @@
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <ComboBox fx:id="cbRows" prefHeight="26.0" prefWidth="50.0" styleClass="backButton" stylesheets="@../../Styles/normalButton.css" />
+                              <ComboBox fx:id="cbRows" prefHeight="26.0" prefWidth="70.0" styleClass="backButton" stylesheets="@../../Styles/normalButton.css" />
                            </children>
                         </HBox>
                      </children>
