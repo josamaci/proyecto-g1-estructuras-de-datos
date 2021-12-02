@@ -39,7 +39,7 @@ public class CreditsController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        if(Reader.language){
+        if(Reader.getLanguage()){
             lblWinLose.setText("YOU LOSE");
             btMainMenu.setText("Main Menu");
             lbPoints.setText("Points: ");
@@ -48,13 +48,13 @@ public class CreditsController implements Initializable {
             btMainMenu.setText("Menú principal");
             lbPoints.setText("Puntos: ");
         }
-        lblPoints.setText(String.valueOf(Reader.punt));
+        lblPoints.setText(String.valueOf(Reader.getPunt()));
     }    
 
     @FXML
     private void backToTheTitle(ActionEvent event) throws IOException{
-        Reader.punt=0;
-        Reader.cont=120;
+        Reader.setPunt(0);
+        Reader.setCont(120);
         App.setRoot("MainMenu");
     }
     
