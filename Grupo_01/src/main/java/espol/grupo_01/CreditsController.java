@@ -40,11 +40,19 @@ public class CreditsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         if(Reader.getLanguage()){
-            lblWinLose.setText("YOU LOSE");
+            if(Reader.getLife()==0 || Reader.getCont() == 0 ){
+                lblWinLose.setText("YOU LOSE");
+            }else{
+                lblWinLose.setText("YOU WIN");       
+            }
             btMainMenu.setText("Main Menu");
             lbPoints.setText("Points: ");
         }else{
-            lblWinLose.setText("¡HAS PERDIDO!");
+            if(Reader.getLife()== 0 || Reader.getCont() == 0){
+                lblWinLose.setText("¡HAS PERDIDO!");
+            }else{
+                lblWinLose.setText("¡HAS GANADO!");
+            }
             btMainMenu.setText("Menú principal");
             lbPoints.setText("Puntos: ");
         }

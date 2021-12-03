@@ -65,6 +65,8 @@ public class PlayboardController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        btMoveRight.setDisable(true);
+        btMoveLeft.setDisable(true);
         click = 0;
         Reader.setMap(new HashMap<Label, Posicion>());
         Matrix matriz = new Matrix(Reader.getSize());
@@ -285,6 +287,10 @@ public class PlayboardController implements Initializable {
         public void run(){
             try{
                 while(Reader.getCont()>0){
+                    if(cbRows.getValue()!=null){
+                        btMoveRight.setDisable(false);
+                        btMoveLeft.setDisable(false);
+                    }
                 sleep(1000);
                 Reader.setCont(Reader.getCont()-1);
                 Reader.setPunt(Reader.getPunt()+1);
@@ -324,6 +330,7 @@ public class PlayboardController implements Initializable {
                                 break;
                             case 0:
                                 health3.setDisable(true);
+                                Reader.setCont(0);
                                 break;
                         }
                     });
