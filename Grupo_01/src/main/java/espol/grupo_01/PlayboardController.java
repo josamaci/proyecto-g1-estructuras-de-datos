@@ -71,6 +71,7 @@ public class PlayboardController implements Initializable {
         Reader.setMap(new HashMap<Label, Posicion>());
         Matrix matriz = new Matrix(Reader.getSize());
         moveRow(matriz);
+        AddRowColumn(matriz);
         bpPlayboard.setCenter(matriz.getGridPane());
         lblTime.setText(String.valueOf(Reader.getCont()));
         lblPoints.setText(String.valueOf(Reader.getPunt()));
@@ -84,58 +85,54 @@ public class PlayboardController implements Initializable {
         setComboBox();
     }    
 
-    @FXML
-    private void AddRow(ActionEvent event) {
-        if(click<1){
-            click++;
-        } else {
-            btAddRow.setDisable(true);
-            btAddColumn.setDisable(true);
-            btDeleteRow.setDisable(true);
-            btDeleteColumn.setDisable(true);
-        }
-    } 
-
-    @FXML
-    private void AddColumn(ActionEvent event) {
-
-        if(click<1){
-            click++;
-        } else {
-            btAddRow.setDisable(true);
-            btAddColumn.setDisable(true);
-            btDeleteRow.setDisable(true);
-            btDeleteColumn.setDisable(true);
-            
-        }
+    public void AddRowColumn(Matrix m) {
+        
+        btAddRow.setOnMouseClicked(eh -> {
+            if (click < 1) {
+                click++;
+                m.addRow();
+            } else {
+                btAddRow.setDisable(true);
+                btAddColumn.setDisable(true);
+                btDeleteRow.setDisable(true);
+                btDeleteColumn.setDisable(true);
+            }
+        });
+        btAddColumn.setOnMouseClicked(eh -> {
+            if (click < 1) {
+                click++;
+                m.addColumn();
+            } else {
+                btAddRow.setDisable(true);
+                btAddColumn.setDisable(true);
+                btDeleteRow.setDisable(true);
+                btDeleteColumn.setDisable(true);
+            }
+        });
+        
+        btDeleteRow.setOnMouseClicked(eh -> {
+            if (click < 1) {
+                click++;
+            } else {
+                btAddRow.setDisable(true);
+                btAddColumn.setDisable(true);
+                btDeleteRow.setDisable(true);
+                btDeleteColumn.setDisable(true);
+            }
+        });
+        
+        btDeleteColumn.setOnMouseClicked(eh -> {
+            if (click < 1) {
+                click++;
+            } else {
+                btAddRow.setDisable(true);
+                btAddColumn.setDisable(true);
+                btDeleteRow.setDisable(true);
+                btDeleteColumn.setDisable(true);
+            }
+        });
     }
-
-    @FXML
-    private void DeleteRow(ActionEvent event) {
-
-        if(click<1){
-            click++;
-        } else {
-            btAddRow.setDisable(true);
-            btAddColumn.setDisable(true);
-            btDeleteRow.setDisable(true);
-            btDeleteColumn.setDisable(true);
-        }
-    }
-
-    @FXML
-    private void DeleteColumn(ActionEvent event) {
-
-        if(click<1){
-            click++;
-        } else {
-            btAddRow.setDisable(true);
-            btAddColumn.setDisable(true);
-            btDeleteRow.setDisable(true);
-            btDeleteColumn.setDisable(true);
-        }
-    }
-
+        
     @FXML
     private void surrender(ActionEvent event) throws IOException {
         Reader.setCont(1);
