@@ -34,6 +34,7 @@ public class Matrix {
                 gridPane.add(l, j, i);
             }
         }
+        gridPane.setGridLinesVisible(true);
     }
     
     public void updatePane() {
@@ -150,6 +151,9 @@ public class Matrix {
                     }
                 }
             }
+            if (row + 1 < size) {
+                this.vertical(segundaParte, row + 1, size - 1);
+            }
         }
     }
     
@@ -211,6 +215,9 @@ public class Matrix {
                     }
                 }
             }
+            if (column + 1 < size) {
+                this.horizontal(segundaParte, size - 1, column + 1);
+            }
         }
     }
     
@@ -249,10 +256,46 @@ public class Matrix {
     }
     
     public void addColumn() {
-        gridPane.addRow(size, new Label(" "));
+        Label[][] arreglo = new Label[array.length][array.length+1];
+        
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                arreglo[i][j] = array[i][j];
+            }
+        }
+        
+        for (int i = 0; i < arreglo.length; i++) {
+            Label l = new Label();
+            StyleManager.styleLabel(l);
+            arreglo[i][array.length + 1] = l;
+        }
+        
+        // Al finalizar
+        
+        array = arreglo;
+        this.updatePane();
     }
     
     public void addRow() {
-        gridPane.addColumn(size, new Label(" "));
+        Label[][] arreglo = new Label[array.length+1][array.length];
+
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                arreglo[i][j] = array[i][j];
+            }
+        }
+        
+        // Recorrer filas
+        
+        for (int i = 0; i < arreglo.length; i++) {
+            Label l = new Label();
+            StyleManager.styleLabel(l);
+            arreglo[array.length+1][i] = l;
+        }
+        
+        // Al finalizar
+        
+        array = arreglo;
+        this.updatePane();
     }
 }

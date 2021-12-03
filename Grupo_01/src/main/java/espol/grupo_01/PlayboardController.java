@@ -244,7 +244,9 @@ public class PlayboardController implements Initializable {
     
     private void putWords(Matrix matrix) {
         int count = 0;
-        int rdInt = Randomer.getRdint(3);
+//        int rdInt = Randomer.getRdint(3);
+        int rdInt = Randomer.getRdint(2);
+//        int rdInt = 1;
         for (String string : Reader.getRandom()) {
             count++;
             switch (rdInt) {
@@ -254,12 +256,10 @@ public class PlayboardController implements Initializable {
                 case 1:
                     matrix.vertical(string, Randomer.getRdint(matrix.getSize()-1) , Randomer.getRdint(matrix.getSize()-1));
                     break;
-                case 2:
-                    matrix.downLeft(string, Randomer.getRdint(matrix.getSize()-1) , Randomer.getRdint(matrix.getSize()-1));
-                    break;
+//                case 2:
+//                    matrix.downLeft(string, Randomer.getRdint(matrix.getSize()-1) , Randomer.getRdint(matrix.getSize()-1));
+//                    break;
             }
-//            matrix.vertical(string, count);
-//            count++;
         }
         
     }
