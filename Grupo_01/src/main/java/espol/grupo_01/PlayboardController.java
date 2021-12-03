@@ -138,7 +138,7 @@ public class PlayboardController implements Initializable {
 
     @FXML
     private void surrender(ActionEvent event) throws IOException {
-        Reader.setCont(0);
+        Reader.setCont(1);
         bpPlayboard.setCenter(null);
     }
     

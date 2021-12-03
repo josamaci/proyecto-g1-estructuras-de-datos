@@ -18,7 +18,7 @@ public class Reader {
     private static int size = 7;
     private static int cont = 120;
     private static int punt = 0;
-    private static int life = 3;
+    private static int life = 4;
     private static Set<String> random;
     private static Map<Label, Posicion> map;
     public static boolean getLanguage() {
