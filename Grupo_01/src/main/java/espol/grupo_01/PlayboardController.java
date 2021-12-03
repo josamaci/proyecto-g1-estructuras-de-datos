@@ -80,7 +80,7 @@ public class PlayboardController implements Initializable {
         generate();
         putWords(matriz);
         setWords();
-//        matriz.updateWords();
+        matriz.updateWords();
         iniciarContadorVidas();
         setComboBox();
     }    
